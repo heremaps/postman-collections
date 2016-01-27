@@ -7,26 +7,48 @@ These examples have been created for use with the **Postman** utility. Postman i
 
 To import the collection, first `clone` this repository, then open the Postman utility and select the *Import* option. Select the *Folder* tab from the dialog and drag and drop the cloned repository folder into the target.
 
+The collections contained in this repository are organized under this scheme:
 
-**NOTE:** In order to get the postman requests to work, you **must** replace all instances of the `{YOUR_APP_ID}` and `{YOUR_APP_CODE}` variables within the collection and use your own HERE credentials. Within Postman, set the variables using the *Manage environments* menu.
+* [REST APIs](#rest-apis)
+  * [Batch Geocoder API](#batch-geocoder-api)
+  * [Geocoder API](#geocoder-api)
+  * [Map Image API](#map-image-api)
+  * [Map Tile API](#map-tile-api)
+  * [Places API](#places-api)
+  * [Public Transport API](#public-transport-api)
+  * [Routing API](#routing-api)
+  * [Traffic API](#traffic-api)
+  * [Venue Maps](#venue-maps)
+  * [Weather API](#weather-api)
+* [Platform Extensions](#platform-extensions)
+  * [Custom Location Extension API](#custom-location-extension-api)
+  * [Platform Data Extension API](#platform-data-extension-api)
+  * [Route Match Extension API](#route-match-extension-api)
+  * [Toll Cost Extension API](#toll-cost-extension-api)
+  * [Waypoint Sequence Extension API](#waypoint-sequence-extension-api)
+* [Legacy APIs](#legacy-apis)
+  * [Enterprise Routing API](#enterprise-routing-api)
+  * [Matrix Routing API](#matrix-routing-api)
 
-You can obtain a set of credentials from the [Plans Page](https://developer.here.com/plans/api/consumer-mapping) on developer.here.com.
+> **NOTE:** In order to get the postman requests to work, you **must** replace all instances of the `{YOUR_APP_ID}` and `{YOUR_APP_CODE}` variables within the collection and use your own HERE credentials. Within Postman, set the variables using the *`Manage environments`* menu.
 
-
+> You can obtain a set of credentials from the [Plans Page](https://developer.here.com/plans/api/consumer-mapping) on **developer.here.com**.
+  
 ---
 # REST APIs
 
 The **HERE REST APIs** provide a flexible and fast access to a variety of map data and other map data functions. Developers can use the HERE Rest APIs to perform tasks ranging from batch geocode requests and advanced traffic incident reports to creating an isoline route.
 
-## Batch Geocoder API
+## [Batch Geocoder API](batch-geocoder.postman_collection)
 
 * **Batch Geocode Addresses** -  Start asynchronously geocoding a large set of addresses in one batch
 * **Batch Geocode Job Status** - Request the status of a batch geocoder job
 * **Batch Reverse Geocode Locations** - Start asynchronously reverse-geocoding a large set of locations in one batch
 * **Download Geocoded Data**  - Download a zipped geocoded dataset from a completed job
 
+[Download this collection](../../raw/master/batch-geocoder.postman_collection) :link:
 
-## Geocoder API
+## [Geocoder API](geocoder.postman_collection)
 
 * **Geocode a Street Intersection** - Request the latitude, longitude and details of a street intersection
 * **Geocode an Address within a Bounding Box** - Request the latitude, longitude and details of an address restricting results to a specific area
@@ -40,9 +62,9 @@ The **HERE REST APIs** provide a flexible and fast access to a variety of map da
 * **Reverse Geocode the Shape of a Postal Code** - Request the shape of a postal district for a given latitude and longitude
 * **Suppressing Response Attributes** - Request only the latitude, longitude for a given address
 
+[Download this collection](../../raw/master/geocoder.postman_collection) :link:
 
-
-## Map Image API
+## [Map Image API](map-image.postman_collection)
 
 * **Changing from the Metric System** - Request an image of a map including a scale bar in miles or yards
 * **Default Map Image** - Request the default image of a map
@@ -61,8 +83,9 @@ The **HERE REST APIs** provide a flexible and fast access to a variety of map da
 * **Styling a Set of Markers** - Request an image of a map including markers styled with a common theme
 * **Terrain Map Image** - Request an image of a topographical map
 
+[Download this collection](../../raw/master/map-image.postman_collection) :link:
 
-## Map Tile API
+## [Map Tile API](map-tile.postman_collection)
 
 * **Base64 Encoded Map Tile** - Request a base64 encoded map tile
 * **Color-reduced Street Map** - Request a greyed out street map tile
@@ -87,8 +110,9 @@ The **HERE REST APIs** provide a flexible and fast access to a variety of map da
 * **Transparent Truck Restrictions Map** - Request a transparent tile showing restrictions for heavy vehicles only
 * **Truck Restrictions Map** - Request a street map tile showing restrictions for heavy vehicles
 
+[Download this collection](../../raw/master/map-tile.postman_collection) :link:
 
-## Places API
+## [Places API](places.postman_collection)
 
 * **Explore Nearby Places** places/explore-nearby-places) - Request a list of places close to a location
 * **Explore Places using Implicit Contexts** places/explore-places-implicit-contexts) - Request a list of popular places within a specified area
@@ -100,8 +124,9 @@ The **HERE REST APIs** provide a flexible and fast access to a variety of map da
 * **Place Categories** places/place-categories) - Request a list of place categories available for a given location
 * **Search Suggestions** places/search-suggestion) - Request a list of suggestions based on a partial query string
 
+[Download this collection](../../raw/master/places.postman_collection) :link:
 
-## Public Transport API
+## [Public Transport API](public-transit.postman_collection)
 
 * **Adjust Walking Speed in Transit Route** - Request a public transit route with faster walking speed
 * **Avoid Transit Routes Involving Transfers** - Request a direct public transit route excluding changes and transfers
@@ -120,8 +145,9 @@ The **HERE REST APIs** provide a flexible and fast access to a variety of map da
 * **Transit Coverage Nearby** - Request a list of transit operators and station coverage nearby
 * **Transit Coverage Within a City** - Request a list of transit operator coverage within a specified city
 
+[Download this collection](../../raw/master/public-transit.postman_collection) :link:
 
-## Routing API
+## [Routing API](routing.postman_collection)
 
 * **Additional Route Settings** - Request a route specifying additional route settings.
 * **Avoiding a Form of Public Transport** - Request a public transport route avoiding rail
@@ -136,9 +162,9 @@ The **HERE REST APIs** provide a flexible and fast access to a variety of map da
 * **Route with an Intermediate Stop Point** - Request a route from A to B with stop at an intermediate point C
 * **Timetabled Public Transport Route** - Request a public transport route between two points specifying a departure time
 
+[Download this collection](../../raw/master/routing.postman_collection) :link:
 
-
-## Traffic API
+## [Traffic API](traffic.postman_collection)
 
 * **Flow using Proximity** - Request traffic flow for a circle around a defined point
 * **Flow using Proximity returning Additional Attributes** - Request traffic flow information using proximity, returning shape and functional class
@@ -154,9 +180,9 @@ The **HERE REST APIs** provide a flexible and fast access to a variety of map da
 * **Traffic flow using corridor** - Request traffic flow for a defined route
 * **Transparent Traffic Map** - Request a transparent tile with traffic flow information
 
+[Download this collection](../../raw/master/traffic.postman_collection) :link:
 
-
-## Venue Maps
+## [Venue Maps](venue-maps.postman_collection)
 
 * **Base64 Encoded Map Tiles** - Request a base64 encoded map tile and associated room definitions with a single request
 * **Full Venue Model** - Request extended details of places found within a venue
@@ -167,9 +193,9 @@ The **HERE REST APIs** provide a flexible and fast access to a variety of map da
 * **Venue Map Tile** - Request an individual venue map tile
 * **Venues within a Bounding Box** - Request a list of venues found within a defined area
 
+[Download this collection](../../raw/master/venue-maps.postman_collection) :link:
 
-
-## Weather API
+## [Weather API](weather.postman_collection)
 
 * **Changing from the Metric System** - Request temperatures in Fahrenheit and wind speeds in mph
 * **Hourly Forecast** - Request an hour-by-hour seven day weather forecast
@@ -182,6 +208,8 @@ The **HERE REST APIs** provide a flexible and fast access to a variety of map da
 * **Weather Conditions for a City**  - Request current weather observations around a named location
 * **Weather Conditions using Zip Codes**  - Request current weather conditions using a US Zip Codes
 
+[Download this collection](../../raw/master/weather.postman_collection) :link:
+
 ---
 
 # Platform Extensions
@@ -189,7 +217,7 @@ The **HERE REST APIs** provide a flexible and fast access to a variety of map da
 The **HERE Platform Extensions** enable developers to further enrich their HERE enabled applications by providing access to additional data sets and functionalities, currently not available through HERE Platform services, which are tailored to specific use cases. Developers can use the Platform Extensions to add more capabilities to the service results received from HERE Platform services. They can only be used as add-ons to HERE Platform Services.
 
 
-## Custom Location Extension API
+## [Custom Location Extension API](location-custom.postman_collection)
 
 * **Filtering by Custom Attributes** - Request a list of user-defined locations based on their attribute values
 * **Filtering by both Custom Attributes and Area** - Request a list of user-defined locations within a defined area that match specific attributes
@@ -199,8 +227,9 @@ The **HERE Platform Extensions** enable developers to further enrich their HERE 
 * **Find Locations within a Bounding Box** - Request a list of user-defined locations within a defined area
 * **Find the Five Nearest Locations** - Request a list of user-defined locations within a circle around a fixed point
 
+[Download this collection](../../raw/master/location-custom.postman_collection) :link:
 
-## Platform Data Extension API
+## [Platform Data Extension API](platform-data.postman_collection)
 
 * **Available Attributes** - Request which map data layers contain which attributes
 * **Available Attributes within a Map Data Layer** - Request which attributes are available within a specified map data layer
@@ -209,32 +238,37 @@ The **HERE Platform Extensions** enable developers to further enrich their HERE 
 * **Platform Data** - Request data from a specific data layer about a specified location
 * **Platform Static Data** - Request enumerated content from a static data table
 
+[Download this collection](../../raw/master/platform-data.postman_collection) :link:
 
-## Route Match Extension API
+## [Route Match Extension API](route-match.postman_collection)
 
 * **Match GPX Data to a Route** - Request a set of linkIds that match a GPX trace
 
+[Download this collection](../../raw/master/route-match.postman_collection) :link:
 
-## Toll Cost Extension API
+## [Toll Cost Extension API](toll-cost.postman_collection)
 
 * **Toll Cost for a Truck**  - Request toll costs for a 7.5 ton truck  journey based on linkIds
 * **Toll Costs based on Departure Time** - Request toll costs for a journey commencing at a given time
 * **Toll Costs for a Car** - Request standard passenger vehicle toll costs for a journey based on linkIds
 * **Toll Costs for a Truck with Trailer**  - Request toll costs for a 38 ton truck-with-trailer journey based on linkIds
 
+[Download this collection](../../raw/master/toll-cost.postman_collection) :link:
 
-## Waypoint Sequence Extension API
+## [Waypoint Sequence Extension API](waypoints-sequence.postman_collection)
 
 * **Waypoint Sequence for a Truck**  - Request an ordered list of destinations for the shortest truck journey
 * **Waypoint Sequence for Hazardous Materials** - Request an ordered list of destinations for a truck carrying hazardous materials
 * **Waypoint Sequence for a Car** - Request an ordered list of destinations for the quickest car journey
 * **Waypoint Sequence for a Truck with Trailer** - Request an ordered list of destinations for a truck with trailer
 
+[Download this collection](../../raw/master/waypoints-sequence.postman_collection) :link:
+
 ---
 
 # Legacy APIs
 
-## Enterprise Routing API
+## [Enterprise Routing API](legacy-enterprise-routing.postman_collection)
 
 * **Abnormal Loads** - Request a truck route for long, tall or wide vehicles
 * **Avoiding a specified area** - Request a route avoiding a defined area by specifying a bounding box
@@ -261,9 +295,10 @@ The **HERE Platform Extensions** enable developers to further enrich their HERE 
 * **Truck Route via an Intermediate Point** - Request a truck route from A to C with an additional stopover at point B
 * **Weight Restrictions** - Request a truck route for a heavy vehicle specifying axel or laden weights
 
+[Download this collection](../../raw/master/legacy-enterprise-routing.postman_collection) :link:
 
-
-## Matrix Routing API
+## [Matrix Routing API](legacy-matrix-routing.postman_collection)
 
 * **Matrix Routing**  - Simultaneously calculate route distances to multiple locations
 
+[Download this collection](../../raw/master/legacy-matrix-routing.postman_collection) :link:
