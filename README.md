@@ -2,10 +2,10 @@
 
 This repository holds a series of postman collections demonstrating a variety of use cases for all of the  **HERE REST and Platform Extension APIs**. More information about our APIs can be found on [developer.here.com](https://developer.here.com/).
 
-These examples have been created for use with the **Postman** utility. Postman is a testing framework for REST APIs. The tool can be downloaded from [www.getpostman.com](www.getpostman.com).
+These examples have been created for use with the **Postman** utility. Postman is a testing framework for REST APIs. The tool can be downloaded from [www.getpostman.com](https://www.getpostman.com).
 
 
-To import the collection, first `clone` this repository, then open the Postman utility and select the *Import* option. Select the *Folder* tab from the dialog and drag and drop the cloned repository folder into the target.
+To import the collection, first `clone` this repository, then open the Postman utility and select the *`Import`* option. Select the *`Folder`* tab from the dialog and drag and drop the cloned repository folder into the target.
 
 The collections contained in this repository are organized under this scheme:
 
@@ -38,6 +38,8 @@ The collections contained in this repository are organized under this scheme:
 # REST APIs
 
 The **HERE REST APIs** provide a flexible and fast access to a variety of map data and other map data functions. Developers can use the HERE Rest APIs to perform tasks ranging from batch geocode requests and advanced traffic incident reports to creating an isoline route.
+
+> Documentation on these APIs can be found on the [developer.here.com portal](https://developer.here.com/rest-apis).
 
 ## [Batch Geocoder API](batch-geocoder.postman_collection)
 
@@ -216,6 +218,7 @@ The **HERE REST APIs** provide a flexible and fast access to a variety of map da
 
 The **HERE Platform Extensions** enable developers to further enrich their HERE enabled applications by providing access to additional data sets and functionalities, currently not available through HERE Platform services, which are tailored to specific use cases. Developers can use the Platform Extensions to add more capabilities to the service results received from HERE Platform services. They can only be used as add-ons to HERE Platform Services.
 
+> Documentation on these APIs can be found on the [developer.here.com portal](https://developer.here.com/platform-extensions).
 
 ## [Custom Location Extension API](location-custom.postman_collection)
 
@@ -267,6 +270,7 @@ The **HERE Platform Extensions** enable developers to further enrich their HERE 
 ---
 
 # Legacy APIs
+> Documentation on these APIs can be found on the bottom of the [developer.here.com documentation listing page](https://developer.here.com/documentation).
 
 ## [Enterprise Routing API](legacy-enterprise-routing.postman_collection)
 
