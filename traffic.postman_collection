@@ -1,1 +1,453 @@
-{"id":"554225ddcccb443f1f6ddb45","name":"Traffic API","description":"Examples for traffic_nlp_6.0.41.1 or higher","order":[],"folders":[],"timestamp":1448890155090,"synced":false,"owner":0,"sharedWithTeam":false,"subscribed":false,"remoteLink":"","public":false,"write":true,"requests":[{"collectionId":"554225ddcccb443f1f6ddb45","id":"incidents-using-corridor","name":"Traffic Incidents using a corridor","description":"*Request traffic incidents for a defined route *\n\nThe request is made using the corridor parameter in the request URL. The Server also supports an XML response.\n\n\n\n* **corridor**  `text`\n \\- A type of spatial filter. The corridor is defined by its path and width. The path is a line along the center of the corridor represented by a series of latitude/longitude pairs. Corridor width is given in meters.\n\n* **app_id**  `text`\n \\- A 20 byte Base64 URL-safe encoded string used for the authentication of the client application.    You must include an `app_id` with every request.\n\n* **app_code**  `text`\n \\- A 20 byte Base64 URL-safe encoded string used for the authentication of the client application.    You must include an `app_code` with every request.","data":[{"key":"corridor","value":"51.5072,-0.1275;51.50781,-0.13112;51.51006,-0.1346;1000","type":"text"},{"key":"app_id","value":"{{YOUR_APP_ID}}","type":"text"},{"key":"app_code","value":"{{YOUR_APP_CODE}}","type":"text"}],"dataMode":"params","timestamp":1448890154639,"headers":"","url":"https://traffic.cit.api.here.com/traffic/6.0/incidents.json?corridor=51.5072,-0.1275;51.50781,-0.13112;51.51006,-0.1346;1000&app_id={{YOUR_APP_ID}}&app_code={{YOUR_APP_CODE}}","method":"GET"},{"collectionId":"554225ddcccb443f1f6ddb45","id":"traffic-incidents-via-proximity","name":"Traffic Incidents via Proximity","description":"*Request traffic incident information within specified area*\n\nTraffic incidents can be retrieved through several different request types, based on the addressing schemes that they use to specify their geography. Traffic requests can be output to either XML or JSON format. API also supports filters to limit the amount of information provided in the response. Filters are based on on status, criticality, TMC table IDs, profiles, or start and end times, etc.\n\n\n\n* **prox**  `prox`\n \\- A type of spatial filter. Proximity specifies a circle to search using a latitude, a longitude, and a radius in meters.    e.g. `52.515,13.377,100`\n\n* **criticality**  `multi-enum`\n \\- A filter that selects incident reports according to criticality,  `0`=critical, `1`=major, `2`=minor,  `3`=lowImpact\n\n Valid values are : `0` - critical, `1` - major, `2` - minor, `3` - lowImpact\n\n* **app_id**  `text`\n \\- A 20 byte Base64 URL-safe encoded string used for the authentication of the client application.    You must include an `app_id` with every request.\n\n* **app_code**  `text`\n \\- A 20 byte Base64 URL-safe encoded string used for the authentication of the client application.    You must include an `app_code` with every request.","data":[{"key":"prox","value":"52.5311,13.3644,15000","type":"text"},{"key":"criticality","value":"0,1","type":"text"},{"key":"app_id","value":"{{YOUR_APP_ID}}","type":"text"},{"key":"app_code","value":"{{YOUR_APP_CODE}}","type":"text"}],"dataMode":"params","timestamp":1448890154692,"headers":"","url":"https://traffic.cit.api.here.com/traffic/6.0/incidents.json?prox=52.5311,13.3644,15000&criticality=0,1&app_id={{YOUR_APP_ID}}&app_code={{YOUR_APP_CODE}}","method":"GET"},{"collectionId":"554225ddcccb443f1f6ddb45","id":"traffic-incidents","name":"Traffic Incidents within a Bounding Box","description":"*Request traffic incident information within specified area*\n\nTraffic incidents can be retrieved through several different request types, based on the addressing schemes that they use to specify their geography. Traffic requests can be output to either XML or JSON format. API also supports filters to limit the amount of information provided in the response. Filters are based on on status, criticality, TMC table IDs, profiles, or start and end times, etc.\n\n\n\n* **bbox**  `bbox`\n \\- A type of spatial filter. A bounding box specifies the top-right and bottom left corners of an area to search.    e.g. `52.515,13.377;52.134,13.978`\n\n* **criticality**  `multi-enum`\n \\- A filter that selects incident reports according to criticality,  `0`=critical, `1`=major, `2`=minor,  `3`=lowImpact\n\n Valid values are : `0` - critical, `1` - major, `2` - minor, `3` - lowImpact\n\n* **app_id**  `text`\n \\- A 20 byte Base64 URL-safe encoded string used for the authentication of the client application.    You must include an `app_id` with every request.\n\n* **app_code**  `text`\n \\- A 20 byte Base64 URL-safe encoded string used for the authentication of the client application.    You must include an `app_code` with every request.","data":[{"key":"bbox","value":"52.5311,13.3644;52.5114,13.4035","type":"text"},{"key":"criticality","value":"0","type":"text"},{"key":"app_id","value":"{{YOUR_APP_ID}}","type":"text"},{"key":"app_code","value":"{{YOUR_APP_CODE}}","type":"text"}],"dataMode":"params","timestamp":1448890154721,"headers":"","url":"https://traffic.cit.api.here.com/traffic/6.0/incidents.json?bbox=52.5311,13.3644;52.5114,13.4035&criticality=0&app_id={{YOUR_APP_ID}}&app_code={{YOUR_APP_CODE}}","method":"GET"},{"collectionId":"554225ddcccb443f1f6ddb45","id":"traffic-tile","name":"Traffic Map","description":"*Request a map tile with traffic flow information*\n\nTo obtain a traffic map tile, use the  `traffictile` parameter in the path of the request URL.\n\n\n\n* **app_id**  `text`\n \\- A 20 byte Base64 URL-safe encoded string used for the authentication of the client application.    You must include an `app_id` with every request.\n\n* **app_code**  `text`\n \\- A 20 byte Base64 URL-safe encoded string used for the authentication of the client application.    You must include an `app_code` with every request.","data":[{"key":"app_id","value":"{{YOUR_APP_ID}}","type":"text"},{"key":"app_code","value":"{{YOUR_APP_CODE}}","type":"text"}],"dataMode":"params","timestamp":1448890154783,"headers":"","url":"https://1.traffic.maps.cit.api.here.com/maptile/2.1/traffictile/newest/normal.day/15/16358/10898/256/png8?app_id={{YOUR_APP_ID}}&app_code={{YOUR_APP_CODE}}","method":"GET"},{"collectionId":"554225ddcccb443f1f6ddb45","id":"traffic-tile-transparent","name":"Transparent Traffic Map","description":"*Request a transparent tile with traffic flow information*\n\nTo obtain a transparent map tile displaying traffic flow, use the `flowtile` parameter in the path of the request URL.\n\n\n\n* **app_id**  `text`\n \\- A 20 byte Base64 URL-safe encoded string used for the authentication of the client application.    You must include an `app_id` with every request.\n\n* **app_code**  `text`\n \\- A 20 byte Base64 URL-safe encoded string used for the authentication of the client application.    You must include an `app_code` with every request.","data":[{"key":"app_id","value":"{{YOUR_APP_ID}}","type":"text"},{"key":"app_code","value":"{{YOUR_APP_CODE}}","type":"text"}],"dataMode":"params","timestamp":1448890154810,"headers":"","url":"https://1.traffic.maps.cit.api.here.com/maptile/2.1/flowtile/newest/normal.day/15/16358/10898/256/png8?app_id={{YOUR_APP_ID}}&app_code={{YOUR_APP_CODE}}","method":"GET"},{"collectionId":"554225ddcccb443f1f6ddb45","id":"transparent-traffic-map-via-tda-to-be-deprecated1","name":"Transparent Traffic Map via TDA (to be deprecated)","description":"*Request a transparent tile with traffic flow information*\n\nSupports custom coloring, functional class filters, DLR rendering, sub-segment traffic rendering.\n\n\n\n* **app_id**  `text`\n \\- A 20 byte Base64 URL-safe encoded string used for the authentication of the client application.    You must include an `app_id` with every request.\n\n* **app_code**  `text`\n \\- A 20 byte Base64 URL-safe encoded string used for the authentication of the client application.    You must include an `app_code` with every request.","data":[{"key":"app_id","value":"{{YOUR_APP_ID}}","type":"text"},{"key":"app_code","value":"{{YOUR_APP_CODE}}","type":"text"}],"dataMode":"params","timestamp":1448890154838,"headers":"","url":"https://tiles.traffic.cit.api.here.com/traffic/6.0/tiles/8/133/86/256/png32?app_id={{YOUR_APP_ID}}&app_code={{YOUR_APP_CODE}}","method":"GET"},{"collectionId":"554225ddcccb443f1f6ddb45","id":"traffic-flow-availability-data3","name":"Traffic Flow Availability Data","description":"*Flow availability requests allow you to see what traffic flow coverage exists in the current Traffic API.*\n\nT<i></i>he Server also supports an XML response.\n\n\n\n* **app_id**  `text`\n \\- A 20 byte Base64 URL-safe encoded string used for the authentication of the client application.    You must include an `app_id` with every request.\n\n* **app_code**  `text`\n \\- A 20 byte Base64 URL-safe encoded string used for the authentication of the client application.    You must include an `app_code` with every request.","data":[{"key":"app_id","value":"{{YOUR_APP_ID}}","type":"text"},{"key":"app_code","value":"{{YOUR_APP_CODE}}","type":"text"}],"dataMode":"params","timestamp":1448890154868,"headers":"","url":"https://traffic.cit.api.here.com/traffic/6.0/flowavailability.json?app_id={{YOUR_APP_ID}}&app_code={{YOUR_APP_CODE}}","method":"GET"},{"collectionId":"554225ddcccb443f1f6ddb45","id":"flow-using-corridor","name":"Traffic flow using corridor","description":"*Request traffic flow for a defined route *\n\nThe request is made using the corridor parameter in the request URL. The Server also supports an XML response.\n\n\n\n* **corridor**  `text`\n \\- A type of spatial filter. The corridor is defined by its path and width. The path is a line along the center of the corridor represented by a series of latitude/longitude pairs. Corridor width is given in meters.\n\n* **app_id**  `text`\n \\- A 20 byte Base64 URL-safe encoded string used for the authentication of the client application.    You must include an `app_id` with every request.\n\n* **app_code**  `text`\n \\- A 20 byte Base64 URL-safe encoded string used for the authentication of the client application.    You must include an `app_code` with every request.","data":[{"key":"corridor","value":"51.5072,-0.1275;51.50781,-0.13112;51.51006,-0.1346;1000","type":"text"},{"key":"app_id","value":"{{YOUR_APP_ID}}","type":"text"},{"key":"app_code","value":"{{YOUR_APP_CODE}}","type":"text"}],"dataMode":"params","timestamp":1448890154913,"headers":"","url":"https://traffic.cit.api.here.com/traffic/6.1/flow.json?corridor=51.5072,-0.1275;51.50781,-0.13112;51.51006,-0.1346;1000&app_id={{YOUR_APP_ID}}&app_code={{YOUR_APP_CODE}}","method":"GET"},{"collectionId":"554225ddcccb443f1f6ddb45","id":"traffic-flow-shape-fc","name":"Requesting Additional Attributes","description":"*Request traffic flow including shape and functional class information*\n\nServer also supports an XML response.\n\n\n\n* **quadkey**  `quadkey`\n \\- An identifier of a map tile in a grid of tiles spanning the entire globe. A `quadkey` is a single number string from 0 to 21 digits long.\n\n* **responseattributes**  `text`\n \\- A list indicating optional information to be included in the traffic flow data response\n\n* **app_id**  `text`\n \\- A 20 byte Base64 URL-safe encoded string used for the authentication of the client application.    You must include an `app_id` with every request.\n\n* **app_code**  `text`\n \\- A 20 byte Base64 URL-safe encoded string used for the authentication of the client application.    You must include an `app_code` with every request.","data":[{"key":"quadkey","value":"0313131311102300330","type":"text"},{"key":"responseattributes","value":"sh,fc","type":"text"},{"key":"app_id","value":"{{YOUR_APP_ID}}","type":"text"},{"key":"app_code","value":"{{YOUR_APP_CODE}}","type":"text"}],"dataMode":"params","timestamp":1448890154939,"headers":"","url":"https://traffic.cit.api.here.com/traffic/6.1/flow.json?quadkey=0313131311102300330&responseattributes=sh,fc&app_id={{YOUR_APP_ID}}&app_code={{YOUR_APP_CODE}}","method":"GET"},{"collectionId":"554225ddcccb443f1f6ddb45","id":"traffic-flow-proximity","name":"Flow using Proximity","description":"*Request traffic flow for a circle around a defined point*\n\nThe request is made using the `prox` parameter in the request URL. The Server also supports an XML response.\n\n\n\n* **prox**  `prox`\n \\- A type of spatial filter. Proximity specifies a circle to search using a latitude, a longitude, and a radius in meters.    e.g. `52.515,13.377,100`\n\n* **app_id**  `text`\n \\- A 20 byte Base64 URL-safe encoded string used for the authentication of the client application.    You must include an `app_id` with every request.\n\n* **app_code**  `text`\n \\- A 20 byte Base64 URL-safe encoded string used for the authentication of the client application.    You must include an `app_code` with every request.","data":[{"key":"prox","value":"51.5072,-0.1275,100","type":"text"},{"key":"app_id","value":"{{YOUR_APP_ID}}","type":"text"},{"key":"app_code","value":"{{YOUR_APP_CODE}}","type":"text"}],"dataMode":"params","timestamp":1448890154968,"headers":"","url":"https://traffic.cit.api.here.com/traffic/6.1/flow.json?prox=51.5072,-0.1275,100&app_id={{YOUR_APP_ID}}&app_code={{YOUR_APP_CODE}}","method":"GET"},{"collectionId":"554225ddcccb443f1f6ddb45","id":"traffic-flow-bounding-box","name":"Flow within a Bounding Box","description":"*Request traffic flow information within specified area*\n\nThe request is made using the `bbox` parameter in the request URL. The Server also supports an XML response.\n\n\n\n* **bbox**  `bbox`\n \\- A type of spatial filter. A bounding box specifies the top-right and bottom left corners of an area to search.    e.g. `52.515,13.377;52.134,13.978`\n\n* **app_id**  `text`\n \\- A 20 byte Base64 URL-safe encoded string used for the authentication of the client application.    You must include an `app_id` with every request.\n\n* **app_code**  `text`\n \\- A 20 byte Base64 URL-safe encoded string used for the authentication of the client application.    You must include an `app_code` with every request.","data":[{"key":"bbox","value":"51.5082,-0.1285;51.5062,-0.1265","type":"text"},{"key":"app_id","value":"{{YOUR_APP_ID}}","type":"text"},{"key":"app_code","value":"{{YOUR_APP_CODE}}","type":"text"}],"dataMode":"params","timestamp":1448890154999,"headers":"","url":"https://traffic.cit.api.here.com/traffic/6.1/flow.json?bbox=51.5082,-0.1285;51.5062,-0.1265&app_id={{YOUR_APP_ID}}&app_code={{YOUR_APP_CODE}}","method":"GET"},{"collectionId":"554225ddcccb443f1f6ddb45","id":"traffic-flow-jam-factor","name":"Flow with a Minimum Jam Factor","description":"*Request traffic flow information within specified area*\n\nThe filter in the request is made by adding the `minjamfactor` parameter to the request URL. The server also supports XML response.\n\n\n\n* **bbox**  `bbox`\n \\- A type of spatial filter. A bounding box specifies the top-right and bottom left corners of an area to search.    e.g. `52.515,13.377;52.134,13.978`\n\n* **minjamfactor**  `text`\n \\- An indicator of the minimum jam factor value for traffic flow items to be included in the response\n\n* **app_id**  `text`\n \\- A 20 byte Base64 URL-safe encoded string used for the authentication of the client application.    You must include an `app_id` with every request.\n\n* **app_code**  `text`\n \\- A 20 byte Base64 URL-safe encoded string used for the authentication of the client application.    You must include an `app_code` with every request.","data":[{"key":"bbox","value":"51.5482,-0.1285;51.5062,-0.1245","type":"text"},{"key":"minjamfactor","value":"7","type":"text"},{"key":"app_id","value":"{{YOUR_APP_ID}}","type":"text"},{"key":"app_code","value":"{{YOUR_APP_CODE}}","type":"text"}],"dataMode":"params","timestamp":1448890155027,"headers":"","url":"https://traffic.cit.api.here.com/traffic/6.1/flow.json?bbox=51.5482,-0.1285;51.5062,-0.1245&minjamfactor=7&app_id={{YOUR_APP_ID}}&app_code={{YOUR_APP_CODE}}","method":"GET"},{"collectionId":"554225ddcccb443f1f6ddb45","id":"traffic-flow-quadkey","name":"Flow using Quadkey","description":"*Request traffic flow information using a quadkey*\n\nThe quadkey unique defines a region of the globe using a standard addressing algorthm, which can also be used with certain map tile services. The server also supports an XML response.\n\n\n\n* **quadkey**  `quadkey`\n \\- An identifier of a map tile in a grid of tiles spanning the entire globe. A `quadkey` is a single number string from 0 to 21 digits long.\n\n* **app_id**  `text`\n \\- A 20 byte Base64 URL-safe encoded string used for the authentication of the client application.    You must include an `app_id` with every request.\n\n* **app_code**  `text`\n \\- A 20 byte Base64 URL-safe encoded string used for the authentication of the client application.    You must include an `app_code` with every request.","data":[{"key":"quadkey","value":"0313131311102300","type":"text"},{"key":"app_id","value":"{{YOUR_APP_ID}}","type":"text"},{"key":"app_code","value":"{{YOUR_APP_CODE}}","type":"text"}],"dataMode":"params","timestamp":1448890155048,"headers":"","url":"https://traffic.cit.api.here.com/traffic/6.1/flow.json?quadkey=0313131311102300&app_id={{YOUR_APP_ID}}&app_code={{YOUR_APP_CODE}}","method":"GET"},{"collectionId":"554225ddcccb443f1f6ddb45","id":"traffic-flow-proximity-shape-fc","name":"Flow using Proximity returning Additional Attributes","description":"*Request traffic flow information using proximity, returning shape and functional class*\n\nThe request is made through combining the `prox` parameter and the `responseattributes` in the request URL. The server also supports an XML response.\n\n\n\n* **prox**  `prox`\n \\- A type of spatial filter. Proximity specifies a circle to search using a latitude, a longitude, and a radius in meters.    e.g. `52.515,13.377,100`\n\n* **responseattributes**  `multi-enum`\n \\- A list indicating optional information to be included in the traffic flow data response\n\n Valid values are : `fc` - functionalClass, `sh` - shape\n\n* **app_id**  `text`\n \\- A 20 byte Base64 URL-safe encoded string used for the authentication of the client application.    You must include an `app_id` with every request.\n\n* **app_code**  `text`\n \\- A 20 byte Base64 URL-safe encoded string used for the authentication of the client application.    You must include an `app_code` with every request.","data":[{"key":"prox","value":"41.8831,-87.6216,100","type":"text"},{"key":"responseattributes","value":"sh,fc","type":"text"},{"key":"app_id","value":"{{YOUR_APP_ID}}","type":"text"},{"key":"app_code","value":"{{YOUR_APP_CODE}}","type":"text"}],"dataMode":"params","timestamp":1448890155088,"headers":"","url":"https://traffic.cit.api.here.com/traffic/6.1/flow.json?prox=41.8831,-87.6216,100&responseattributes=sh,fc&app_id={{YOUR_APP_ID}}&app_code={{YOUR_APP_CODE}}","method":"GET"}]}
+{
+	"id": "f0dcbdf3-7a4f-078f-a871-b5344e6a9936",
+	"name": "Traffic API",
+	"description": "The **HERE Traffic API** is a RESTful API that provides traffic flow information and traffic map tiles.\n\n\n**Traffic Incident Data**\n\nThe API provides aggregated information about traffic incidents in XML or JSON, including the type and location of each traffic incident, status (whether it is still active), start and end time, and other relevant data.\n\n**Traffic Map Tile Overlays (Traffic Tiles)**\n\nThe Traffic API delivers pre-rendered map tile overlays with traffic information, ready to be displayed by mapping applications. You can request map tiles that show traffic data for a specific area.\n\n**Traffic Flow Data**\n\nThe service offers access to real-time traffic flow data in XML or JSON, including information on speed and congestion for the region(s) defined in each request, and can deliver additional data such as the geometry of the road segments to which the flow data relate.\n\n**Traffic Flow Availability**\n\nThe service allows client applications to access the general traffic information either specified by a map segment (defined as a map view), or in general for the whole world (without the map view).\n\n\nThis example set works with version **6.0.41.1** or higher\n\nAdditional information can be found on [developer.here.com](https://developer.here.com/rest-apis/documentation/traffic)",
+	"order": [
+		"69ae6ff5-b3a8-abbc-2b2c-f1c520cba42c",
+		"775e3227-bc2b-b08f-72a3-e24f31dfef73",
+		"91788822-8cee-e6f7-731c-fa4ad1506165",
+		"44d6cbbd-d299-c568-4116-4919d3f732b6",
+		"a32e6d85-28b2-26ae-5f41-4ef4c6010a8c",
+		"e26537b0-894a-c743-0aac-0d9b3f7d7f0d",
+		"8d89f25b-7ab2-f3d8-2c85-128a69bf3fdb",
+		"1b25e6d8-ddeb-7316-9b5a-e51ad1c15c1e",
+		"c1fd96e6-300b-50af-be1c-c03e0119c3ab",
+		"ef225b61-7998-098b-ad63-ec12105ff51a",
+		"4dd42820-5fe0-ca1b-1c23-9d9869734950",
+		"f4e27d58-3146-0206-da9f-ff8efa24d5f3",
+		"70ff612c-6b49-0db9-8941-25e57209cca6",
+		"18cd7f60-029f-0a3d-5992-d5706c95bd60"
+	],
+	"folders": [],
+	"timestamp": 1448890155090,
+	"owner": 0,
+	"remoteLink": "",
+	"public": false,
+	"requests": [
+		{
+			"collectionId": "f0dcbdf3-7a4f-078f-a871-b5344e6a9936",
+			"data": [
+				{
+					"key": "prox",
+					"type": "text",
+					"value": "41.8831,-87.6216,100"
+				},
+				{
+					"key": "responseattributes",
+					"type": "text",
+					"value": "sh,fc"
+				},
+				{
+					"key": "app_id",
+					"type": "text",
+					"value": "{{YOUR_APP_ID}}"
+				},
+				{
+					"key": "app_code",
+					"type": "text",
+					"value": "{{YOUR_APP_CODE}}"
+				}
+			],
+			"dataMode": "params",
+			"description": "*Request traffic flow information using proximity, returning shape and functional class*\n\nThe request is made through combining the `prox` parameter and the `responseattributes` in the request URL. The server also supports an XML response.\n\n\n\n* **prox**  `prox`\n \\- A type of spatial filter. Proximity specifies a circle to search using a latitude, a longitude, and a radius in meters.    e.g. `52.515,13.377,100`\n\n* **responseattributes**  `multi-enum`\n \\- A list indicating optional information to be included in the traffic flow data response\n\n Valid values are : `fc` - functionalClass, `sh` - shape\n\n* **app_id**  `text`\n \\- A 20 byte Base64 URL-safe encoded string used for the authentication of the client application.    You must include an `app_id` with every request.\n\n* **app_code**  `text`\n \\- A 20 byte Base64 URL-safe encoded string used for the authentication of the client application.    You must include an `app_code` with every request.",
+			"headers": "",
+			"id": "18cd7f60-029f-0a3d-5992-d5706c95bd60",
+			"method": "GET",
+			"name": "Flow using Proximity returning Additional Attributes",
+			"timestamp": 1448890155088,
+			"url": "https://traffic.cit.api.here.com/traffic/6.1/flow.json?prox=41.8831,-87.6216,100&responseattributes=sh,fc&app_id={{YOUR_APP_ID}}&app_code={{YOUR_APP_CODE}}",
+			"preRequestScript": "",
+			"tests": ""
+		},
+		{
+			"collectionId": "f0dcbdf3-7a4f-078f-a871-b5344e6a9936",
+			"data": [
+				{
+					"key": "corridor",
+					"type": "text",
+					"value": "51.5072,-0.1275;51.50781,-0.13112;51.51006,-0.1346;1000"
+				},
+				{
+					"key": "app_id",
+					"type": "text",
+					"value": "{{YOUR_APP_ID}}"
+				},
+				{
+					"key": "app_code",
+					"type": "text",
+					"value": "{{YOUR_APP_CODE}}"
+				}
+			],
+			"dataMode": "params",
+			"description": "*Request traffic flow for a defined route *\n\nThe request is made using the corridor parameter in the request URL. The Server also supports an XML response.\n\n\n\n* **corridor**  `text`\n \\- A type of spatial filter. The corridor is defined by its path and width. The path is a line along the center of the corridor represented by a series of latitude/longitude pairs. Corridor width is given in meters.\n\n* **app_id**  `text`\n \\- A 20 byte Base64 URL-safe encoded string used for the authentication of the client application.    You must include an `app_id` with every request.\n\n* **app_code**  `text`\n \\- A 20 byte Base64 URL-safe encoded string used for the authentication of the client application.    You must include an `app_code` with every request.",
+			"headers": "",
+			"id": "1b25e6d8-ddeb-7316-9b5a-e51ad1c15c1e",
+			"method": "GET",
+			"name": "Traffic flow using corridor",
+			"timestamp": 1448890154913,
+			"url": "https://traffic.cit.api.here.com/traffic/6.1/flow.json?corridor=51.5072,-0.1275;51.50781,-0.13112;51.51006,-0.1346;1000&app_id={{YOUR_APP_ID}}&app_code={{YOUR_APP_CODE}}",
+			"preRequestScript": "",
+			"tests": ""
+		},
+		{
+			"collectionId": "f0dcbdf3-7a4f-078f-a871-b5344e6a9936",
+			"data": [
+				{
+					"key": "app_id",
+					"type": "text",
+					"value": "{{YOUR_APP_ID}}"
+				},
+				{
+					"key": "app_code",
+					"type": "text",
+					"value": "{{YOUR_APP_CODE}}"
+				}
+			],
+			"dataMode": "params",
+			"description": "*Request a map tile with traffic flow information*\n\nTo obtain a traffic map tile, use the  `traffictile` parameter in the path of the request URL.\n\n\n\n* **app_id**  `text`\n \\- A 20 byte Base64 URL-safe encoded string used for the authentication of the client application.    You must include an `app_id` with every request.\n\n* **app_code**  `text`\n \\- A 20 byte Base64 URL-safe encoded string used for the authentication of the client application.    You must include an `app_code` with every request.",
+			"headers": "",
+			"id": "44d6cbbd-d299-c568-4116-4919d3f732b6",
+			"method": "GET",
+			"name": "Traffic Map",
+			"timestamp": 1448890154783,
+			"url": "https://1.traffic.maps.cit.api.here.com/maptile/2.1/traffictile/newest/normal.day/15/16358/10898/256/png8?app_id={{YOUR_APP_ID}}&app_code={{YOUR_APP_CODE}}",
+			"preRequestScript": "",
+			"tests": ""
+		},
+		{
+			"collectionId": "f0dcbdf3-7a4f-078f-a871-b5344e6a9936",
+			"data": [
+				{
+					"key": "bbox",
+					"type": "text",
+					"value": "51.5082,-0.1285;51.5062,-0.1265"
+				},
+				{
+					"key": "app_id",
+					"type": "text",
+					"value": "{{YOUR_APP_ID}}"
+				},
+				{
+					"key": "app_code",
+					"type": "text",
+					"value": "{{YOUR_APP_CODE}}"
+				}
+			],
+			"dataMode": "params",
+			"description": "*Request traffic flow information within specified area*\n\nThe request is made using the `bbox` parameter in the request URL. The Server also supports an XML response.\n\n\n\n* **bbox**  `bbox`\n \\- A type of spatial filter. A bounding box specifies the top-right and bottom left corners of an area to search.    e.g. `52.515,13.377;52.134,13.978`\n\n* **app_id**  `text`\n \\- A 20 byte Base64 URL-safe encoded string used for the authentication of the client application.    You must include an `app_id` with every request.\n\n* **app_code**  `text`\n \\- A 20 byte Base64 URL-safe encoded string used for the authentication of the client application.    You must include an `app_code` with every request.",
+			"headers": "",
+			"id": "4dd42820-5fe0-ca1b-1c23-9d9869734950",
+			"method": "GET",
+			"name": "Flow within a Bounding Box",
+			"timestamp": 1448890154999,
+			"url": "https://traffic.cit.api.here.com/traffic/6.1/flow.json?bbox=51.5082,-0.1285;51.5062,-0.1265&app_id={{YOUR_APP_ID}}&app_code={{YOUR_APP_CODE}}",
+			"preRequestScript": "",
+			"tests": ""
+		},
+		{
+			"collectionId": "f0dcbdf3-7a4f-078f-a871-b5344e6a9936",
+			"data": [
+				{
+					"key": "corridor",
+					"type": "text",
+					"value": "51.5072,-0.1275;51.50781,-0.13112;51.51006,-0.1346;1000"
+				},
+				{
+					"key": "app_id",
+					"type": "text",
+					"value": "{{YOUR_APP_ID}}"
+				},
+				{
+					"key": "app_code",
+					"type": "text",
+					"value": "{{YOUR_APP_CODE}}"
+				}
+			],
+			"dataMode": "params",
+			"description": "*Request traffic incidents for a defined route *\n\nThe request is made using the corridor parameter in the request URL. The Server also supports an XML response.\n\n\n\n* **corridor**  `text`\n \\- A type of spatial filter. The corridor is defined by its path and width. The path is a line along the center of the corridor represented by a series of latitude/longitude pairs. Corridor width is given in meters.\n\n* **app_id**  `text`\n \\- A 20 byte Base64 URL-safe encoded string used for the authentication of the client application.    You must include an `app_id` with every request.\n\n* **app_code**  `text`\n \\- A 20 byte Base64 URL-safe encoded string used for the authentication of the client application.    You must include an `app_code` with every request.",
+			"headers": "",
+			"id": "69ae6ff5-b3a8-abbc-2b2c-f1c520cba42c",
+			"method": "GET",
+			"name": "Traffic Incidents using a corridor",
+			"timestamp": 1448890154639,
+			"url": "https://traffic.cit.api.here.com/traffic/6.0/incidents.json?corridor=51.5072,-0.1275;51.50781,-0.13112;51.51006,-0.1346;1000&app_id={{YOUR_APP_ID}}&app_code={{YOUR_APP_CODE}}",
+			"preRequestScript": "",
+			"tests": ""
+		},
+		{
+			"collectionId": "f0dcbdf3-7a4f-078f-a871-b5344e6a9936",
+			"data": [
+				{
+					"key": "quadkey",
+					"type": "text",
+					"value": "0313131311102300"
+				},
+				{
+					"key": "app_id",
+					"type": "text",
+					"value": "{{YOUR_APP_ID}}"
+				},
+				{
+					"key": "app_code",
+					"type": "text",
+					"value": "{{YOUR_APP_CODE}}"
+				}
+			],
+			"dataMode": "params",
+			"description": "*Request traffic flow information using a quadkey*\n\nThe quadkey unique defines a region of the globe using a standard addressing algorthm, which can also be used with certain map tile services. The server also supports an XML response.\n\n\n\n* **quadkey**  `quadkey`\n \\- An identifier of a map tile in a grid of tiles spanning the entire globe. A `quadkey` is a single number string from 0 to 21 digits long.\n\n* **app_id**  `text`\n \\- A 20 byte Base64 URL-safe encoded string used for the authentication of the client application.    You must include an `app_id` with every request.\n\n* **app_code**  `text`\n \\- A 20 byte Base64 URL-safe encoded string used for the authentication of the client application.    You must include an `app_code` with every request.",
+			"headers": "",
+			"id": "70ff612c-6b49-0db9-8941-25e57209cca6",
+			"method": "GET",
+			"name": "Flow using Quadkey",
+			"timestamp": 1448890155048,
+			"url": "https://traffic.cit.api.here.com/traffic/6.1/flow.json?quadkey=0313131311102300&app_id={{YOUR_APP_ID}}&app_code={{YOUR_APP_CODE}}",
+			"preRequestScript": "",
+			"tests": ""
+		},
+		{
+			"collectionId": "f0dcbdf3-7a4f-078f-a871-b5344e6a9936",
+			"data": [
+				{
+					"key": "prox",
+					"type": "text",
+					"value": "52.5311,13.3644,15000"
+				},
+				{
+					"key": "criticality",
+					"type": "text",
+					"value": "0,1"
+				},
+				{
+					"key": "app_id",
+					"type": "text",
+					"value": "{{YOUR_APP_ID}}"
+				},
+				{
+					"key": "app_code",
+					"type": "text",
+					"value": "{{YOUR_APP_CODE}}"
+				}
+			],
+			"dataMode": "params",
+			"description": "*Request traffic incident information within specified area*\n\nTraffic incidents can be retrieved through several different request types, based on the addressing schemes that they use to specify their geography. Traffic requests can be output to either XML or JSON format. API also supports filters to limit the amount of information provided in the response. Filters are based on on status, criticality, TMC table IDs, profiles, or start and end times, etc.\n\n\n\n* **prox**  `prox`\n \\- A type of spatial filter. Proximity specifies a circle to search using a latitude, a longitude, and a radius in meters.    e.g. `52.515,13.377,100`\n\n* **criticality**  `multi-enum`\n \\- A filter that selects incident reports according to criticality,  `0`=critical, `1`=major, `2`=minor,  `3`=lowImpact\n\n Valid values are : `0` - critical, `1` - major, `2` - minor, `3` - lowImpact\n\n* **app_id**  `text`\n \\- A 20 byte Base64 URL-safe encoded string used for the authentication of the client application.    You must include an `app_id` with every request.\n\n* **app_code**  `text`\n \\- A 20 byte Base64 URL-safe encoded string used for the authentication of the client application.    You must include an `app_code` with every request.",
+			"headers": "",
+			"id": "775e3227-bc2b-b08f-72a3-e24f31dfef73",
+			"method": "GET",
+			"name": "Traffic Incidents via Proximity",
+			"timestamp": 1448890154692,
+			"url": "https://traffic.cit.api.here.com/traffic/6.0/incidents.json?prox=52.5311,13.3644,15000&criticality=0,1&app_id={{YOUR_APP_ID}}&app_code={{YOUR_APP_CODE}}",
+			"preRequestScript": "",
+			"tests": ""
+		},
+		{
+			"collectionId": "f0dcbdf3-7a4f-078f-a871-b5344e6a9936",
+			"data": [
+				{
+					"key": "app_id",
+					"type": "text",
+					"value": "{{YOUR_APP_ID}}"
+				},
+				{
+					"key": "app_code",
+					"type": "text",
+					"value": "{{YOUR_APP_CODE}}"
+				}
+			],
+			"dataMode": "params",
+			"description": "*Flow availability requests allow you to see what traffic flow coverage exists in the current Traffic API.*\n\nT<i></i>he Server also supports an XML response.\n\n\n\n* **app_id**  `text`\n \\- A 20 byte Base64 URL-safe encoded string used for the authentication of the client application.    You must include an `app_id` with every request.\n\n* **app_code**  `text`\n \\- A 20 byte Base64 URL-safe encoded string used for the authentication of the client application.    You must include an `app_code` with every request.",
+			"headers": "",
+			"id": "8d89f25b-7ab2-f3d8-2c85-128a69bf3fdb",
+			"method": "GET",
+			"name": "Traffic Flow Availability Data",
+			"timestamp": 1448890154868,
+			"url": "https://traffic.cit.api.here.com/traffic/6.0/flowavailability.json?app_id={{YOUR_APP_ID}}&app_code={{YOUR_APP_CODE}}",
+			"preRequestScript": "",
+			"tests": ""
+		},
+		{
+			"collectionId": "f0dcbdf3-7a4f-078f-a871-b5344e6a9936",
+			"data": [
+				{
+					"key": "bbox",
+					"type": "text",
+					"value": "52.5311,13.3644;52.5114,13.4035"
+				},
+				{
+					"key": "criticality",
+					"type": "text",
+					"value": "0"
+				},
+				{
+					"key": "app_id",
+					"type": "text",
+					"value": "{{YOUR_APP_ID}}"
+				},
+				{
+					"key": "app_code",
+					"type": "text",
+					"value": "{{YOUR_APP_CODE}}"
+				}
+			],
+			"dataMode": "params",
+			"description": "*Request traffic incident information within specified area*\n\nTraffic incidents can be retrieved through several different request types, based on the addressing schemes that they use to specify their geography. Traffic requests can be output to either XML or JSON format. API also supports filters to limit the amount of information provided in the response. Filters are based on on status, criticality, TMC table IDs, profiles, or start and end times, etc.\n\n\n\n* **bbox**  `bbox`\n \\- A type of spatial filter. A bounding box specifies the top-right and bottom left corners of an area to search.    e.g. `52.515,13.377;52.134,13.978`\n\n* **criticality**  `multi-enum`\n \\- A filter that selects incident reports according to criticality,  `0`=critical, `1`=major, `2`=minor,  `3`=lowImpact\n\n Valid values are : `0` - critical, `1` - major, `2` - minor, `3` - lowImpact\n\n* **app_id**  `text`\n \\- A 20 byte Base64 URL-safe encoded string used for the authentication of the client application.    You must include an `app_id` with every request.\n\n* **app_code**  `text`\n \\- A 20 byte Base64 URL-safe encoded string used for the authentication of the client application.    You must include an `app_code` with every request.",
+			"headers": "",
+			"id": "91788822-8cee-e6f7-731c-fa4ad1506165",
+			"method": "GET",
+			"name": "Traffic Incidents within a Bounding Box",
+			"timestamp": 1448890154721,
+			"url": "https://traffic.cit.api.here.com/traffic/6.0/incidents.json?bbox=52.5311,13.3644;52.5114,13.4035&criticality=0&app_id={{YOUR_APP_ID}}&app_code={{YOUR_APP_CODE}}",
+			"preRequestScript": "",
+			"tests": ""
+		},
+		{
+			"collectionId": "f0dcbdf3-7a4f-078f-a871-b5344e6a9936",
+			"data": [
+				{
+					"key": "app_id",
+					"type": "text",
+					"value": "{{YOUR_APP_ID}}"
+				},
+				{
+					"key": "app_code",
+					"type": "text",
+					"value": "{{YOUR_APP_CODE}}"
+				}
+			],
+			"dataMode": "params",
+			"description": "*Request a transparent tile with traffic flow information*\n\nTo obtain a transparent map tile displaying traffic flow, use the `flowtile` parameter in the path of the request URL.\n\n\n\n* **app_id**  `text`\n \\- A 20 byte Base64 URL-safe encoded string used for the authentication of the client application.    You must include an `app_id` with every request.\n\n* **app_code**  `text`\n \\- A 20 byte Base64 URL-safe encoded string used for the authentication of the client application.    You must include an `app_code` with every request.",
+			"headers": "",
+			"id": "a32e6d85-28b2-26ae-5f41-4ef4c6010a8c",
+			"method": "GET",
+			"name": "Transparent Traffic Map",
+			"timestamp": 1448890154810,
+			"url": "https://1.traffic.maps.cit.api.here.com/maptile/2.1/flowtile/newest/normal.day/15/16358/10898/256/png8?app_id={{YOUR_APP_ID}}&app_code={{YOUR_APP_CODE}}",
+			"preRequestScript": "",
+			"tests": ""
+		},
+		{
+			"collectionId": "f0dcbdf3-7a4f-078f-a871-b5344e6a9936",
+			"data": [
+				{
+					"key": "quadkey",
+					"type": "text",
+					"value": "0313131311102300330"
+				},
+				{
+					"key": "responseattributes",
+					"type": "text",
+					"value": "sh,fc"
+				},
+				{
+					"key": "app_id",
+					"type": "text",
+					"value": "{{YOUR_APP_ID}}"
+				},
+				{
+					"key": "app_code",
+					"type": "text",
+					"value": "{{YOUR_APP_CODE}}"
+				}
+			],
+			"dataMode": "params",
+			"description": "*Request traffic flow including shape and functional class information*\n\nServer also supports an XML response.\n\n\n\n* **quadkey**  `quadkey`\n \\- An identifier of a map tile in a grid of tiles spanning the entire globe. A `quadkey` is a single number string from 0 to 21 digits long.\n\n* **responseattributes**  `text`\n \\- A list indicating optional information to be included in the traffic flow data response\n\n* **app_id**  `text`\n \\- A 20 byte Base64 URL-safe encoded string used for the authentication of the client application.    You must include an `app_id` with every request.\n\n* **app_code**  `text`\n \\- A 20 byte Base64 URL-safe encoded string used for the authentication of the client application.    You must include an `app_code` with every request.",
+			"headers": "",
+			"id": "c1fd96e6-300b-50af-be1c-c03e0119c3ab",
+			"method": "GET",
+			"name": "Requesting Additional Attributes",
+			"timestamp": 1448890154939,
+			"url": "https://traffic.cit.api.here.com/traffic/6.1/flow.json?quadkey=0313131311102300330&responseattributes=sh,fc&app_id={{YOUR_APP_ID}}&app_code={{YOUR_APP_CODE}}",
+			"preRequestScript": "",
+			"tests": ""
+		},
+		{
+			"collectionId": "f0dcbdf3-7a4f-078f-a871-b5344e6a9936",
+			"data": [
+				{
+					"key": "app_id",
+					"type": "text",
+					"value": "{{YOUR_APP_ID}}"
+				},
+				{
+					"key": "app_code",
+					"type": "text",
+					"value": "{{YOUR_APP_CODE}}"
+				}
+			],
+			"dataMode": "params",
+			"description": "*Request a transparent tile with traffic flow information*\n\nSupports custom coloring, functional class filters, DLR rendering, sub-segment traffic rendering.\n\n\n\n* **app_id**  `text`\n \\- A 20 byte Base64 URL-safe encoded string used for the authentication of the client application.    You must include an `app_id` with every request.\n\n* **app_code**  `text`\n \\- A 20 byte Base64 URL-safe encoded string used for the authentication of the client application.    You must include an `app_code` with every request.",
+			"headers": "",
+			"id": "e26537b0-894a-c743-0aac-0d9b3f7d7f0d",
+			"method": "GET",
+			"name": "Transparent Traffic Map via TDA (to be deprecated)",
+			"timestamp": 1448890154838,
+			"url": "https://tiles.traffic.cit.api.here.com/traffic/6.0/tiles/8/133/86/256/png32?app_id={{YOUR_APP_ID}}&app_code={{YOUR_APP_CODE}}",
+			"preRequestScript": "",
+			"tests": ""
+		},
+		{
+			"collectionId": "f0dcbdf3-7a4f-078f-a871-b5344e6a9936",
+			"data": [
+				{
+					"key": "prox",
+					"type": "text",
+					"value": "51.5072,-0.1275,100"
+				},
+				{
+					"key": "app_id",
+					"type": "text",
+					"value": "{{YOUR_APP_ID}}"
+				},
+				{
+					"key": "app_code",
+					"type": "text",
+					"value": "{{YOUR_APP_CODE}}"
+				}
+			],
+			"dataMode": "params",
+			"description": "*Request traffic flow for a circle around a defined point*\n\nThe request is made using the `prox` parameter in the request URL. The Server also supports an XML response.\n\n\n\n* **prox**  `prox`\n \\- A type of spatial filter. Proximity specifies a circle to search using a latitude, a longitude, and a radius in meters.    e.g. `52.515,13.377,100`\n\n* **app_id**  `text`\n \\- A 20 byte Base64 URL-safe encoded string used for the authentication of the client application.    You must include an `app_id` with every request.\n\n* **app_code**  `text`\n \\- A 20 byte Base64 URL-safe encoded string used for the authentication of the client application.    You must include an `app_code` with every request.",
+			"headers": "",
+			"id": "ef225b61-7998-098b-ad63-ec12105ff51a",
+			"method": "GET",
+			"name": "Flow using Proximity",
+			"timestamp": 1448890154968,
+			"url": "https://traffic.cit.api.here.com/traffic/6.1/flow.json?prox=51.5072,-0.1275,100&app_id={{YOUR_APP_ID}}&app_code={{YOUR_APP_CODE}}",
+			"preRequestScript": "",
+			"tests": ""
+		},
+		{
+			"collectionId": "f0dcbdf3-7a4f-078f-a871-b5344e6a9936",
+			"data": [
+				{
+					"key": "bbox",
+					"type": "text",
+					"value": "51.5482,-0.1285;51.5062,-0.1245"
+				},
+				{
+					"key": "minjamfactor",
+					"type": "text",
+					"value": "7"
+				},
+				{
+					"key": "app_id",
+					"type": "text",
+					"value": "{{YOUR_APP_ID}}"
+				},
+				{
+					"key": "app_code",
+					"type": "text",
+					"value": "{{YOUR_APP_CODE}}"
+				}
+			],
+			"dataMode": "params",
+			"description": "*Request traffic flow information within specified area*\n\nThe filter in the request is made by adding the `minjamfactor` parameter to the request URL. The server also supports XML response.\n\n\n\n* **bbox**  `bbox`\n \\- A type of spatial filter. A bounding box specifies the top-right and bottom left corners of an area to search.    e.g. `52.515,13.377;52.134,13.978`\n\n* **minjamfactor**  `text`\n \\- An indicator of the minimum jam factor value for traffic flow items to be included in the response\n\n* **app_id**  `text`\n \\- A 20 byte Base64 URL-safe encoded string used for the authentication of the client application.    You must include an `app_id` with every request.\n\n* **app_code**  `text`\n \\- A 20 byte Base64 URL-safe encoded string used for the authentication of the client application.    You must include an `app_code` with every request.",
+			"headers": "",
+			"id": "f4e27d58-3146-0206-da9f-ff8efa24d5f3",
+			"method": "GET",
+			"name": "Flow with a Minimum Jam Factor",
+			"timestamp": 1448890155027,
+			"url": "https://traffic.cit.api.here.com/traffic/6.1/flow.json?bbox=51.5482,-0.1285;51.5062,-0.1245&minjamfactor=7&app_id={{YOUR_APP_ID}}&app_code={{YOUR_APP_CODE}}",
+			"preRequestScript": "",
+			"tests": ""
+		}
+	]
+}

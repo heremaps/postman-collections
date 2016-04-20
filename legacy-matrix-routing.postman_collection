@@ -1,1 +1,65 @@
-{"id":"56000a83e618b15031321408","name":"Matrix Routing API","description":"Examples for routing_matrix_lbsp_6.2.61.0 or higher","order":[],"folders":[],"timestamp":1448890114930,"synced":false,"owner":0,"sharedWithTeam":false,"subscribed":false,"remoteLink":"","public":false,"write":true,"requests":[{"collectionId":"56000a83e618b15031321408","id":"calculate-matrix","name":"Matrix Routing","description":"*Simultaneously calculate route distances to multiple locations*\n\nMatrix calculations are made using the `calculatematrix` endpoint and appending a `start0` parameter and multiple consecutively numbered `destination` parameters to the request.\n\n\n\n* **mode**  `text`\n \\- Routing mode determines how the route is calculated.    e.g.fastest;car;traffic:disabled`\n\n* **start0**  `latlng`\n \\- Start point for the route calculations.    e.g. `52.515,13.377`\n\n* **destination0**  `latlng`\n \\- First destination point for the route calculations.    e.g. `52.4,13.5`\n\n* **destination1**  `latlng`\n \\- Second destination point for the route calculations.    e.g. `52.3,13.4`\n\n* **destination2**  `latlng`\n \\- Third destination point for the route calculations.    e.g. `52.6,13.3`\n\n* **app_id**  `text`\n \\- A 20 byte Base64 URL-safe encoded string used for the authentication of the client application.    You must include an `app_id` with every request.\n\n* **app_code**  `text`\n \\- A 20 byte Base64 URL-safe encoded string used for the authentication of the client application.    You must include an `app_code` with every request.","data":[{"key":"mode","value":"fastest;truck;traffic:disabled;","type":"text"},{"key":"start0","value":"40.7790,-73.9622","type":"text"},{"key":"destination0","value":"40.7482,-73.9860","type":"text"},{"key":"destination1","value":"40.7558,-73.9870","type":"text"},{"key":"destination2","value":"40.7054,-73.9961","type":"text"},{"key":"app_id","value":"{{YOUR_APP_ID}}","type":"text"},{"key":"app_code","value":"{{YOUR_APP_CODE}}","type":"text"}],"dataMode":"params","timestamp":1448890114926,"headers":"","url":"https://legacy.matrix.route.cit.api.here.com/routing/6.2/calculatematrix.json?mode=fastest;truck;traffic:disabled;&start0=40.7790,-73.9622&destination0=40.7482,-73.9860&destination1=40.7558,-73.9870&destination2=40.7054,-73.9961&app_id={{YOUR_APP_ID}}&app_code={{YOUR_APP_CODE}}","method":"GET"}]}
+{
+	"id": "7947083a-5b81-96b5-b33a-88b823e6bda3",
+	"name": "Matrix Routing API",
+	"description": "The **HERE Matrix Routing API** is a **deprecated** web service API that offered easy and fast routing across many regions of the world. It has been superceded by the [Routing API 7.x](https://developer.here.com/rest-apis/documentation/routing)\n\nThe Matrix Routing API provided the following capabilities:\n\n* Calculate a matrix of routes between many start points and destinations\n\nThis example set works with version **6.2.61** or higher",
+	"order": [
+		"a5257b77-b7e6-1988-3aba-e4f1a623c5b3"
+	],
+	"folders": [],
+	"timestamp": 1448890114930,
+	"owner": 0,
+	"remoteLink": "",
+	"public": false,
+	"requests": [
+		{
+			"collectionId": "7947083a-5b81-96b5-b33a-88b823e6bda3",
+			"id": "a5257b77-b7e6-1988-3aba-e4f1a623c5b3",
+			"name": "Matrix Routing",
+			"description": "*Simultaneously calculate route distances to multiple locations*\n\nMatrix calculations are made using the `calculatematrix` endpoint and appending a `start0` parameter and multiple consecutively numbered `destination` parameters to the request.\n\n\n\n* **mode**  `text`\n \\- Routing mode determines how the route is calculated.    e.g.fastest;car;traffic:disabled`\n\n* **start0**  `latlng`\n \\- Start point for the route calculations.    e.g. `52.515,13.377`\n\n* **destination0**  `latlng`\n \\- First destination point for the route calculations.    e.g. `52.4,13.5`\n\n* **destination1**  `latlng`\n \\- Second destination point for the route calculations.    e.g. `52.3,13.4`\n\n* **destination2**  `latlng`\n \\- Third destination point for the route calculations.    e.g. `52.6,13.3`\n\n* **app_id**  `text`\n \\- A 20 byte Base64 URL-safe encoded string used for the authentication of the client application.    You must include an `app_id` with every request.\n\n* **app_code**  `text`\n \\- A 20 byte Base64 URL-safe encoded string used for the authentication of the client application.    You must include an `app_code` with every request.",
+			"data": [
+				{
+					"key": "mode",
+					"value": "fastest;truck;traffic:disabled;",
+					"type": "text"
+				},
+				{
+					"key": "start0",
+					"value": "40.7790,-73.9622",
+					"type": "text"
+				},
+				{
+					"key": "destination0",
+					"value": "40.7482,-73.9860",
+					"type": "text"
+				},
+				{
+					"key": "destination1",
+					"value": "40.7558,-73.9870",
+					"type": "text"
+				},
+				{
+					"key": "destination2",
+					"value": "40.7054,-73.9961",
+					"type": "text"
+				},
+				{
+					"key": "app_id",
+					"value": "{{YOUR_APP_ID}}",
+					"type": "text"
+				},
+				{
+					"key": "app_code",
+					"value": "{{YOUR_APP_CODE}}",
+					"type": "text"
+				}
+			],
+			"dataMode": "params",
+			"timestamp": 1448890114926,
+			"headers": "",
+			"url": "https://legacy.matrix.route.cit.api.here.com/routing/6.2/calculatematrix.json?mode=fastest;truck;traffic:disabled;&start0=40.7790,-73.9622&destination0=40.7482,-73.9860&destination1=40.7558,-73.9870&destination2=40.7054,-73.9961&app_id={{YOUR_APP_ID}}&app_code={{YOUR_APP_CODE}}",
+			"method": "GET",
+			"preRequestScript": "",
+			"tests": ""
+		}
+	]
+}

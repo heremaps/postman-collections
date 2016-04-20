@@ -1,1 +1,301 @@
-{"id":"5603c3f6e618b15031321411","name":"Custom Location Extension API","description":"Examples for location_custom_nlp_1.7.7 or higher","order":[],"folders":[],"timestamp":1448890171202,"synced":false,"owner":0,"sharedWithTeam":false,"subscribed":false,"remoteLink":"","public":false,"write":true,"requests":[{"collectionId":"5603c3f6e618b15031321411","id":"bounding-box-search","name":"Find Locations within a Bounding Box","description":"*Request a list of user-defined locations within a defined area*\n\nThe request uses the `bbox` endpoint, and the bounding box is specified by adding the `bbox` parameter to the request URL.\n\n\n\n* **layerId**  `text`\n \\- Unique indicator used to retrieve a dataset\n\n* **bbox**  `bbox`\n \\- Restricts results to be found within this bounding box\n\n* **app_id**  `text`\n \\- A 20 byte Base64 URL-safe encoded string used for the authentication of the client application.    You must include an `app_id` with every request.\n\n* **app_code**  `text`\n \\- A 20 byte Base64 URL-safe encoded string used for the authentication of the client application.    You must include an `app_code` with every request.","data":[{"key":"layerId","value":"30","type":"text"},{"key":"bbox","value":"48.7940,9.1308;48.7553,9.2022","type":"text"},{"key":"app_id","value":"{{YOUR_APP_ID}}","type":"text"},{"key":"app_code","value":"{{YOUR_APP_CODE}}","type":"text"}],"dataMode":"params","timestamp":1448890171006,"headers":"","url":"https://customlocation.cit.api.here.com/v1/search/bbox?layerId=30&bbox=48.7940,9.1308;48.7553,9.2022&app_id={{YOUR_APP_ID}}&app_code={{YOUR_APP_CODE}}","method":"GET"},{"collectionId":"5603c3f6e618b15031321411","id":"bounding-box-attribute-search","name":"Filtering by both Custom Attributes and Area","description":"*Request a list of user-defined locations within a defined area that match specific attributes*\n\nAn attribute-based search is requested using the `attribute` endpoint and by adding the `query` parameter to the request URL, the `bbox` parameter can restrict the search to a smaller area.\n\n\n\n* **layerId**  `text`\n \\- Unique indicator used to retrieve a dataset\n\n* **bbox**  `bbox`\n \\- Restricts results to be found within this bounding box\n\n* **query**  `text`\n \\- The query to retrieve\n\n* **app_id**  `text`\n \\- A 20 byte Base64 URL-safe encoded string used for the authentication of the client application.    You must include an `app_id` with every request.\n\n* **app_code**  `text`\n \\- A 20 byte Base64 URL-safe encoded string used for the authentication of the client application.    You must include an `app_code` with every request.","data":[{"key":"layerId","value":"30","type":"text"},{"key":"bbox","value":"48.1673,11.5159;48.1048,11.6298","type":"text"},{"key":"query","value":"[like]/name1/shop","type":"text"},{"key":"app_id","value":"{{YOUR_APP_ID}}","type":"text"},{"key":"app_code","value":"{{YOUR_APP_CODE}}","type":"text"}],"dataMode":"params","timestamp":1448890171043,"headers":"","url":"https://customlocation.cit.api.here.com/v1/search/bbox?layerId=30&bbox=48.1673,11.5159;48.1048,11.6298&query=[like]/name1/shop&app_id={{YOUR_APP_ID}}&app_code={{YOUR_APP_CODE}}","method":"GET"},{"collectionId":"5603c3f6e618b15031321411","id":"attribute-search","name":"Filtering by Custom Attributes","description":"*Request a list of user-defined locations based on their attribute values*\n\nAn attribute-based search is requested using the `attribute` endpoint and by adding the `query` parameter to the request URL.\n\n\n\n* **layerId**  `text`\n \\- Unique indicator used to retrieve a dataset\n\n* **query**  `text`\n \\- The query to retrieve\n\n* **app_id**  `text`\n \\- A 20 byte Base64 URL-safe encoded string used for the authentication of the client application.    You must include an `app_id` with every request.\n\n* **app_code**  `text`\n \\- A 20 byte Base64 URL-safe encoded string used for the authentication of the client application.    You must include an `app_code` with every request.","data":[{"key":"layerId","value":"30","type":"text"},{"key":"query","value":"[like]/city/frankfurt/[AND][like]/name1/shop","type":"text"},{"key":"app_id","value":"{{YOUR_APP_ID}}","type":"text"},{"key":"app_code","value":"{{YOUR_APP_CODE}}","type":"text"}],"dataMode":"params","timestamp":1448890171081,"headers":"","url":"https://customlocation.cit.api.here.com/v1/search/attribute?layerId=30&query=[like]/city/frankfurt/[AND][like]/name1/shop&app_id={{YOUR_APP_ID}}&app_code={{YOUR_APP_CODE}}","method":"GET"},{"collectionId":"5603c3f6e618b15031321411","id":"route-search-routeid","name":"Find Locations along a pre-defined Route","description":"*Request a list of user-defined locations along a pre-defined route*\n\nThe route has been pre-calculated and the `routeid` has already been acquired from a previous routing request. A route-based corridor search is requested using the `corridor` endpoint and by adding the `routeid` parameter to the request URL, along with a corridor `width`.\n\n\n\n* **layerId**  `text`\n \\- Unique indicator used to retrieve a dataset\n\n* **routeId**  `text`\n \\- A <b>previously</b> calculated routeId\n\n* **radius**  `number`\n \\- Width of the search corridor\n\n* **limit**  `number`\n \\- The limit of the number of items contained in the response.\n\n* **app_id**  `text`\n \\- A 20 byte Base64 URL-safe encoded string used for the authentication of the client application.    You must include an `app_id` with every request.\n\n* **app_code**  `text`\n \\- A 20 byte Base64 URL-safe encoded string used for the authentication of the client application.    You must include an `app_code` with every request.","data":[{"key":"layerId","value":"30","type":"text"},{"key":"routeId","value":"REM3SAkAAAD_If32dTBKQCS5_If0eyNAAAAAoHIwSkAAAAAA73sjQAAAAAAAAPB_AAAAAAAA8H8lWhgDSQN4CyTIKAHpt68D5wyOAAEAAIAJyCgBAQAAgCANjgABAAAAAADA_wEAAAAAAMD_denUi3CwmwcDBA","type":"text"},{"key":"radius","value":"100","type":"text"},{"key":"limit","value":"5","type":"text"},{"key":"app_id","value":"{{YOUR_APP_ID}}","type":"text"},{"key":"app_code","value":"{{YOUR_APP_CODE}}","type":"text"}],"dataMode":"params","timestamp":1448890171110,"headers":"","url":"https://customlocation.cit.api.here.com/v1/search/route/corridor?layerId=30&routeId=REM3SAkAAAD_If32dTBKQCS5_If0eyNAAAAAoHIwSkAAAAAA73sjQAAAAAAAAPB_AAAAAAAA8H8lWhgDSQN4CyTIKAHpt68D5wyOAAEAAIAJyCgBAQAAgCANjgABAAAAAADA_wEAAAAAAMD_denUi3CwmwcDBA&radius=100&limit=5&app_id={{YOUR_APP_ID}}&app_code={{YOUR_APP_CODE}}","method":"GET"},{"collectionId":"5603c3f6e618b15031321411","id":"route-search","name":"Find Locations using Corridor","description":"*Request a list of user-defined locations near to a given corridor*\n\nThe route corridor consists of a series of latitude, longitude pairs defining the waypoints of a route, along with a defined width. A corridor search is requested using the `corridor` endpoint and by adding a series of comma delimited latitude, longitude waypoints to the `route` parameter of the request URL, along with a `radius` for the search.\n\n\n\n* **layerId**  `text`\n \\- Unique indicator used to retrieve a dataset\n\n* **route**  `text`\n \\- A type of spatial filter. The corridor is defined by its path and width. The path is a line along the center of the corridor represented by a series of latitude/longitude pairs. Corridor width is given in meters.\n\n* **radius**  `number`\n \\- width of the search corridor\n\n* **app_id**  `text`\n \\- A 20 byte Base64 URL-safe encoded string used for the authentication of the client application.    You must include an `app_id` with every request.\n\n* **app_code**  `text`\n \\- A 20 byte Base64 URL-safe encoded string used for the authentication of the client application.    You must include an `app_code` with every request.","data":[{"key":"layerId","value":"30","type":"text"},{"key":"route","value":"52.51978,13.388211,52.5198326,13.3882084,52.5198402,13.3883495,52.5147705,13.3891602,52.514758,13.389155","type":"text"},{"key":"radius","value":"100","type":"text"},{"key":"app_id","value":"{{YOUR_APP_ID}}","type":"text"},{"key":"app_code","value":"{{YOUR_APP_CODE}}","type":"text"}],"dataMode":"params","timestamp":1448890171141,"headers":"","url":"https://customlocation.cit.api.here.com/v1/search/corridor?layerId=30&route=52.51978,13.388211,52.5198326,13.3882084,52.5198402,13.3883495,52.5147705,13.3891602,52.514758,13.389155&radius=100&app_id={{YOUR_APP_ID}}&app_code={{YOUR_APP_CODE}}","method":"GET"},{"collectionId":"5603c3f6e618b15031321411","id":"nearest-proximity-search","name":"Find the Five Nearest Locations","description":"*Request a list of user-defined locations within a circle around a fixed point*\n\nThe search uses the `proximity` endpoint. The definition of the location and limit of the search is specified using  `coord` and `radius` parameters, and the number of results returned limited by adding the `limit` parameter to the request URL.\n\n\n\n* **layerId**  `text`\n \\- Unique indicator used to retrieve a dataset\n\n* **coord**  `latlng`\n \\- Center of the proximity search\n\n* **radius**  `number`\n \\- width of the search corridor\n\n* **limit**  `number`\n \\- The limit of the number of items contained in the response.\n\n* **app_id**  `text`\n \\- A 20 byte Base64 URL-safe encoded string used for the authentication of the client application.    You must include an `app_id` with every request.\n\n* **app_code**  `text`\n \\- A 20 byte Base64 URL-safe encoded string used for the authentication of the client application.    You must include an `app_code` with every request.","data":[{"key":"layerId","value":"30","type":"text"},{"key":"coord","value":"53.5527,10.0063","type":"text"},{"key":"radius","value":"5000","type":"text"},{"key":"limit","value":"5","type":"text"},{"key":"app_id","value":"{{YOUR_APP_ID}}","type":"text"},{"key":"app_code","value":"{{YOUR_APP_CODE}}","type":"text"}],"dataMode":"params","timestamp":1448890171171,"headers":"","url":"https://customlocation.cit.api.here.com/v1/search/proximity?layerId=30&coord=53.5527,10.0063&radius=5000&limit=5&app_id={{YOUR_APP_ID}}&app_code={{YOUR_APP_CODE}}","method":"GET"},{"collectionId":"5603c3f6e618b15031321411","id":"proximity-search","name":"Find Locations using Proximity","description":"*Request a list of user-defined locations within a circle around a fixed point*\n\nThe search uses the `proximity` endpoint. The location is defined using the `coord` parameter and radius of the search is defined using the `radius` parameter.\n\n\n\n* **layerId**  `text`\n \\- Unique indicator used to retrieve a dataset\n\n* **coord**  `latlng`\n \\- Center of the proximity search\n\n* **radius**  `number`\n \\- width of the search corridor\n\n* **app_id**  `text`\n \\- A 20 byte Base64 URL-safe encoded string used for the authentication of the client application.    You must include an `app_id` with every request.\n\n* **app_code**  `text`\n \\- A 20 byte Base64 URL-safe encoded string used for the authentication of the client application.    You must include an `app_code` with every request.","data":[{"key":"layerId","value":"30","type":"text"},{"key":"coord","value":"50.1139,8.6776","type":"text"},{"key":"radius","value":"500","type":"text"},{"key":"app_id","value":"{{YOUR_APP_ID}}","type":"text"},{"key":"app_code","value":"{{YOUR_APP_CODE}}","type":"text"}],"dataMode":"params","timestamp":1448890171200,"headers":"","url":"https://customlocation.cit.api.here.com/v1/search/proximity?layerId=30&coord=50.1139,8.6776&radius=500&app_id={{YOUR_APP_ID}}&app_code={{YOUR_APP_CODE}}","method":"GET"}]}
+{
+	"id": "45d18343-0951-1104-f3ae-06df6199d1f6",
+	"name": "Custom Location Extension API",
+	"description": "The **HERE Custom Location Extension** is a service that stores and retrieves custom locations.\nLocations can be uploaded as CSV files or Shapefile standard compliant shapes via an administration website or as XML files via HTTP POST requests to the RESTful API. Locations can be retrieved by making an HTTP GET requests to the RESTful API. \n\n\nThe Custom Location Extension API provides solutions for the following high level use cases:\n\n* Store custom sets of locations and polygons, for use with other HERE APIs.\n* Perform a proximity search for custom points of interest and polygons around a specified location.\n* Retrieve a set of custom points of interest (POIs) and/or polygons within a specified bounding box.\n* Find all custom locations and polygons within an isoline route result.\n* Find all custom locations and polygons within a specified radius of a defined route.\n* Search custom indices generated from multiple fields from one or more layers.\n\nThis example set works with version **1.7.7** or higher\n\nAdditional information can be found on [developer.here.com](https://developer.here.com/platform-extensions/documentation/custom-location)",
+	"order": [
+		"945e5891-6173-971a-c2c3-3f0cb5c48a74",
+		"ff91a879-7389-5ccd-730b-ae42eeb456fe",
+		"187f167a-a598-1ee5-0f87-f4f844931fb8",
+		"cf90ee94-f454-6ce7-353f-7910d51c4cc1",
+		"a8d650d9-9ac5-5ab3-9e74-ce7757b89c4d",
+		"d6ff2de6-38fb-c4c3-0f17-69696871af06",
+		"d8b2809c-4881-dc7d-f906-fdea3359d198"
+	],
+	"folders": [],
+	"timestamp": 1448890171202,
+	"owner": 0,
+	"remoteLink": "",
+	"public": false,
+	"requests": [
+		{
+			"collectionId": "45d18343-0951-1104-f3ae-06df6199d1f6",
+			"data": [
+				{
+					"key": "layerId",
+					"type": "text",
+					"value": "30"
+				},
+				{
+					"key": "query",
+					"type": "text",
+					"value": "[like]/city/frankfurt/[AND][like]/name1/shop"
+				},
+				{
+					"key": "app_id",
+					"type": "text",
+					"value": "{{YOUR_APP_ID}}"
+				},
+				{
+					"key": "app_code",
+					"type": "text",
+					"value": "{{YOUR_APP_CODE}}"
+				}
+			],
+			"dataMode": "params",
+			"description": "*Request a list of user-defined locations based on their attribute values*\n\nAn attribute-based search is requested using the `attribute` endpoint and by adding the `query` parameter to the request URL.\n\n\n\n* **layerId**  `text`\n \\- Unique indicator used to retrieve a dataset\n\n* **query**  `text`\n \\- The query to retrieve\n\n* **app_id**  `text`\n \\- A 20 byte Base64 URL-safe encoded string used for the authentication of the client application.    You must include an `app_id` with every request.\n\n* **app_code**  `text`\n \\- A 20 byte Base64 URL-safe encoded string used for the authentication of the client application.    You must include an `app_code` with every request.",
+			"headers": "",
+			"id": "187f167a-a598-1ee5-0f87-f4f844931fb8",
+			"method": "GET",
+			"name": "Filtering by Custom Attributes",
+			"timestamp": 1448890171081,
+			"url": "https://customlocation.cit.api.here.com/v1/search/attribute?layerId=30&query=[like]/city/frankfurt/[AND][like]/name1/shop&app_id={{YOUR_APP_ID}}&app_code={{YOUR_APP_CODE}}",
+			"preRequestScript": "",
+			"tests": ""
+		},
+		{
+			"collectionId": "45d18343-0951-1104-f3ae-06df6199d1f6",
+			"data": [
+				{
+					"key": "layerId",
+					"type": "text",
+					"value": "30"
+				},
+				{
+					"key": "bbox",
+					"type": "text",
+					"value": "48.7940,9.1308;48.7553,9.2022"
+				},
+				{
+					"key": "app_id",
+					"type": "text",
+					"value": "{{YOUR_APP_ID}}"
+				},
+				{
+					"key": "app_code",
+					"type": "text",
+					"value": "{{YOUR_APP_CODE}}"
+				}
+			],
+			"dataMode": "params",
+			"description": "*Request a list of user-defined locations within a defined area*\n\nThe request uses the `bbox` endpoint, and the bounding box is specified by adding the `bbox` parameter to the request URL.\n\n\n\n* **layerId**  `text`\n \\- Unique indicator used to retrieve a dataset\n\n* **bbox**  `bbox`\n \\- Restricts results to be found within this bounding box\n\n* **app_id**  `text`\n \\- A 20 byte Base64 URL-safe encoded string used for the authentication of the client application.    You must include an `app_id` with every request.\n\n* **app_code**  `text`\n \\- A 20 byte Base64 URL-safe encoded string used for the authentication of the client application.    You must include an `app_code` with every request.",
+			"headers": "",
+			"id": "945e5891-6173-971a-c2c3-3f0cb5c48a74",
+			"method": "GET",
+			"name": "Find Locations within a Bounding Box",
+			"timestamp": 1448890171006,
+			"url": "https://customlocation.cit.api.here.com/v1/search/bbox?layerId=30&bbox=48.7940,9.1308;48.7553,9.2022&app_id={{YOUR_APP_ID}}&app_code={{YOUR_APP_CODE}}",
+			"preRequestScript": "",
+			"tests": ""
+		},
+		{
+			"collectionId": "45d18343-0951-1104-f3ae-06df6199d1f6",
+			"data": [
+				{
+					"key": "layerId",
+					"type": "text",
+					"value": "30"
+				},
+				{
+					"key": "route",
+					"type": "text",
+					"value": "52.51978,13.388211,52.5198326,13.3882084,52.5198402,13.3883495,52.5147705,13.3891602,52.514758,13.389155"
+				},
+				{
+					"key": "radius",
+					"type": "text",
+					"value": "100"
+				},
+				{
+					"key": "app_id",
+					"type": "text",
+					"value": "{{YOUR_APP_ID}}"
+				},
+				{
+					"key": "app_code",
+					"type": "text",
+					"value": "{{YOUR_APP_CODE}}"
+				}
+			],
+			"dataMode": "params",
+			"description": "*Request a list of user-defined locations near to a given corridor*\n\nThe route corridor consists of a series of latitude, longitude pairs defining the waypoints of a route, along with a defined width. A corridor search is requested using the `corridor` endpoint and by adding a series of comma delimited latitude, longitude waypoints to the `route` parameter of the request URL, along with a `radius` for the search.\n\n\n\n* **layerId**  `text`\n \\- Unique indicator used to retrieve a dataset\n\n* **route**  `text`\n \\- A type of spatial filter. The corridor is defined by its path and width. The path is a line along the center of the corridor represented by a series of latitude/longitude pairs. Corridor width is given in meters.\n\n* **radius**  `number`\n \\- width of the search corridor\n\n* **app_id**  `text`\n \\- A 20 byte Base64 URL-safe encoded string used for the authentication of the client application.    You must include an `app_id` with every request.\n\n* **app_code**  `text`\n \\- A 20 byte Base64 URL-safe encoded string used for the authentication of the client application.    You must include an `app_code` with every request.",
+			"headers": "",
+			"id": "a8d650d9-9ac5-5ab3-9e74-ce7757b89c4d",
+			"method": "GET",
+			"name": "Find Locations using Corridor",
+			"timestamp": 1448890171141,
+			"url": "https://customlocation.cit.api.here.com/v1/search/corridor?layerId=30&route=52.51978,13.388211,52.5198326,13.3882084,52.5198402,13.3883495,52.5147705,13.3891602,52.514758,13.389155&radius=100&app_id={{YOUR_APP_ID}}&app_code={{YOUR_APP_CODE}}",
+			"preRequestScript": "",
+			"tests": ""
+		},
+		{
+			"collectionId": "45d18343-0951-1104-f3ae-06df6199d1f6",
+			"data": [
+				{
+					"key": "layerId",
+					"type": "text",
+					"value": "30"
+				},
+				{
+					"key": "routeId",
+					"type": "text",
+					"value": "REM3SAkAAAD_If32dTBKQCS5_If0eyNAAAAAoHIwSkAAAAAA73sjQAAAAAAAAPB_AAAAAAAA8H8lWhgDSQN4CyTIKAHpt68D5wyOAAEAAIAJyCgBAQAAgCANjgABAAAAAADA_wEAAAAAAMD_denUi3CwmwcDBA"
+				},
+				{
+					"key": "radius",
+					"type": "text",
+					"value": "100"
+				},
+				{
+					"key": "limit",
+					"type": "text",
+					"value": "5"
+				},
+				{
+					"key": "app_id",
+					"type": "text",
+					"value": "{{YOUR_APP_ID}}"
+				},
+				{
+					"key": "app_code",
+					"type": "text",
+					"value": "{{YOUR_APP_CODE}}"
+				}
+			],
+			"dataMode": "params",
+			"description": "*Request a list of user-defined locations along a pre-defined route*\n\nThe route has been pre-calculated and the `routeid` has already been acquired from a previous routing request. A route-based corridor search is requested using the `corridor` endpoint and by adding the `routeid` parameter to the request URL, along with a corridor `width`.\n\n\n\n* **layerId**  `text`\n \\- Unique indicator used to retrieve a dataset\n\n* **routeId**  `text`\n \\- A <b>previously</b> calculated routeId\n\n* **radius**  `number`\n \\- Width of the search corridor\n\n* **limit**  `number`\n \\- The limit of the number of items contained in the response.\n\n* **app_id**  `text`\n \\- A 20 byte Base64 URL-safe encoded string used for the authentication of the client application.    You must include an `app_id` with every request.\n\n* **app_code**  `text`\n \\- A 20 byte Base64 URL-safe encoded string used for the authentication of the client application.    You must include an `app_code` with every request.",
+			"headers": "",
+			"id": "cf90ee94-f454-6ce7-353f-7910d51c4cc1",
+			"method": "GET",
+			"name": "Find Locations along a pre-defined Route",
+			"timestamp": 1448890171110,
+			"url": "https://customlocation.cit.api.here.com/v1/search/route/corridor?layerId=30&routeId=REM3SAkAAAD_If32dTBKQCS5_If0eyNAAAAAoHIwSkAAAAAA73sjQAAAAAAAAPB_AAAAAAAA8H8lWhgDSQN4CyTIKAHpt68D5wyOAAEAAIAJyCgBAQAAgCANjgABAAAAAADA_wEAAAAAAMD_denUi3CwmwcDBA&radius=100&limit=5&app_id={{YOUR_APP_ID}}&app_code={{YOUR_APP_CODE}}",
+			"preRequestScript": "",
+			"tests": ""
+		},
+		{
+			"collectionId": "45d18343-0951-1104-f3ae-06df6199d1f6",
+			"data": [
+				{
+					"key": "layerId",
+					"type": "text",
+					"value": "30"
+				},
+				{
+					"key": "coord",
+					"type": "text",
+					"value": "53.5527,10.0063"
+				},
+				{
+					"key": "radius",
+					"type": "text",
+					"value": "5000"
+				},
+				{
+					"key": "limit",
+					"type": "text",
+					"value": "5"
+				},
+				{
+					"key": "app_id",
+					"type": "text",
+					"value": "{{YOUR_APP_ID}}"
+				},
+				{
+					"key": "app_code",
+					"type": "text",
+					"value": "{{YOUR_APP_CODE}}"
+				}
+			],
+			"dataMode": "params",
+			"description": "*Request a list of user-defined locations within a circle around a fixed point*\n\nThe search uses the `proximity` endpoint. The definition of the location and limit of the search is specified using  `coord` and `radius` parameters, and the number of results returned limited by adding the `limit` parameter to the request URL.\n\n\n\n* **layerId**  `text`\n \\- Unique indicator used to retrieve a dataset\n\n* **coord**  `latlng`\n \\- Center of the proximity search\n\n* **radius**  `number`\n \\- width of the search corridor\n\n* **limit**  `number`\n \\- The limit of the number of items contained in the response.\n\n* **app_id**  `text`\n \\- A 20 byte Base64 URL-safe encoded string used for the authentication of the client application.    You must include an `app_id` with every request.\n\n* **app_code**  `text`\n \\- A 20 byte Base64 URL-safe encoded string used for the authentication of the client application.    You must include an `app_code` with every request.",
+			"headers": "",
+			"id": "d6ff2de6-38fb-c4c3-0f17-69696871af06",
+			"method": "GET",
+			"name": "Find the Five Nearest Locations",
+			"timestamp": 1448890171171,
+			"url": "https://customlocation.cit.api.here.com/v1/search/proximity?layerId=30&coord=53.5527,10.0063&radius=5000&limit=5&app_id={{YOUR_APP_ID}}&app_code={{YOUR_APP_CODE}}",
+			"preRequestScript": "",
+			"tests": ""
+		},
+		{
+			"collectionId": "45d18343-0951-1104-f3ae-06df6199d1f6",
+			"data": [
+				{
+					"key": "layerId",
+					"type": "text",
+					"value": "30"
+				},
+				{
+					"key": "coord",
+					"type": "text",
+					"value": "50.1139,8.6776"
+				},
+				{
+					"key": "radius",
+					"type": "text",
+					"value": "500"
+				},
+				{
+					"key": "app_id",
+					"type": "text",
+					"value": "{{YOUR_APP_ID}}"
+				},
+				{
+					"key": "app_code",
+					"type": "text",
+					"value": "{{YOUR_APP_CODE}}"
+				}
+			],
+			"dataMode": "params",
+			"description": "*Request a list of user-defined locations within a circle around a fixed point*\n\nThe search uses the `proximity` endpoint. The location is defined using the `coord` parameter and radius of the search is defined using the `radius` parameter.\n\n\n\n* **layerId**  `text`\n \\- Unique indicator used to retrieve a dataset\n\n* **coord**  `latlng`\n \\- Center of the proximity search\n\n* **radius**  `number`\n \\- width of the search corridor\n\n* **app_id**  `text`\n \\- A 20 byte Base64 URL-safe encoded string used for the authentication of the client application.    You must include an `app_id` with every request.\n\n* **app_code**  `text`\n \\- A 20 byte Base64 URL-safe encoded string used for the authentication of the client application.    You must include an `app_code` with every request.",
+			"headers": "",
+			"id": "d8b2809c-4881-dc7d-f906-fdea3359d198",
+			"method": "GET",
+			"name": "Find Locations using Proximity",
+			"timestamp": 1448890171200,
+			"url": "https://customlocation.cit.api.here.com/v1/search/proximity?layerId=30&coord=50.1139,8.6776&radius=500&app_id={{YOUR_APP_ID}}&app_code={{YOUR_APP_CODE}}",
+			"preRequestScript": "",
+			"tests": ""
+		},
+		{
+			"collectionId": "45d18343-0951-1104-f3ae-06df6199d1f6",
+			"data": [
+				{
+					"key": "layerId",
+					"type": "text",
+					"value": "30"
+				},
+				{
+					"key": "bbox",
+					"type": "text",
+					"value": "48.1673,11.5159;48.1048,11.6298"
+				},
+				{
+					"key": "query",
+					"type": "text",
+					"value": "[like]/name1/shop"
+				},
+				{
+					"key": "app_id",
+					"type": "text",
+					"value": "{{YOUR_APP_ID}}"
+				},
+				{
+					"key": "app_code",
+					"type": "text",
+					"value": "{{YOUR_APP_CODE}}"
+				}
+			],
+			"dataMode": "params",
+			"description": "*Request a list of user-defined locations within a defined area that match specific attributes*\n\nAn attribute-based search is requested using the `attribute` endpoint and by adding the `query` parameter to the request URL, the `bbox` parameter can restrict the search to a smaller area.\n\n\n\n* **layerId**  `text`\n \\- Unique indicator used to retrieve a dataset\n\n* **bbox**  `bbox`\n \\- Restricts results to be found within this bounding box\n\n* **query**  `text`\n \\- The query to retrieve\n\n* **app_id**  `text`\n \\- A 20 byte Base64 URL-safe encoded string used for the authentication of the client application.    You must include an `app_id` with every request.\n\n* **app_code**  `text`\n \\- A 20 byte Base64 URL-safe encoded string used for the authentication of the client application.    You must include an `app_code` with every request.",
+			"headers": "",
+			"id": "ff91a879-7389-5ccd-730b-ae42eeb456fe",
+			"method": "GET",
+			"name": "Filtering by both Custom Attributes and Area",
+			"timestamp": 1448890171043,
+			"url": "https://customlocation.cit.api.here.com/v1/search/bbox?layerId=30&bbox=48.1673,11.5159;48.1048,11.6298&query=[like]/name1/shop&app_id={{YOUR_APP_ID}}&app_code={{YOUR_APP_CODE}}",
+			"preRequestScript": "",
+			"tests": ""
+		}
+	]
+}

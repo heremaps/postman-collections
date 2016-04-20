@@ -1,1 +1,30 @@
-{"id":"55a7c5af5c1287144839b7e8","name":"Route Match Extension API","description":"Examples for locations_data_to_route_nlp_2.0.0 or higher","order":[],"folders":[],"timestamp":1448890190061,"synced":false,"owner":0,"sharedWithTeam":false,"subscribed":false,"remoteLink":"","public":false,"write":true,"requests":[{"collectionId":"55a7c5af5c1287144839b7e8","id":"match-gpx-data-to-a-route","name":"Match GPX Data to a Route","description":"*Request a set of linkIds that match a GPX trace*\n\nTo obtain a route send the file data to the `matchroute.json` endpoint.\n\n\n\n* **routemode**  `enum`\n \\- Whether to match the data to a car or a pedestrian route\n\n Valid values are : `car`, `pedestrian`\n\n* **app_id**  `text`\n \\- A 20 byte Base64 URL-safe encoded string used for the authentication of the client application.    You must include an `app_id` with every request.\n\n* **app_code**  `text`\n \\- A 20 byte Base64 URL-safe encoded string used for the authentication of the client application.    You must include an `app_code` with every request.","data":[{"key":"routemode","value":"car","type":"text"},{"key":"app_id","value":"{{YOUR_APP_ID}}","type":"text"},{"key":"app_code","value":"{{YOUR_APP_CODE}}","type":"text"}],"dataMode":"raw","timestamp":1448890190059,"headers":"","url":"http://rme.cit.api.here.com/2/matchroute.json?routemode=car&app_id={{YOUR_APP_ID}}&app_code={{YOUR_APP_CODE}}","method":"POST","rawModeData":"&lt;?xml version=\"1.0\"?&gt;\n&lt;gpx version=\"1.0\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xmlns=\"http://www.topografix.com/GPX/1/0\" xsi:schemaLocation=\"http://www.topografix.com/GPX/1/0 http://www.topografix.com/GPX/1/0/gpx.xsd\"&gt;\n  &lt;trk&gt;\n    &lt;trkseg&gt;\n      &lt;trkpt lat=\"51.10177\" lon=\"0.39349\"/&gt;\n      &lt;trkpt lat=\"51.10181\" lon=\"0.39335\"/&gt;\n      &lt;trkpt lat=\"51.10255\" lon=\"0.39369\"/&gt;\n      &lt;trkpt lat=\"51.10398\" lon=\"0.39466\"/&gt;\n      &lt;trkpt lat=\"51.10501\" lon=\"0.39533\"/&gt;\n    &lt;/trkseg&gt;\n  &lt;/trk&gt;\n&lt;/gpx&gt;"}]}
+{
+	"id": "12f974c2-5d4c-4efd-f463-be1546c19068",
+	"name": "Route Match Extension API",
+	"description": "The **HERE Route Match Extension API** is a Restful API that computes the most probable route from a GPS trace. The GPS trace is sent in the POST request body using a standard format like GPX, NMEA, KML or CSV. Route Match Extension API assumes that it is a consecutive set of GPS coordinates, and constructs a legal route driven on the HERE road network. Typical inaccuracies of GPS traces are taken into account when computing the most probable smooth route.\n\nRoute Match Extension API returns 3 items in the result:\n\n* The route path as a sequence of link IDs with driving direction per link. It includes the geometry and length of each link.\n* Each input GPS coordinate with the matched link ID on the route, and the matched coordinate on the route.\n* Warnings encountered during the match process, like very bad point quality or suspicious driving manoeuvres.\n\nThis example set works with version **2.0.0** or higher\n\nAdditional information can be found on [developer.here.com](https://developer.here.com/platform-extensions/documentation/route-match)",
+	"order": [
+		"1517a3a8-815e-bdb4-4c30-0923994ef5d3"
+	],
+	"folders": [],
+	"timestamp": 1448890190061,
+	"owner": 0,
+	"remoteLink": "",
+	"public": false,
+	"requests": [
+		{
+			"collectionId": "12f974c2-5d4c-4efd-f463-be1546c19068",
+			"data": [],
+			"dataMode": "raw",
+			"description": "*Request a set of linkIds that match a GPX trace*\n\nTo obtain a route send the file data to the `matchroute.json` endpoint.\n\n\n\n* **routemode**  `enum`\n \\- Whether to match the data to a car or a pedestrian route\n\n Valid values are : `car`, `pedestrian`\n\n* **app_id**  `text`\n \\- A 20 byte Base64 URL-safe encoded string used for the authentication of the client application.    You must include an `app_id` with every request.\n\n* **app_code**  `text`\n \\- A 20 byte Base64 URL-safe encoded string used for the authentication of the client application.    You must include an `app_code` with every request.",
+			"headers": "",
+			"id": "1517a3a8-815e-bdb4-4c30-0923994ef5d3",
+			"method": "POST",
+			"name": "Match GPX Data to a Route",
+			"rawModeData": "<?xml version=\"1.0\"?>\n<gpx version=\"1.0\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xmlns=\"http://www.topografix.com/GPX/1/0\" xsi:schemaLocation=\"http://www.topografix.com/GPX/1/0 http://www.topografix.com/GPX/1/0/gpx.xsd\">\n  <trk>\n    <trkseg>\n      <trkpt lat=\"51.10177\" lon=\"0.39349\"/>\n      <trkpt lat=\"51.10181\" lon=\"0.39335\"/>\n      <trkpt lat=\"51.10255\" lon=\"0.39369\"/>\n      <trkpt lat=\"51.10398\" lon=\"0.39466\"/>\n      <trkpt lat=\"51.10501\" lon=\"0.39533\"/>\n    </trkseg>\n  </trk>\n</gpx>",
+			"timestamp": 1448890190059,
+			"url": "http://rme.cit.api.here.com/2/matchroute.json?routemode=car&app_id={{YOUR_APP_ID}}&app_code={{YOUR_APP_CODE}}",
+			"preRequestScript": "",
+			"tests": ""
+		}
+	]
+}

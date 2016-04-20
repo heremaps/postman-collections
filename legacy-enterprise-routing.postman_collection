@@ -1,1 +1,1073 @@
-{"id":"56000578e618b15031321405","name":"Legacy Routing API","description":"Examples for routing_lbsp_6.2.61.0 or higher","order":[],"folders":[],"timestamp":1448890146132,"synced":false,"owner":0,"sharedWithTeam":false,"subscribed":false,"remoteLink":"","public":false,"write":true,"requests":[{"collectionId":"56000578e618b15031321405","id":"enterprise-truck-route-from-a-to-b-with-shape","name":"Truck Route from A to B with shape information","description":"*Request a truck route between two points including additional information*\n\nThe shape of the overall route can be requested through adding `routeattributes=shape` to the request URL. Additional information for each maneuver (such as the shape and direction) can requested through adding the `maneuverattributes` parameter to the request URL.\n\n\n\n* **waypoint0**  `latlng`\n \\- Start point of the route.    e.g. `52.515,13.377`\n\n* **waypoint1**  `latlng`\n \\- Second point through which the route must pass.    e.g. `52.6172,13.3833`\n\n* **mode**  `text`\n \\- Routing mode determines how the route is calculated.    e.g. `fastest;car;traffic:disabled.`\n\n* **routeattributes**  `multi-enum`\n \\- Which route attributes are included in the response.    e.g. `shape`\n\n Valid values are : `none`, `bb` - boundingBox, `lg` - legs, `no` - notes, `sh` - shape, `sm` - summary, `sc` - summaryByCountry, `wp` - waypoints\n\n* **maneuverattributes**  `multi-enum`\n \\- Which maneuver attributes are included in the response.\n\n Valid values are : `none`, `ac` - action, `bt` - baseTime, `di` - direction, `eq` - equipment, `fe` - freewayExit, `fj` - freewayJunction, `ix` - indices, `la` - lane, `le` - length, `li` - link, `nm` - nextManeuver, `nr` - nextRoadName, `nu` - nextRoadNumber, `no` - notes, `po` - position, `rn` - roadName, `ru` - roadNumber, `rt` - roadTemplate, `sh` - shape, `sp` - signPost, `ti` - time, `tm` - trafficTime, `tt` - travelTime\n\n* **app_id**  `text`\n \\- A 20 byte Base64 URL-safe encoded string used for the authentication of the client application.    You must include an `app_id` with every request.\n\n* **app_code**  `text`\n \\- A 20 byte Base64 URL-safe encoded string used for the authentication of the client application.    You must include an `app_code` with every request.","data":[{"key":"waypoint0","value":"41.9798,-87.8801","type":"text"},{"key":"waypoint1","value":"41.9043,-87.9216","type":"text"},{"key":"mode","value":"fastest;truck;traffic:default;","type":"text"},{"key":"routeattributes","value":"sh","type":"text"},{"key":"maneuverattributes","value":"di,sh","type":"text"},{"key":"app_id","value":"{{YOUR_APP_ID}}","type":"text"},{"key":"app_code","value":"{{YOUR_APP_CODE}}","type":"text"}],"dataMode":"params","timestamp":1448890145417,"headers":"","url":"https://legacy.route.cit.api.here.com/routing/6.2/calculateroute.json?waypoint0=41.9798,-87.8801&waypoint1=41.9043,-87.9216&mode=fastest;truck;traffic:default;&routeattributes=sh&maneuverattributes=di,sh&app_id={{YOUR_APP_ID}}&app_code={{YOUR_APP_CODE}}","method":"GET"},{"collectionId":"56000578e618b15031321405","id":"enterprise-get-link-info-from-id","name":"Link Information using linkId","description":"*Request detailed information about a path segment in the routing network given a linkid*\n\nLink information can be retrieved using the `getlinkinfo` endpoint, by specifying one or more comma separated linkIds using the `linkids` parameter. The `linkids` have been generated from a previous request.\n\n\n\n* **linkids**  `text`\n \\- Link identifiers for which the detailed information is being requested.\n\n* **app_id**  `text`\n \\- A 20 byte Base64 URL-safe encoded string used for the authentication of the client application.    You must include an `app_id` with every request.\n\n* **app_code**  `text`\n \\- A 20 byte Base64 URL-safe encoded string used for the authentication of the client application.    You must include an `app_code` with every request.","data":[{"key":"linkids","value":"931447247","type":"text"},{"key":"app_id","value":"{{YOUR_APP_ID}}","type":"text"},{"key":"app_code","value":"{{YOUR_APP_CODE}}","type":"text"}],"dataMode":"params","timestamp":1448890145450,"headers":"","url":"https://legacy.route.cit.api.here.com/routing/6.2/getlinkinfo.json?linkids=931447247&app_id={{YOUR_APP_ID}}&app_code={{YOUR_APP_CODE}}","method":"GET"},{"collectionId":"56000578e618b15031321405","id":"enterprise-get-link-info-from-coordinate","name":"Link Information for a location","description":"*Request detailed information about a path segment in the routing network given one of its coordinates*\n\nLink information can be retrieved using the `getlinkinfo` endpoint, and specifying a coordinate (<i>52.5308°N, 13.3846°E</i>) using the `waypoint` parameter.\n\n\n\n* **waypoint**  `latlng`\n \\- Point through which the route must pass.    e.g. `52.515,13.377`\n\n* **app_id**  `text`\n \\- A 20 byte Base64 URL-safe encoded string used for the authentication of the client application.    You must include an `app_id` with every request.\n\n* **app_code**  `text`\n \\- A 20 byte Base64 URL-safe encoded string used for the authentication of the client application.    You must include an `app_code` with every request.","data":[{"key":"waypoint","value":"52.5308,13.3846","type":"text"},{"key":"app_id","value":"{{YOUR_APP_ID}}","type":"text"},{"key":"app_code","value":"{{YOUR_APP_CODE}}","type":"text"}],"dataMode":"params","timestamp":1448890145478,"headers":"","url":"https://legacy.route.cit.api.here.com/routing/6.2/getlinkinfo.json?waypoint=52.5308,13.3846&app_id={{YOUR_APP_ID}}&app_code={{YOUR_APP_CODE}}","method":"GET"},{"collectionId":"56000578e618b15031321405","id":"enterprise-reverse-flow-time-based","name":"Time-based Reverse Flow","description":"*Request a list of path segments that will reach a destination within a given time*\n\nTime-based reverse flow requests are made using the `reverseflow` endpoint and specifying the `destination` and `time` parameters.\n\n\n\n* **mode**  `text`\n \\- Routing mode determines how the route is calculated.    e.g. `fastest;car;traffic:disabled.`\n\n* **destination**  `latlng`\n \\- Destination of the reverse flow calculation.    e.g. `52.515,13.377`\n\n* **time**  `text`\n \\- Travel time for the isoline.    e.g. `PT0H05M`\n\n* **app_id**  `text`\n \\- A 20 byte Base64 URL-safe encoded string used for the authentication of the client application.    You must include an `app_id` with every request.\n\n* **app_code**  `text`\n \\- A 20 byte Base64 URL-safe encoded string used for the authentication of the client application.    You must include an `app_code` with every request.","data":[{"key":"mode","value":"fastest;car","type":"text"},{"key":"destination","value":"52.5160,13.3778","type":"text"},{"key":"time","value":"PT0H02M","type":"text"},{"key":"app_id","value":"{{YOUR_APP_ID}}","type":"text"},{"key":"app_code","value":"{{YOUR_APP_CODE}}","type":"text"}],"dataMode":"params","timestamp":1448890145507,"headers":"","url":"https://legacy.route.cit.api.here.com/routing/6.2/reverseflow.json?mode=fastest;car&destination=52.5160,13.3778&time=PT0H02M&app_id={{YOUR_APP_ID}}&app_code={{YOUR_APP_CODE}}","method":"GET"},{"collectionId":"56000578e618b15031321405","id":"enterprise-reverse-flow-distance-based","name":"Distance-based Reverse Flow","description":"*Request a list of path segments that will reach a destination within a defined distance of travel*\n\nDistance-based reverse flow requests are made using the `reverseflow` endpoint and specifying the `destination` and `distance` parameters.\n\n\n\n* **mode**  `text`\n \\- Routing mode determines how the route is calculated.    e.g. `fastest;car;traffic:disabled.`\n\n* **destination**  `latlng`\n \\- Destination of the reverse flow calculation.    e.g. `52.515,13.377`\n\n* **distance**  `number`\n \\- Distance of the isoline (from the center point) in meters\n\n* **app_id**  `text`\n \\- A 20 byte Base64 URL-safe encoded string used for the authentication of the client application.    You must include an `app_id` with every request.\n\n* **app_code**  `text`\n \\- A 20 byte Base64 URL-safe encoded string used for the authentication of the client application.    You must include an `app_code` with every request.","data":[{"key":"mode","value":"fastest;pedestrian","type":"text"},{"key":"destination","value":"52.5160,13.3778","type":"text"},{"key":"distance","value":"200","type":"text"},{"key":"app_id","value":"{{YOUR_APP_ID}}","type":"text"},{"key":"app_code","value":"{{YOUR_APP_CODE}}","type":"text"}],"dataMode":"params","timestamp":1448890145529,"headers":"","url":"https://legacy.route.cit.api.here.com/routing/6.2/reverseflow.json?mode=fastest;pedestrian&destination=52.5160,13.3778&distance=200&app_id={{YOUR_APP_ID}}&app_code={{YOUR_APP_CODE}}","method":"GET"},{"collectionId":"56000578e618b15031321405","id":"enterprise-calculate-isochrone","name":"Isochrone Calculation","description":"*Request the shape outlining the area that can be reached within a given time*\n\nIsochrone calculations are made using the `calculateisoline` endpoint and specifying the `start` and `time` parameters.\n\n\n\n* **mode**  `text`\n \\- Routing mode determines how the route is calculated.    e.g. `fastest;car;traffic:disabled.`\n\n* **start**  `latlng`\n \\- Center of the isoline request.    e.g. `52.515,13.377`\n\n* **time**  `text`\n \\- Travel time for the isoline.    e.g. `PT0H05M`\n\n* **app_id**  `text`\n \\- A 20 byte Base64 URL-safe encoded string used for the authentication of the client application.    You must include an `app_id` with every request.\n\n* **app_code**  `text`\n \\- A 20 byte Base64 URL-safe encoded string used for the authentication of the client application.    You must include an `app_code` with every request.","data":[{"key":"mode","value":"fastest;car","type":"text"},{"key":"start","value":"52.5160,13.3778","type":"text"},{"key":"time","value":"PT0H05M","type":"text"},{"key":"app_id","value":"{{YOUR_APP_ID}}","type":"text"},{"key":"app_code","value":"{{YOUR_APP_CODE}}","type":"text"}],"dataMode":"params","timestamp":1448890145563,"headers":"","url":"https://legacy.route.cit.api.here.com/routing/6.2/calculateisoline.json?mode=fastest;car&start=52.5160,13.3778&time=PT0H05M&app_id={{YOUR_APP_ID}}&app_code={{YOUR_APP_CODE}}","method":"GET"},{"collectionId":"56000578e618b15031321405","id":"enterprise-calculate-isoline-distance","name":"Distance Isoline Calculation","description":"*Request the shape outlining the area that can be reached within a defined distance of travel*\n\nTravel distance isoline calculations are made using the `calculateisoline` endpoint and specifying the `start` and `distance` parameters.\n\n\n\n* **mode**  `text`\n \\- Routing mode determines how the route is calculated.    e.g. `fastest;car;traffic:disabled.`\n\n* **start**  `latlng`\n \\- Center of the isoline request.    e.g. `52.515,13.377`\n\n* **distance**  `number`\n \\- Distance of the isoline (from the center point) in meters\n\n* **app_id**  `text`\n \\- A 20 byte Base64 URL-safe encoded string used for the authentication of the client application.    You must include an `app_id` with every request.\n\n* **app_code**  `text`\n \\- A 20 byte Base64 URL-safe encoded string used for the authentication of the client application.    You must include an `app_code` with every request.","data":[{"key":"mode","value":"fastest;pedestrian","type":"text"},{"key":"start","value":"52.5160,13.3778","type":"text"},{"key":"distance","value":"2000","type":"text"},{"key":"app_id","value":"{{YOUR_APP_ID}}","type":"text"},{"key":"app_code","value":"{{YOUR_APP_CODE}}","type":"text"}],"dataMode":"params","timestamp":1448890145590,"headers":"","url":"https://legacy.route.cit.api.here.com/routing/6.2/calculateisoline.json?mode=fastest;pedestrian&start=52.5160,13.3778&distance=2000&app_id={{YOUR_APP_ID}}&app_code={{YOUR_APP_CODE}}","method":"GET"},{"collectionId":"56000578e618b15031321405","id":"enterprise-route-from-a-to-b-car","name":"Car Route from A to B","description":"*Request a driving route for light vehicles between two points*\n\nFastest car routes can be requested by setting the `mode` parameter to `fastest;car` in the request URL.\n\n\n\n* **waypoint0**  `latlng`\n \\- Start point of the route.    e.g. `52.515,13.377`\n\n* **waypoint1**  `latlng`\n \\- Second point through which the route must pass.    e.g. `52.6172,13.3833`\n\n* **mode**  `text`\n \\- Routing mode determines how the route is calculated.    e.g. `fastest;car;traffic:disabled.`\n\n* **app_id**  `text`\n \\- A 20 byte Base64 URL-safe encoded string used for the authentication of the client application.    You must include an `app_id` with every request.\n\n* **app_code**  `text`\n \\- A 20 byte Base64 URL-safe encoded string used for the authentication of the client application.    You must include an `app_code` with every request.","data":[{"key":"waypoint0","value":"48.8733,2.2961","type":"text"},{"key":"waypoint1","value":"48.8597,2.3403","type":"text"},{"key":"mode","value":"fastest;car","type":"text"},{"key":"app_id","value":"{{YOUR_APP_ID}}","type":"text"},{"key":"app_code","value":"{{YOUR_APP_CODE}}","type":"text"}],"dataMode":"params","timestamp":1448890145621,"headers":"","url":"https://legacy.route.cit.api.here.com/routing/6.2/calculateroute.json?waypoint0=48.8733,2.2961&waypoint1=48.8597,2.3403&mode=fastest;car&app_id={{YOUR_APP_ID}}&app_code={{YOUR_APP_CODE}}","method":"GET"},{"collectionId":"56000578e618b15031321405","id":"enterprise-truck-route-from-a-to-b","name":"Truck Route from A to B","description":"*Request a truck route between two points*\n\nFastest truck routes can be requested by setting the `mode` parameter to `fastest;truck` in the request URL.\n\n\n\n* **waypoint0**  `latlng`\n \\- Start point of the route.    e.g. `52.515,13.377`\n\n* **waypoint1**  `latlng`\n \\- Second point through which the route must pass.    e.g. `52.6172,13.3833`\n\n* **mode**  `text`\n \\- Routing mode determines how the route is calculated.    e.g. `fastest;car;traffic:disabled.`\n\n* **app_id**  `text`\n \\- A 20 byte Base64 URL-safe encoded string used for the authentication of the client application.    You must include an `app_id` with every request.\n\n* **app_code**  `text`\n \\- A 20 byte Base64 URL-safe encoded string used for the authentication of the client application.    You must include an `app_code` with every request.","data":[{"key":"waypoint0","value":"41.9798,-87.8801","type":"text"},{"key":"waypoint1","value":"41.9043,-87.9216","type":"text"},{"key":"mode","value":"fastest;truck","type":"text"},{"key":"app_id","value":"{{YOUR_APP_ID}}","type":"text"},{"key":"app_code","value":"{{YOUR_APP_CODE}}","type":"text"}],"dataMode":"params","timestamp":1448890145660,"headers":"","url":"https://legacy.route.cit.api.here.com/routing/6.2/calculateroute.json?waypoint0=41.9798,-87.8801&waypoint1=41.9043,-87.9216&mode=fastest;truck&app_id={{YOUR_APP_ID}}&app_code={{YOUR_APP_CODE}}","method":"GET"},{"collectionId":"56000578e618b15031321405","id":"enterprise-get-route-info-from-id","name":"Previously Calculated Route Information","description":"*Request information about a previously calculated route*\n\nPrevious routes can be retrieved using the `getroute` endpoint and appending a `routeid` to the request. The `routeid` in question has been generated from a previous request.\n\n\n\n* **routeid**  `text`\n \\- Route identifier for which the detailed route information is being requested.\n\n* **app_id**  `text`\n \\- A 20 byte Base64 URL-safe encoded string used for the authentication of the client application.    You must include an `app_id` with every request.\n\n* **app_code**  `text`\n \\- A 20 byte Base64 URL-safe encoded string used for the authentication of the client application.    You must include an `app_code` with every request.","data":[{"key":"routeid","value":"REM6yjIAAAB2Tx4Wav1EQGpN845T-FXAAAAA4HL9REAAAAAgW_hVwAAAAAAAAPB_AAAAAAAA8H9VtnU3rYvbaADPEwFd_kP67etXAQMAAAD_zhMBAQAAgPHrVwEDAAAAAADA_wEAAAAAAMD_aR0pCYcHtYTjob4X2h8eiZg3uPHjvAH6","type":"text"},{"key":"app_id","value":"{{YOUR_APP_ID}}","type":"text"},{"key":"app_code","value":"{{YOUR_APP_CODE}}","type":"text"}],"dataMode":"params","timestamp":1448890145693,"headers":"","url":"https://legacy.route.cit.api.here.com/routing/6.2/getroute.json?routeid=REM6yjIAAAB2Tx4Wav1EQGpN845T-FXAAAAA4HL9REAAAAAgW_hVwAAAAAAAAPB_AAAAAAAA8H9VtnU3rYvbaADPEwFd_kP67etXAQMAAAD_zhMBAQAAgPHrVwEDAAAAAADA_wEAAAAAAMD_aR0pCYcHtYTjob4X2h8eiZg3uPHjvAH6&app_id={{YOUR_APP_ID}}&app_code={{YOUR_APP_CODE}}","method":"GET"},{"collectionId":"56000578e618b15031321405","id":"enterprise-route-from-a-to-b-multiple-route-modes","name":"Multiple Route Modes","description":"*Request routes for multiple routing modes within a single request*\n\nAdditional mode parameters (`mode0`, `mode1`, `mode2` etc...) can be added consecutively to the request URL.\n\n\n\n* **waypoint0**  `latlng`\n \\- Start point of the route.    e.g. `52.515,13.377`\n\n* **waypoint1**  `latlng`\n \\- Second point through which the route must pass.    e.g. `52.6172,13.3833`\n\n* **mode0**  `text`\n \\- First routing mode. Determines how the route is calculated.    e.g. `fastest;car;traffic:disabled`\n\n* **mode1**  `text`\n \\- Second routing mode. Determines how the route is calculated.    e.g. `fastest;car;traffic:disabled`\n\n* **app_id**  `text`\n \\- A 20 byte Base64 URL-safe encoded string used for the authentication of the client application.    You must include an `app_id` with every request.\n\n* **app_code**  `text`\n \\- A 20 byte Base64 URL-safe encoded string used for the authentication of the client application.    You must include an `app_code` with every request.","data":[{"key":"waypoint0","value":"41.9054,12.4813","type":"text"},{"key":"waypoint1","value":"41.9061,12.4832","type":"text"},{"key":"mode0","value":"fastest;pedestrian","type":"text"},{"key":"mode1","value":"fastest;car","type":"text"},{"key":"app_id","value":"{{YOUR_APP_ID}}","type":"text"},{"key":"app_code","value":"{{YOUR_APP_CODE}}","type":"text"}],"dataMode":"params","timestamp":1448890145728,"headers":"","url":"https://legacy.route.cit.api.here.com/routing/6.2/calculateroute.json?waypoint0=41.9054,12.4813&waypoint1=41.9061,12.4832&mode0=fastest;pedestrian&mode1=fastest;car&app_id={{YOUR_APP_ID}}&app_code={{YOUR_APP_CODE}}","method":"GET"},{"collectionId":"56000578e618b15031321405","id":"enterprise-route-from-a-to-b-pedestrian","name":"Pedestrian Route from A to B","description":"*Request a walking route between two points*\n\nFastest pedestrian routes can be requested by setting the `mode` parameter to `fastest;pedestrian` in the request URL.\n\n\n\n* **waypoint0**  `latlng`\n \\- Start point of the route.    e.g. `52.515,13.377`\n\n* **waypoint1**  `latlng`\n \\- Second point through which the route must pass.    e.g. `52.6172,13.3833`\n\n* **mode**  `text`\n \\- Routing mode determines how the route is calculated.    e.g. `fastest;car;traffic:disabled.`\n\n* **app_id**  `text`\n \\- A 20 byte Base64 URL-safe encoded string used for the authentication of the client application.    You must include an `app_id` with every request.\n\n* **app_code**  `text`\n \\- A 20 byte Base64 URL-safe encoded string used for the authentication of the client application.    You must include an `app_code` with every request.","data":[{"key":"waypoint0","value":"40.7480,-73.9862","type":"text"},{"key":"waypoint1","value":"40.7558,-73.9870","type":"text"},{"key":"mode","value":"fastest;pedestrian","type":"text"},{"key":"app_id","value":"{{YOUR_APP_ID}}","type":"text"},{"key":"app_code","value":"{{YOUR_APP_CODE}}","type":"text"}],"dataMode":"params","timestamp":1448890145752,"headers":"","url":"https://legacy.route.cit.api.here.com/routing/6.2/calculateroute.json?waypoint0=40.7480,-73.9862&waypoint1=40.7558,-73.9870&mode=fastest;pedestrian&app_id={{YOUR_APP_ID}}&app_code={{YOUR_APP_CODE}}","method":"GET"},{"collectionId":"56000578e618b15031321405","id":"enterprise-truck-route-within-viewport","name":"Getting truck route information within viewbounds","description":"*Request partial truck route information for maneuvers within a given area*\n\nBy setting the `representation` parameter to `dragNDrop` to retrieve a list of latitudes &amp; longitudes that make up the route shape that is within the viewbounds.\n\n\n\n* **waypoint0**  `latlng`\n \\- Start point of the route.    e.g. `52.515,13.377`\n\n* **waypoint1**  `latlng`\n \\- Second point through which the route must pass.    e.g. `52.6172,13.3833`\n\n* **mode**  `text`\n \\- Routing mode determines how the route is calculated.    e.g. `fastest;car;traffic:disabled.`\n\n* **viewbounds**  `bbox`\n \\- View bounds are specified as pair of coordinates.\n\n* **representation**  `enum`\n \\- Representation of the route.    e.g. `dragNDrop`\n\n Valid values are : `display`, `dragNDrop`, `linkPaging`, `navigation`, `overview`, `turnByTurn`\n\n* **app_id**  `text`\n \\- A 20 byte Base64 URL-safe encoded string used for the authentication of the client application.    You must include an `app_id` with every request.\n\n* **app_code**  `text`\n \\- A 20 byte Base64 URL-safe encoded string used for the authentication of the client application.    You must include an `app_code` with every request.","data":[{"key":"waypoint0","value":"52.5168,13.3884","type":"text"},{"key":"waypoint1","value":"52.5166,13.3935","type":"text"},{"key":"mode","value":"fastest;truck","type":"text"},{"key":"viewbounds","value":"52.5178,13.3856;52.5159,13.3928","type":"text"},{"key":"representation","value":"dragNDrop","type":"text"},{"key":"app_id","value":"{{YOUR_APP_ID}}","type":"text"},{"key":"app_code","value":"{{YOUR_APP_CODE}}","type":"text"}],"dataMode":"params","timestamp":1448890145805,"headers":"","url":"https://legacy.route.cit.api.here.com/routing/6.2/calculateroute.json?waypoint0=52.5168,13.3884&waypoint1=52.5166,13.3935&mode=fastest;truck&viewbounds=52.5178,13.3856;52.5159,13.3928&representation=dragNDrop&app_id={{YOUR_APP_ID}}&app_code={{YOUR_APP_CODE}}","method":"GET"},{"collectionId":"56000578e618b15031321405","id":"enterprise-truck-route-avoid-area","name":"Avoiding a specified area","description":"*Request a route avoiding a defined area by specifying a bounding box*\n\nAreas of road can be avoided through adding an array of bounding boxes to the `avoidareas` parameter added to the request URL.\n\n\n\n* **waypoint0**  `latlng`\n \\- Start point of the route.    e.g. `52.515,13.377`\n\n* **waypoint1**  `latlng`\n \\- Second point through which the route must pass.    e.g. `52.6172,13.3833`\n\n* **mode**  `text`\n \\- Routing mode determines how the route is calculated.    e.g. `fastest;car;traffic:disabled.`\n\n* **avoidareas**  `bbox`\n \\- Areas which the route must not cross - an array of bounding boxes\n\n* **app_id**  `text`\n \\- A 20 byte Base64 URL-safe encoded string used for the authentication of the client application.    You must include an `app_id` with every request.\n\n* **app_code**  `text`\n \\- A 20 byte Base64 URL-safe encoded string used for the authentication of the client application.    You must include an `app_code` with every request.","data":[{"key":"waypoint0","value":"50.0522,8.2180","type":"text"},{"key":"waypoint1","value":"50.0957,8.5280","type":"text"},{"key":"mode","value":"fastest;truck","type":"text"},{"key":"avoidareas","value":"50.1062,8.2811;50.0180,8.4253","type":"text"},{"key":"app_id","value":"{{YOUR_APP_ID}}","type":"text"},{"key":"app_code","value":"{{YOUR_APP_CODE}}","type":"text"}],"dataMode":"params","timestamp":1448890145829,"headers":"","url":"https://legacy.route.cit.api.here.com/routing/6.2/calculateroute.json?waypoint0=50.0522,8.2180&waypoint1=50.0957,8.5280&mode=fastest;truck&avoidareas=50.1062,8.2811;50.0180,8.4253&app_id={{YOUR_APP_ID}}&app_code={{YOUR_APP_CODE}}","method":"GET"},{"collectionId":"56000578e618b15031321405","id":"enterprise-truck-route-avoid-area-by-linkid","name":"Avoiding a specified stretch of road","description":"*Request a truck route avoiding a specific road as defined by an avoidLink*\n\nStretches of road can be avoided through adding a comma delimited list of link Ids to the `avoidlinks` parameter added to the request URL.\n\n\n\n* **waypoint0**  `latlng`\n \\- Start point of the route.    e.g. `52.515,13.377`\n\n* **waypoint1**  `latlng`\n \\- Second point through which the route must pass.    e.g. `52.6172,13.3833`\n\n* **mode**  `text`\n \\- Routing mode determines how the route is calculated.    e.g. `fastest;car;traffic:disabled.`\n\n* **avoidlinks**  `text`\n \\- Links which the route must not cross. A list of LinkIdType.\n\n* **app_id**  `text`\n \\- A 20 byte Base64 URL-safe encoded string used for the authentication of the client application.    You must include an `app_id` with every request.\n\n* **app_code**  `text`\n \\- A 20 byte Base64 URL-safe encoded string used for the authentication of the client application.    You must include an `app_code` with every request.","data":[{"key":"waypoint0","value":"41.9798,-87.8801","type":"text"},{"key":"waypoint1","value":"41.9043,-87.9216","type":"text"},{"key":"mode","value":"fastest;truck","type":"text"},{"key":"avoidlinks","value":"-915258031","type":"text"},{"key":"app_id","value":"{{YOUR_APP_ID}}","type":"text"},{"key":"app_code","value":"{{YOUR_APP_CODE}}","type":"text"}],"dataMode":"params","timestamp":1448890145863,"headers":"","url":"https://legacy.route.cit.api.here.com/routing/6.2/calculateroute.json?waypoint0=41.9798,-87.8801&waypoint1=41.9043,-87.9216&mode=fastest;truck&avoidlinks=-915258031&app_id={{YOUR_APP_ID}}&app_code={{YOUR_APP_CODE}}","method":"GET"},{"collectionId":"56000578e618b15031321405","id":"enterprise-truck-route-with-imperial-measurements","name":"Changing from the metric system","description":"*Request a truck route with instructional distances given in miles and yards.*\n\nThe unit of measurement of the maneuver instructions can be altered by setting the `metricSystem` parameter to `imperial` in the request URL.\n\n\n\n* **waypoint0**  `latlng`\n \\- Start point of the route.    e.g. `52.515,13.377`\n\n* **waypoint1**  `latlng`\n \\- Second point through which the route must pass.    e.g. `52.6172,13.3833`\n\n* **mode**  `text`\n \\- Routing mode determines how the route is calculated.    e.g. `fastest;car;traffic:disabled.`\n\n* **metricSystem**  `enum`\n \\- The system of units to be used with instructions. Either imperial or metric. Metric is the default.\n\n Valid values are : `imperial`, `metric`\n\n* **app_id**  `text`\n \\- A 20 byte Base64 URL-safe encoded string used for the authentication of the client application.    You must include an `app_id` with every request.\n\n* **app_code**  `text`\n \\- A 20 byte Base64 URL-safe encoded string used for the authentication of the client application.    You must include an `app_code` with every request.","data":[{"key":"waypoint0","value":"41.9798,-87.8801","type":"text"},{"key":"waypoint1","value":"41.9043,-87.9216","type":"text"},{"key":"mode","value":"fastest;truck","type":"text"},{"key":"metricSystem","value":"imperial","type":"text"},{"key":"app_id","value":"{{YOUR_APP_ID}}","type":"text"},{"key":"app_code","value":"{{YOUR_APP_CODE}}","type":"text"}],"dataMode":"params","timestamp":1448890145888,"headers":"","url":"https://legacy.route.cit.api.here.com/routing/6.2/calculateroute.json?waypoint0=41.9798,-87.8801&waypoint1=41.9043,-87.9216&mode=fastest;truck&metricSystem=imperial&app_id={{YOUR_APP_ID}}&app_code={{YOUR_APP_CODE}}","method":"GET"},{"collectionId":"56000578e618b15031321405","id":"enterprise-truck-route-avoid-motorway","name":"Prefer/Avoid Motorways","description":"*Request a truck route preferring or avoiding specific types of road*\n\nRouting preferences can be added by extending the `mode` parameter of the request URL by adding a semi-colon delimited list of route link flags. In this case the addition of `motorway:-3` to the `mode` parameter indicates a high aversion to travel using motorways.\n\n\n\n* **waypoint0**  `latlng`\n \\- Start point of the route.    e.g. `52.515,13.377`\n\n* **waypoint1**  `latlng`\n \\- Second point through which the route must pass.    e.g. `52.6172,13.3833`\n\n* **mode**  `text`\n \\- Routing mode determines how the route is calculated.    e.g. `fastest;car;traffic:disabled.`\n\n* **instructionformat**  `enum`\n \\- Defines the representation format of the maneuver's instruction text.    e.g. `html`\n\n Valid values are : `txt`, `html`, `native`\n\n* **app_id**  `text`\n \\- A 20 byte Base64 URL-safe encoded string used for the authentication of the client application.    You must include an `app_id` with every request.\n\n* **app_code**  `text`\n \\- A 20 byte Base64 URL-safe encoded string used for the authentication of the client application.    You must include an `app_code` with every request.","data":[{"key":"waypoint0","value":"51.4741,-0.6152","type":"text"},{"key":"waypoint1","value":"51.4814,-0.4531","type":"text"},{"key":"mode","value":"fastest;truck;motorway:-3","type":"text"},{"key":"instructionformat","value":"text","type":"text"},{"key":"app_id","value":"{{YOUR_APP_ID}}","type":"text"},{"key":"app_code","value":"{{YOUR_APP_CODE}}","type":"text"}],"dataMode":"params","timestamp":1448890145916,"headers":"","url":"https://legacy.route.cit.api.here.com/routing/6.2/calculateroute.json?waypoint0=51.4741,-0.6152&waypoint1=51.4814,-0.4531&mode=fastest;truck;motorway:-3&instructionformat=text&app_id={{YOUR_APP_ID}}&app_code={{YOUR_APP_CODE}}","method":"GET"},{"collectionId":"56000578e618b15031321405","id":"enterprise-truck-route-with-language-support","name":"Multi-language support","description":"*Request truck route instructions in a foreign language*\n\nThe language of the maneuver  instructions can be altered by setting the `language` in the request URL.  Consult the  Enterprise Routing API Reference for a full list of available languages.\n\n\n\n* **waypoint0**  `latlng`\n \\- Start point of the route.    e.g. `52.515,13.377`\n\n* **waypoint1**  `latlng`\n \\- Second point through which the route must pass.    e.g. `52.6172,13.3833`\n\n* **mode**  `text`\n \\- Routing mode determines how the route is calculated.    e.g. `fastest;car;traffic:disabled.`\n\n* **language**  `enum`\n \\- Language used for maneuever instructions. For example `en-us`\n\n Valid values are : `en-uk` - British English, `en-us` - American English, `fr-fr` - French, `de-de` - German, `es-es` - Spanish, `it-it` - Italian\n\n* **app_id**  `text`\n \\- A 20 byte Base64 URL-safe encoded string used for the authentication of the client application.    You must include an `app_id` with every request.\n\n* **app_code**  `text`\n \\- A 20 byte Base64 URL-safe encoded string used for the authentication of the client application.    You must include an `app_code` with every request.","data":[{"key":"waypoint0","value":"41.9798,-87.8801","type":"text"},{"key":"waypoint1","value":"41.9043,-87.9216","type":"text"},{"key":"mode","value":"fastest;truck;traffic:disabled;","type":"text"},{"key":"language","value":"fr-fr","type":"text"},{"key":"app_id","value":"{{YOUR_APP_ID}}","type":"text"},{"key":"app_code","value":"{{YOUR_APP_CODE}}","type":"text"}],"dataMode":"params","timestamp":1448890145948,"headers":"","url":"https://legacy.route.cit.api.here.com/routing/6.2/calculateroute.json?waypoint0=41.9798,-87.8801&waypoint1=41.9043,-87.9216&mode=fastest;truck;traffic:disabled;&language=fr-fr&app_id={{YOUR_APP_ID}}&app_code={{YOUR_APP_CODE}}","method":"GET"},{"collectionId":"56000578e618b15031321405","id":"enterprise-truck-route-toll-information","name":"Toll Summary by Country","description":"*Request a truck route with toll road summary by country*\n\nRoute attributes can be suppressed through adding the `routeattributes=none` to the request URL. Toll information can be requested through adding `sc` to the value of the `routeattributes` parameter.\n\n\n\n* **waypoint0**  `latlng`\n \\- Start point of the route.    e.g. `52.515,13.377`\n\n* **waypoint1**  `latlng`\n \\- Second point through which the route must pass.    e.g. `52.6172,13.3833`\n\n* **mode**  `text`\n \\- Routing mode determines how the route is calculated.    e.g. `fastest;car;traffic:disabled.`\n\n* **routeattributes**  `multi-enum`\n \\- Which route attributes are included in the response.    e.g. `shape`\n\n Valid values are : `none`, `bb` - boundingBox, `lg` - legs, `no` - notes, `sh` - shape, `sm` - summary, `sc` - summaryByCountry, `wp` - waypoints\n\n* **app_id**  `text`\n \\- A 20 byte Base64 URL-safe encoded string used for the authentication of the client application.    You must include an `app_id` with every request.\n\n* **app_code**  `text`\n \\- A 20 byte Base64 URL-safe encoded string used for the authentication of the client application.    You must include an `app_code` with every request.","data":[{"key":"waypoint0","value":"52.3182,13.5540","type":"text"},{"key":"waypoint1","value":"48.7416,2.3626","type":"text"},{"key":"mode","value":"fastest;truck","type":"text"},{"key":"routeattributes","value":"none,sc","type":"text"},{"key":"app_id","value":"{{YOUR_APP_ID}}","type":"text"},{"key":"app_code","value":"{{YOUR_APP_CODE}}","type":"text"}],"dataMode":"params","timestamp":1448890145973,"headers":"","url":"https://legacy.route.cit.api.here.com/routing/6.2/calculateroute.json?waypoint0=52.3182,13.5540&waypoint1=48.7416,2.3626&mode=fastest;truck&routeattributes=none,sc&app_id={{YOUR_APP_ID}}&app_code={{YOUR_APP_CODE}}","method":"GET"},{"collectionId":"56000578e618b15031321405","id":"enterprise-truck-route-for-hazardous-goods","name":"Hazardous Goods","description":"*Request a truck route for a vehicle transporting hazardous goods*\n\nEnvironmental restrictions can be added to the routing request, through adding the `shippedhazardousgoods` parameter to the request URL.\n\n\n\n* **waypoint0**  `latlng`\n \\- Start point of the route.    e.g. `52.515,13.377`\n\n* **waypoint1**  `latlng`\n \\- Second point through which the route must pass.    e.g. `52.6172,13.3833`\n\n* **mode**  `text`\n \\- Routing mode determines how the route is calculated.    e.g. `fastest;car;traffic:disabled.`\n\n* **shippedhazardousgoods**  `multi-enum`\n \\- Truck routing only, list of hazardous materials in the vehicle.\n\n Valid values are : `combustible`, `corrosive`, `explosive`, `flammable`, `gas`, `harmfulToWater`, `organic`, `other`, `poison`, `poisonousInhalation`, `radioActive`\n\n* **app_id**  `text`\n \\- A 20 byte Base64 URL-safe encoded string used for the authentication of the client application.    You must include an `app_id` with every request.\n\n* **app_code**  `text`\n \\- A 20 byte Base64 URL-safe encoded string used for the authentication of the client application.    You must include an `app_code` with every request.","data":[{"key":"waypoint0","value":"52.5851,13.2795","type":"text"},{"key":"waypoint1","value":"52.5369,13.2645","type":"text"},{"key":"mode","value":"fastest;truck","type":"text"},{"key":"shippedhazardousgoods","value":"flammable,harmfulToWater","type":"text"},{"key":"app_id","value":"{{YOUR_APP_ID}}","type":"text"},{"key":"app_code","value":"{{YOUR_APP_CODE}}","type":"text"}],"dataMode":"params","timestamp":1448890146003,"headers":"","url":"https://legacy.route.cit.api.here.com/routing/6.2/calculateroute.json?waypoint0=52.5851,13.2795&waypoint1=52.5369,13.2645&mode=fastest;truck&shippedhazardousgoods=flammable,harmfulToWater&app_id={{YOUR_APP_ID}}&app_code={{YOUR_APP_CODE}}","method":"GET"},{"collectionId":"56000578e618b15031321405","id":"enterprise-truck-route-trailer-restrictions","name":"Trailer Restrictions","description":"*Request a truck route for a vehicle with a trailer*\n\nTrailer restrictions can be added to a routing request, through adding the `hastrailer` parameter to the request URL.\n\n\n\n* **waypoint0**  `latlng`\n \\- Start point of the route.    e.g. `52.515,13.377`\n\n* **waypoint1**  `latlng`\n \\- Second point through which the route must pass.    e.g. `52.6172,13.3833`\n\n* **mode**  `text`\n \\- Routing mode determines how the route is calculated.    e.g. `fastest;car;traffic:disabled.`\n\n* **hastrailer**  `enum`\n \\- Truck routing only, specifies if the vehicle has a trailer\n\n Valid values are : `true`, `false`\n\n* **app_id**  `text`\n \\- A 20 byte Base64 URL-safe encoded string used for the authentication of the client application.    You must include an `app_id` with every request.\n\n* **app_code**  `text`\n \\- A 20 byte Base64 URL-safe encoded string used for the authentication of the client application.    You must include an `app_code` with every request.","data":[{"key":"waypoint0","value":"46.5185,11.3431","type":"text"},{"key":"waypoint1","value":"46.4956,9.8367","type":"text"},{"key":"mode","value":"fastest;truck","type":"text"},{"key":"hastrailer","value":"true","type":"text"},{"key":"app_id","value":"{{YOUR_APP_ID}}","type":"text"},{"key":"app_code","value":"{{YOUR_APP_CODE}}","type":"text"}],"dataMode":"params","timestamp":1448890146037,"headers":"","url":"https://legacy.route.cit.api.here.com/routing/6.2/calculateroute.json?waypoint0=46.5185,11.3431&waypoint1=46.4956,9.8367&mode=fastest;truck&hastrailer=true&app_id={{YOUR_APP_ID}}&app_code={{YOUR_APP_CODE}}","method":"GET"},{"collectionId":"56000578e618b15031321405","id":"enterprise-truck-route-dimension-restrictions","name":"Abnormal Loads","description":"*Request a truck route for long, tall or wide vehicles*\n\nDimension restrictions can be added to a routing request, through adding the `height`,  `width` and `length`  parameters to the request URL.\n\n\n\n* **waypoint0**  `latlng`\n \\- Start point of the route.    e.g. `52.515,13.377`\n\n* **waypoint1**  `latlng`\n \\- Second point through which the route must pass.    e.g. `52.6172,13.3833`\n\n* **mode**  `text`\n \\- Routing mode determines how the route is calculated.    e.g. `fastest;car;traffic:disabled.`\n\n* **height**  `number`\n \\- Truck routing only, vehicle height in meters\n\n* **width**  `number`\n \\- Truck routing only, vehicle width in meters\n\n* **length**  `number`\n \\- Truck routing only, vehicle length in meters\n\n* **app_id**  `text`\n \\- A 20 byte Base64 URL-safe encoded string used for the authentication of the client application.    You must include an `app_id` with every request.\n\n* **app_code**  `text`\n \\- A 20 byte Base64 URL-safe encoded string used for the authentication of the client application.    You must include an `app_code` with every request.","data":[{"key":"waypoint0","value":"42.3653,-71.0622","type":"text"},{"key":"waypoint1","value":"42.3714,-71.0280","type":"text"},{"key":"mode","value":"fastest;truck;traffic:disabled;","type":"text"},{"key":"height","value":"3","type":"text"},{"key":"width","value":"2.5","type":"text"},{"key":"length","value":"7","type":"text"},{"key":"app_id","value":"{{YOUR_APP_ID}}","type":"text"},{"key":"app_code","value":"{{YOUR_APP_CODE}}","type":"text"}],"dataMode":"params","timestamp":1448890146061,"headers":"","url":"https://legacy.route.cit.api.here.com/routing/6.2/calculateroute.json?waypoint0=42.3653,-71.0622&waypoint1=42.3714,-71.0280&mode=fastest;truck;traffic:disabled;&height=3&width=2.5&length=7&app_id={{YOUR_APP_ID}}&app_code={{YOUR_APP_CODE}}","method":"GET"},{"collectionId":"56000578e618b15031321405","id":"enterprise-truck-route-weight-restrictions","name":"Weight Restrictions","description":"*Request a truck route for a heavy vehicle specifying axel or laden weights*\n\nWeight restrictions can be added to a routing request, through adding the `permittedgrossweight`,  `limitedweight`, `weightperaxle` and `trailerweight` parameters to the request URL.\n\n\n\n* **waypoint0**  `latlng`\n \\- Start point of the route.    e.g. `52.515,13.377`\n\n* **waypoint1**  `latlng`\n \\- Second point through which the route must pass.    e.g. `52.6172,13.3833`\n\n* **mode**  `text`\n \\- Routing mode determines how the route is calculated.    e.g. `fastest;car;traffic:disabled.`\n\n* **permittedgrossweight**  `number`\n \\- Truck routing only, permitted gross weight of the vehicle in tons.\n\n* **limitedweight**  `number`\n \\- Truck routing only, vehicle weight including trailers and shipped goods, in tons.\n\n* **weightperaxle**  `number`\n \\- The maximum weight each axel of the vehicle is permitted to carry in tons\n\n* **trailerweight**  `number`\n \\- The maximum weight of the trailer of the vehicle  in tons - the `hasTrailer` parameter must also be set\n\n* **app_id**  `text`\n \\- A 20 byte Base64 URL-safe encoded string used for the authentication of the client application.    You must include an `app_id` with every request.\n\n* **app_code**  `text`\n \\- A 20 byte Base64 URL-safe encoded string used for the authentication of the client application.    You must include an `app_code` with every request.","data":[{"key":"waypoint0","value":"39.2923,-76.6088","type":"text"},{"key":"waypoint1","value":"39.2976,-76.5940","type":"text"},{"key":"mode","value":"fastest;truck;traffic:disabled;","type":"text"},{"key":"permittedgrossweight","value":"30","type":"text"},{"key":"limitedweight","value":"20","type":"text"},{"key":"weightperaxle","value":"10","type":"text"},{"key":"trailerweight","value":"30","type":"text"},{"key":"app_id","value":"{{YOUR_APP_ID}}","type":"text"},{"key":"app_code","value":"{{YOUR_APP_CODE}}","type":"text"}],"dataMode":"params","timestamp":1448890146093,"headers":"","url":"https://legacy.route.cit.api.here.com/routing/6.2/calculateroute.json?waypoint0=39.2923,-76.6088&waypoint1=39.2976,-76.5940&mode=fastest;truck;traffic:disabled;&permittedgrossweight=30&limitedweight=20&weightperaxle=10&trailerweight=30&app_id={{YOUR_APP_ID}}&app_code={{YOUR_APP_CODE}}","method":"GET"},{"collectionId":"56000578e618b15031321405","id":"enterprise-truck-route-from-a-to-c-via-b","name":"Truck Route via an Intermediate Point","description":"*Request a truck route from A to C with an additional stopover at point B*\n\nAdditional waypoint parameters (`waypoint0`, `waypoint1`, `waypoint2` etc...) can be added consecutively to the request URL.\n\n\n\n* **waypoint0**  `latlng`\n \\- Start point of the route.    e.g. `52.515,13.377`\n\n* **waypoint1**  `latlng`\n \\- Second point through which the route must pass.    e.g. `52.6172,13.3833`\n\n* **waypoint2**  `latlng`\n \\- Third point through which the route must pass.\n\n* **mode**  `text`\n \\- Routing mode determines how the route is calculated.    e.g. `fastest;car;traffic:disabled.`\n\n* **app_id**  `text`\n \\- A 20 byte Base64 URL-safe encoded string used for the authentication of the client application.    You must include an `app_id` with every request.\n\n* **app_code**  `text`\n \\- A 20 byte Base64 URL-safe encoded string used for the authentication of the client application.    You must include an `app_code` with every request.","data":[{"key":"waypoint0","value":"50.0522,8.2180","type":"text"},{"key":"waypoint1","value":"50.0460,8.5561","type":"text"},{"key":"waypoint2","value":"50.0957,8.5280","type":"text"},{"key":"mode","value":"fastest;truck","type":"text"},{"key":"app_id","value":"{{YOUR_APP_ID}}","type":"text"},{"key":"app_code","value":"{{YOUR_APP_CODE}}","type":"text"}],"dataMode":"params","timestamp":1448890146130,"headers":"","url":"https://legacy.route.cit.api.here.com/routing/6.2/calculateroute.json?waypoint0=50.0522,8.2180&waypoint1=50.0460,8.5561&waypoint2=50.0957,8.5280&mode=fastest;truck&app_id={{YOUR_APP_ID}}&app_code={{YOUR_APP_CODE}}","method":"GET"}]}
+{
+	"id": "4be59ea3-f211-99e7-55f6-56b4c0f5085c",
+	"name": "Legacy Routing API",
+	"description": "The **HERE Enterprise Routing API** is a **deprecated** web service API that offered easy and fast routing across many regions of the world. It has been superceded by the [Routing API 7.x](https://developer.here.com/rest-apis/documentation/routing)\n\nThe Enterprise Routing API provided the following capabilities:\n\n* Calculate a route for a set of waypoints\n* Update a previously calculated route\n* Calculate an area which can be reached by travelling a given distance or time\n\nThis example set works with version **6.2.61** or higher\n",
+	"order": [
+		"8a870ed2-8fd6-c334-2467-ee0cc6b7aa53",
+		"2ac216e4-89a6-e05d-36c0-106f60ff8f5a",
+		"de4647f7-b744-6298-ba5e-da421f343a7a",
+		"a7b76d83-dfdd-8b1f-1859-4771f745ade7",
+		"66f3e97d-26e6-0390-6ea0-e312cb49eaca",
+		"2c388a16-9878-f442-bfb1-0b8ede3bc62c",
+		"f83bb152-4125-16af-ef5a-225df8b763cf",
+		"244c12e8-867b-9402-0c2c-0d56cb8c6b1d",
+		"d0ad52de-a6f3-bd7e-d34f-ee3e66d39d9a",
+		"52513dfa-967d-74a7-35c3-3a86f4429eeb",
+		"72565031-f91d-483b-8337-f5368a305c53",
+		"784d57aa-1447-bcb8-0599-6c5c4a9b2508",
+		"3ab81f85-b4a7-d2b9-3b46-cffb1153c902",
+		"8c898308-d141-fc72-9a94-09770bcde11b",
+		"180cd5df-57c3-ca8e-2141-50f7dee63476",
+		"ce65b569-359d-9b08-047b-6f0bf9c938f8",
+		"03bebec0-2b4e-22c3-b4cf-afc2c715fdad",
+		"98eec566-f409-ff6b-b0b7-15083af4c383",
+		"d78c2e43-33ba-9cf2-8aae-c1b2398f8d82",
+		"9d3c765f-bbb9-0e02-d592-7ffe05e109b0",
+		"622341f0-5609-e899-38e8-8dfb0a438f4a",
+		"24a24a6d-ac2c-5b93-d747-97d9a44c88dc",
+		"93549b26-7311-04b5-6879-05c6dac64bef",
+		"fdd99082-74eb-1c00-3597-5e234bc27f3f"
+	],
+	"folders": [],
+	"timestamp": 1448890146132,
+	"owner": 0,
+	"remoteLink": "",
+	"public": false,
+	"requests": [
+		{
+			"collectionId": "4be59ea3-f211-99e7-55f6-56b4c0f5085c",
+			"id": "03bebec0-2b4e-22c3-b4cf-afc2c715fdad",
+			"name": "Prefer/Avoid Motorways",
+			"description": "*Request a truck route preferring or avoiding specific types of road*\n\nRouting preferences can be added by extending the `mode` parameter of the request URL by adding a semi-colon delimited list of route link flags. In this case the addition of `motorway:-3` to the `mode` parameter indicates a high aversion to travel using motorways.\n\n\n\n* **waypoint0**  `latlng`\n \\- Start point of the route.    e.g. `52.515,13.377`\n\n* **waypoint1**  `latlng`\n \\- Second point through which the route must pass.    e.g. `52.6172,13.3833`\n\n* **mode**  `text`\n \\- Routing mode determines how the route is calculated.    e.g. `fastest;car;traffic:disabled.`\n\n* **instructionformat**  `enum`\n \\- Defines the representation format of the maneuver's instruction text.    e.g. `html`\n\n Valid values are : `txt`, `html`, `native`\n\n* **app_id**  `text`\n \\- A 20 byte Base64 URL-safe encoded string used for the authentication of the client application.    You must include an `app_id` with every request.\n\n* **app_code**  `text`\n \\- A 20 byte Base64 URL-safe encoded string used for the authentication of the client application.    You must include an `app_code` with every request.",
+			"data": [
+				{
+					"key": "waypoint0",
+					"value": "51.4741,-0.6152",
+					"type": "text"
+				},
+				{
+					"key": "waypoint1",
+					"value": "51.4814,-0.4531",
+					"type": "text"
+				},
+				{
+					"key": "mode",
+					"value": "fastest;truck;motorway:-3",
+					"type": "text"
+				},
+				{
+					"key": "instructionformat",
+					"value": "text",
+					"type": "text"
+				},
+				{
+					"key": "app_id",
+					"value": "{{YOUR_APP_ID}}",
+					"type": "text"
+				},
+				{
+					"key": "app_code",
+					"value": "{{YOUR_APP_CODE}}",
+					"type": "text"
+				}
+			],
+			"dataMode": "params",
+			"timestamp": 1448890145916,
+			"headers": "",
+			"url": "https://legacy.route.cit.api.here.com/routing/6.2/calculateroute.json?waypoint0=51.4741,-0.6152&waypoint1=51.4814,-0.4531&mode=fastest;truck;motorway:-3&instructionformat=text&app_id={{YOUR_APP_ID}}&app_code={{YOUR_APP_CODE}}",
+			"method": "GET",
+			"preRequestScript": "",
+			"tests": ""
+		},
+		{
+			"collectionId": "4be59ea3-f211-99e7-55f6-56b4c0f5085c",
+			"id": "180cd5df-57c3-ca8e-2141-50f7dee63476",
+			"name": "Avoiding a specified stretch of road",
+			"description": "*Request a truck route avoiding a specific road as defined by an avoidLink*\n\nStretches of road can be avoided through adding a comma delimited list of link Ids to the `avoidlinks` parameter added to the request URL.\n\n\n\n* **waypoint0**  `latlng`\n \\- Start point of the route.    e.g. `52.515,13.377`\n\n* **waypoint1**  `latlng`\n \\- Second point through which the route must pass.    e.g. `52.6172,13.3833`\n\n* **mode**  `text`\n \\- Routing mode determines how the route is calculated.    e.g. `fastest;car;traffic:disabled.`\n\n* **avoidlinks**  `text`\n \\- Links which the route must not cross. A list of LinkIdType.\n\n* **app_id**  `text`\n \\- A 20 byte Base64 URL-safe encoded string used for the authentication of the client application.    You must include an `app_id` with every request.\n\n* **app_code**  `text`\n \\- A 20 byte Base64 URL-safe encoded string used for the authentication of the client application.    You must include an `app_code` with every request.",
+			"data": [
+				{
+					"key": "waypoint0",
+					"value": "41.9798,-87.8801",
+					"type": "text"
+				},
+				{
+					"key": "waypoint1",
+					"value": "41.9043,-87.9216",
+					"type": "text"
+				},
+				{
+					"key": "mode",
+					"value": "fastest;truck",
+					"type": "text"
+				},
+				{
+					"key": "avoidlinks",
+					"value": "-915258031",
+					"type": "text"
+				},
+				{
+					"key": "app_id",
+					"value": "{{YOUR_APP_ID}}",
+					"type": "text"
+				},
+				{
+					"key": "app_code",
+					"value": "{{YOUR_APP_CODE}}",
+					"type": "text"
+				}
+			],
+			"dataMode": "params",
+			"timestamp": 1448890145863,
+			"headers": "",
+			"url": "https://legacy.route.cit.api.here.com/routing/6.2/calculateroute.json?waypoint0=41.9798,-87.8801&waypoint1=41.9043,-87.9216&mode=fastest;truck&avoidlinks=-915258031&app_id={{YOUR_APP_ID}}&app_code={{YOUR_APP_CODE}}",
+			"method": "GET",
+			"preRequestScript": "",
+			"tests": ""
+		},
+		{
+			"collectionId": "4be59ea3-f211-99e7-55f6-56b4c0f5085c",
+			"id": "244c12e8-867b-9402-0c2c-0d56cb8c6b1d",
+			"name": "Car Route from A to B",
+			"description": "*Request a driving route for light vehicles between two points*\n\nFastest car routes can be requested by setting the `mode` parameter to `fastest;car` in the request URL.\n\n\n\n* **waypoint0**  `latlng`\n \\- Start point of the route.    e.g. `52.515,13.377`\n\n* **waypoint1**  `latlng`\n \\- Second point through which the route must pass.    e.g. `52.6172,13.3833`\n\n* **mode**  `text`\n \\- Routing mode determines how the route is calculated.    e.g. `fastest;car;traffic:disabled.`\n\n* **app_id**  `text`\n \\- A 20 byte Base64 URL-safe encoded string used for the authentication of the client application.    You must include an `app_id` with every request.\n\n* **app_code**  `text`\n \\- A 20 byte Base64 URL-safe encoded string used for the authentication of the client application.    You must include an `app_code` with every request.",
+			"data": [
+				{
+					"key": "waypoint0",
+					"value": "48.8733,2.2961",
+					"type": "text"
+				},
+				{
+					"key": "waypoint1",
+					"value": "48.8597,2.3403",
+					"type": "text"
+				},
+				{
+					"key": "mode",
+					"value": "fastest;car",
+					"type": "text"
+				},
+				{
+					"key": "app_id",
+					"value": "{{YOUR_APP_ID}}",
+					"type": "text"
+				},
+				{
+					"key": "app_code",
+					"value": "{{YOUR_APP_CODE}}",
+					"type": "text"
+				}
+			],
+			"dataMode": "params",
+			"timestamp": 1448890145621,
+			"headers": "",
+			"url": "https://legacy.route.cit.api.here.com/routing/6.2/calculateroute.json?waypoint0=48.8733,2.2961&waypoint1=48.8597,2.3403&mode=fastest;car&app_id={{YOUR_APP_ID}}&app_code={{YOUR_APP_CODE}}",
+			"method": "GET",
+			"preRequestScript": "",
+			"tests": ""
+		},
+		{
+			"collectionId": "4be59ea3-f211-99e7-55f6-56b4c0f5085c",
+			"id": "24a24a6d-ac2c-5b93-d747-97d9a44c88dc",
+			"name": "Abnormal Loads",
+			"description": "*Request a truck route for long, tall or wide vehicles*\n\nDimension restrictions can be added to a routing request, through adding the `height`,  `width` and `length`  parameters to the request URL.\n\n\n\n* **waypoint0**  `latlng`\n \\- Start point of the route.    e.g. `52.515,13.377`\n\n* **waypoint1**  `latlng`\n \\- Second point through which the route must pass.    e.g. `52.6172,13.3833`\n\n* **mode**  `text`\n \\- Routing mode determines how the route is calculated.    e.g. `fastest;car;traffic:disabled.`\n\n* **height**  `number`\n \\- Truck routing only, vehicle height in meters\n\n* **width**  `number`\n \\- Truck routing only, vehicle width in meters\n\n* **length**  `number`\n \\- Truck routing only, vehicle length in meters\n\n* **app_id**  `text`\n \\- A 20 byte Base64 URL-safe encoded string used for the authentication of the client application.    You must include an `app_id` with every request.\n\n* **app_code**  `text`\n \\- A 20 byte Base64 URL-safe encoded string used for the authentication of the client application.    You must include an `app_code` with every request.",
+			"data": [
+				{
+					"key": "waypoint0",
+					"value": "42.3653,-71.0622",
+					"type": "text"
+				},
+				{
+					"key": "waypoint1",
+					"value": "42.3714,-71.0280",
+					"type": "text"
+				},
+				{
+					"key": "mode",
+					"value": "fastest;truck;traffic:disabled;",
+					"type": "text"
+				},
+				{
+					"key": "height",
+					"value": "3",
+					"type": "text"
+				},
+				{
+					"key": "width",
+					"value": "2.5",
+					"type": "text"
+				},
+				{
+					"key": "length",
+					"value": "7",
+					"type": "text"
+				},
+				{
+					"key": "app_id",
+					"value": "{{YOUR_APP_ID}}",
+					"type": "text"
+				},
+				{
+					"key": "app_code",
+					"value": "{{YOUR_APP_CODE}}",
+					"type": "text"
+				}
+			],
+			"dataMode": "params",
+			"timestamp": 1448890146061,
+			"headers": "",
+			"url": "https://legacy.route.cit.api.here.com/routing/6.2/calculateroute.json?waypoint0=42.3653,-71.0622&waypoint1=42.3714,-71.0280&mode=fastest;truck;traffic:disabled;&height=3&width=2.5&length=7&app_id={{YOUR_APP_ID}}&app_code={{YOUR_APP_CODE}}",
+			"method": "GET",
+			"preRequestScript": "",
+			"tests": ""
+		},
+		{
+			"collectionId": "4be59ea3-f211-99e7-55f6-56b4c0f5085c",
+			"id": "2ac216e4-89a6-e05d-36c0-106f60ff8f5a",
+			"name": "Link Information using linkId",
+			"description": "*Request detailed information about a path segment in the routing network given a linkid*\n\nLink information can be retrieved using the `getlinkinfo` endpoint, by specifying one or more comma separated linkIds using the `linkids` parameter. The `linkids` have been generated from a previous request.\n\n\n\n* **linkids**  `text`\n \\- Link identifiers for which the detailed information is being requested.\n\n* **app_id**  `text`\n \\- A 20 byte Base64 URL-safe encoded string used for the authentication of the client application.    You must include an `app_id` with every request.\n\n* **app_code**  `text`\n \\- A 20 byte Base64 URL-safe encoded string used for the authentication of the client application.    You must include an `app_code` with every request.",
+			"data": [
+				{
+					"key": "linkids",
+					"value": "931447247",
+					"type": "text"
+				},
+				{
+					"key": "app_id",
+					"value": "{{YOUR_APP_ID}}",
+					"type": "text"
+				},
+				{
+					"key": "app_code",
+					"value": "{{YOUR_APP_CODE}}",
+					"type": "text"
+				}
+			],
+			"dataMode": "params",
+			"timestamp": 1448890145450,
+			"headers": "",
+			"url": "https://legacy.route.cit.api.here.com/routing/6.2/getlinkinfo.json?linkids=931447247&app_id={{YOUR_APP_ID}}&app_code={{YOUR_APP_CODE}}",
+			"method": "GET",
+			"preRequestScript": "",
+			"tests": ""
+		},
+		{
+			"collectionId": "4be59ea3-f211-99e7-55f6-56b4c0f5085c",
+			"id": "2c388a16-9878-f442-bfb1-0b8ede3bc62c",
+			"name": "Isochrone Calculation",
+			"description": "*Request the shape outlining the area that can be reached within a given time*\n\nIsochrone calculations are made using the `calculateisoline` endpoint and specifying the `start` and `time` parameters.\n\n\n\n* **mode**  `text`\n \\- Routing mode determines how the route is calculated.    e.g. `fastest;car;traffic:disabled.`\n\n* **start**  `latlng`\n \\- Center of the isoline request.    e.g. `52.515,13.377`\n\n* **time**  `text`\n \\- Travel time for the isoline.    e.g. `PT0H05M`\n\n* **app_id**  `text`\n \\- A 20 byte Base64 URL-safe encoded string used for the authentication of the client application.    You must include an `app_id` with every request.\n\n* **app_code**  `text`\n \\- A 20 byte Base64 URL-safe encoded string used for the authentication of the client application.    You must include an `app_code` with every request.",
+			"data": [
+				{
+					"key": "mode",
+					"value": "fastest;car",
+					"type": "text"
+				},
+				{
+					"key": "start",
+					"value": "52.5160,13.3778",
+					"type": "text"
+				},
+				{
+					"key": "time",
+					"value": "PT0H05M",
+					"type": "text"
+				},
+				{
+					"key": "app_id",
+					"value": "{{YOUR_APP_ID}}",
+					"type": "text"
+				},
+				{
+					"key": "app_code",
+					"value": "{{YOUR_APP_CODE}}",
+					"type": "text"
+				}
+			],
+			"dataMode": "params",
+			"timestamp": 1448890145563,
+			"headers": "",
+			"url": "https://legacy.route.cit.api.here.com/routing/6.2/calculateisoline.json?mode=fastest;car&start=52.5160,13.3778&time=PT0H05M&app_id={{YOUR_APP_ID}}&app_code={{YOUR_APP_CODE}}",
+			"method": "GET",
+			"preRequestScript": "",
+			"tests": ""
+		},
+		{
+			"collectionId": "4be59ea3-f211-99e7-55f6-56b4c0f5085c",
+			"id": "3ab81f85-b4a7-d2b9-3b46-cffb1153c902",
+			"name": "Getting truck route information within viewbounds",
+			"description": "*Request partial truck route information for maneuvers within a given area*\n\nBy setting the `representation` parameter to `dragNDrop` to retrieve a list of latitudes &amp; longitudes that make up the route shape that is within the viewbounds.\n\n\n\n* **waypoint0**  `latlng`\n \\- Start point of the route.    e.g. `52.515,13.377`\n\n* **waypoint1**  `latlng`\n \\- Second point through which the route must pass.    e.g. `52.6172,13.3833`\n\n* **mode**  `text`\n \\- Routing mode determines how the route is calculated.    e.g. `fastest;car;traffic:disabled.`\n\n* **viewbounds**  `bbox`\n \\- View bounds are specified as pair of coordinates.\n\n* **representation**  `enum`\n \\- Representation of the route.    e.g. `dragNDrop`\n\n Valid values are : `display`, `dragNDrop`, `linkPaging`, `navigation`, `overview`, `turnByTurn`\n\n* **app_id**  `text`\n \\- A 20 byte Base64 URL-safe encoded string used for the authentication of the client application.    You must include an `app_id` with every request.\n\n* **app_code**  `text`\n \\- A 20 byte Base64 URL-safe encoded string used for the authentication of the client application.    You must include an `app_code` with every request.",
+			"data": [
+				{
+					"key": "waypoint0",
+					"value": "52.5168,13.3884",
+					"type": "text"
+				},
+				{
+					"key": "waypoint1",
+					"value": "52.5166,13.3935",
+					"type": "text"
+				},
+				{
+					"key": "mode",
+					"value": "fastest;truck",
+					"type": "text"
+				},
+				{
+					"key": "viewbounds",
+					"value": "52.5178,13.3856;52.5159,13.3928",
+					"type": "text"
+				},
+				{
+					"key": "representation",
+					"value": "dragNDrop",
+					"type": "text"
+				},
+				{
+					"key": "app_id",
+					"value": "{{YOUR_APP_ID}}",
+					"type": "text"
+				},
+				{
+					"key": "app_code",
+					"value": "{{YOUR_APP_CODE}}",
+					"type": "text"
+				}
+			],
+			"dataMode": "params",
+			"timestamp": 1448890145805,
+			"headers": "",
+			"url": "https://legacy.route.cit.api.here.com/routing/6.2/calculateroute.json?waypoint0=52.5168,13.3884&waypoint1=52.5166,13.3935&mode=fastest;truck&viewbounds=52.5178,13.3856;52.5159,13.3928&representation=dragNDrop&app_id={{YOUR_APP_ID}}&app_code={{YOUR_APP_CODE}}",
+			"method": "GET",
+			"preRequestScript": "",
+			"tests": ""
+		},
+		{
+			"collectionId": "4be59ea3-f211-99e7-55f6-56b4c0f5085c",
+			"id": "52513dfa-967d-74a7-35c3-3a86f4429eeb",
+			"name": "Previously Calculated Route Information",
+			"description": "*Request information about a previously calculated route*\n\nPrevious routes can be retrieved using the `getroute` endpoint and appending a `routeid` to the request. The `routeid` in question has been generated from a previous request.\n\n\n\n* **routeid**  `text`\n \\- Route identifier for which the detailed route information is being requested.\n\n* **app_id**  `text`\n \\- A 20 byte Base64 URL-safe encoded string used for the authentication of the client application.    You must include an `app_id` with every request.\n\n* **app_code**  `text`\n \\- A 20 byte Base64 URL-safe encoded string used for the authentication of the client application.    You must include an `app_code` with every request.",
+			"data": [
+				{
+					"key": "routeid",
+					"value": "REM6yjIAAAB2Tx4Wav1EQGpN845T-FXAAAAA4HL9REAAAAAgW_hVwAAAAAAAAPB_AAAAAAAA8H9VtnU3rYvbaADPEwFd_kP67etXAQMAAAD_zhMBAQAAgPHrVwEDAAAAAADA_wEAAAAAAMD_aR0pCYcHtYTjob4X2h8eiZg3uPHjvAH6",
+					"type": "text"
+				},
+				{
+					"key": "app_id",
+					"value": "{{YOUR_APP_ID}}",
+					"type": "text"
+				},
+				{
+					"key": "app_code",
+					"value": "{{YOUR_APP_CODE}}",
+					"type": "text"
+				}
+			],
+			"dataMode": "params",
+			"timestamp": 1448890145693,
+			"headers": "",
+			"url": "https://legacy.route.cit.api.here.com/routing/6.2/getroute.json?routeid=REM6yjIAAAB2Tx4Wav1EQGpN845T-FXAAAAA4HL9REAAAAAgW_hVwAAAAAAAAPB_AAAAAAAA8H9VtnU3rYvbaADPEwFd_kP67etXAQMAAAD_zhMBAQAAgPHrVwEDAAAAAADA_wEAAAAAAMD_aR0pCYcHtYTjob4X2h8eiZg3uPHjvAH6&app_id={{YOUR_APP_ID}}&app_code={{YOUR_APP_CODE}}",
+			"method": "GET",
+			"preRequestScript": "",
+			"tests": ""
+		},
+		{
+			"collectionId": "4be59ea3-f211-99e7-55f6-56b4c0f5085c",
+			"id": "622341f0-5609-e899-38e8-8dfb0a438f4a",
+			"name": "Trailer Restrictions",
+			"description": "*Request a truck route for a vehicle with a trailer*\n\nTrailer restrictions can be added to a routing request, through adding the `hastrailer` parameter to the request URL.\n\n\n\n* **waypoint0**  `latlng`\n \\- Start point of the route.    e.g. `52.515,13.377`\n\n* **waypoint1**  `latlng`\n \\- Second point through which the route must pass.    e.g. `52.6172,13.3833`\n\n* **mode**  `text`\n \\- Routing mode determines how the route is calculated.    e.g. `fastest;car;traffic:disabled.`\n\n* **hastrailer**  `enum`\n \\- Truck routing only, specifies if the vehicle has a trailer\n\n Valid values are : `true`, `false`\n\n* **app_id**  `text`\n \\- A 20 byte Base64 URL-safe encoded string used for the authentication of the client application.    You must include an `app_id` with every request.\n\n* **app_code**  `text`\n \\- A 20 byte Base64 URL-safe encoded string used for the authentication of the client application.    You must include an `app_code` with every request.",
+			"data": [
+				{
+					"key": "waypoint0",
+					"value": "46.5185,11.3431",
+					"type": "text"
+				},
+				{
+					"key": "waypoint1",
+					"value": "46.4956,9.8367",
+					"type": "text"
+				},
+				{
+					"key": "mode",
+					"value": "fastest;truck",
+					"type": "text"
+				},
+				{
+					"key": "hastrailer",
+					"value": "true",
+					"type": "text"
+				},
+				{
+					"key": "app_id",
+					"value": "{{YOUR_APP_ID}}",
+					"type": "text"
+				},
+				{
+					"key": "app_code",
+					"value": "{{YOUR_APP_CODE}}",
+					"type": "text"
+				}
+			],
+			"dataMode": "params",
+			"timestamp": 1448890146037,
+			"headers": "",
+			"url": "https://legacy.route.cit.api.here.com/routing/6.2/calculateroute.json?waypoint0=46.5185,11.3431&waypoint1=46.4956,9.8367&mode=fastest;truck&hastrailer=true&app_id={{YOUR_APP_ID}}&app_code={{YOUR_APP_CODE}}",
+			"method": "GET",
+			"preRequestScript": "",
+			"tests": ""
+		},
+		{
+			"collectionId": "4be59ea3-f211-99e7-55f6-56b4c0f5085c",
+			"id": "66f3e97d-26e6-0390-6ea0-e312cb49eaca",
+			"name": "Distance-based Reverse Flow",
+			"description": "*Request a list of path segments that will reach a destination within a defined distance of travel*\n\nDistance-based reverse flow requests are made using the `reverseflow` endpoint and specifying the `destination` and `distance` parameters.\n\n\n\n* **mode**  `text`\n \\- Routing mode determines how the route is calculated.    e.g. `fastest;car;traffic:disabled.`\n\n* **destination**  `latlng`\n \\- Destination of the reverse flow calculation.    e.g. `52.515,13.377`\n\n* **distance**  `number`\n \\- Distance of the isoline (from the center point) in meters\n\n* **app_id**  `text`\n \\- A 20 byte Base64 URL-safe encoded string used for the authentication of the client application.    You must include an `app_id` with every request.\n\n* **app_code**  `text`\n \\- A 20 byte Base64 URL-safe encoded string used for the authentication of the client application.    You must include an `app_code` with every request.",
+			"data": [
+				{
+					"key": "mode",
+					"value": "fastest;pedestrian",
+					"type": "text"
+				},
+				{
+					"key": "destination",
+					"value": "52.5160,13.3778",
+					"type": "text"
+				},
+				{
+					"key": "distance",
+					"value": "200",
+					"type": "text"
+				},
+				{
+					"key": "app_id",
+					"value": "{{YOUR_APP_ID}}",
+					"type": "text"
+				},
+				{
+					"key": "app_code",
+					"value": "{{YOUR_APP_CODE}}",
+					"type": "text"
+				}
+			],
+			"dataMode": "params",
+			"timestamp": 1448890145529,
+			"headers": "",
+			"url": "https://legacy.route.cit.api.here.com/routing/6.2/reverseflow.json?mode=fastest;pedestrian&destination=52.5160,13.3778&distance=200&app_id={{YOUR_APP_ID}}&app_code={{YOUR_APP_CODE}}",
+			"method": "GET",
+			"preRequestScript": "",
+			"tests": ""
+		},
+		{
+			"collectionId": "4be59ea3-f211-99e7-55f6-56b4c0f5085c",
+			"id": "72565031-f91d-483b-8337-f5368a305c53",
+			"name": "Multiple Route Modes",
+			"description": "*Request routes for multiple routing modes within a single request*\n\nAdditional mode parameters (`mode0`, `mode1`, `mode2` etc...) can be added consecutively to the request URL.\n\n\n\n* **waypoint0**  `latlng`\n \\- Start point of the route.    e.g. `52.515,13.377`\n\n* **waypoint1**  `latlng`\n \\- Second point through which the route must pass.    e.g. `52.6172,13.3833`\n\n* **mode0**  `text`\n \\- First routing mode. Determines how the route is calculated.    e.g. `fastest;car;traffic:disabled`\n\n* **mode1**  `text`\n \\- Second routing mode. Determines how the route is calculated.    e.g. `fastest;car;traffic:disabled`\n\n* **app_id**  `text`\n \\- A 20 byte Base64 URL-safe encoded string used for the authentication of the client application.    You must include an `app_id` with every request.\n\n* **app_code**  `text`\n \\- A 20 byte Base64 URL-safe encoded string used for the authentication of the client application.    You must include an `app_code` with every request.",
+			"data": [
+				{
+					"key": "waypoint0",
+					"value": "41.9054,12.4813",
+					"type": "text"
+				},
+				{
+					"key": "waypoint1",
+					"value": "41.9061,12.4832",
+					"type": "text"
+				},
+				{
+					"key": "mode0",
+					"value": "fastest;pedestrian",
+					"type": "text"
+				},
+				{
+					"key": "mode1",
+					"value": "fastest;car",
+					"type": "text"
+				},
+				{
+					"key": "app_id",
+					"value": "{{YOUR_APP_ID}}",
+					"type": "text"
+				},
+				{
+					"key": "app_code",
+					"value": "{{YOUR_APP_CODE}}",
+					"type": "text"
+				}
+			],
+			"dataMode": "params",
+			"timestamp": 1448890145728,
+			"headers": "",
+			"url": "https://legacy.route.cit.api.here.com/routing/6.2/calculateroute.json?waypoint0=41.9054,12.4813&waypoint1=41.9061,12.4832&mode0=fastest;pedestrian&mode1=fastest;car&app_id={{YOUR_APP_ID}}&app_code={{YOUR_APP_CODE}}",
+			"method": "GET",
+			"preRequestScript": "",
+			"tests": ""
+		},
+		{
+			"collectionId": "4be59ea3-f211-99e7-55f6-56b4c0f5085c",
+			"id": "784d57aa-1447-bcb8-0599-6c5c4a9b2508",
+			"name": "Pedestrian Route from A to B",
+			"description": "*Request a walking route between two points*\n\nFastest pedestrian routes can be requested by setting the `mode` parameter to `fastest;pedestrian` in the request URL.\n\n\n\n* **waypoint0**  `latlng`\n \\- Start point of the route.    e.g. `52.515,13.377`\n\n* **waypoint1**  `latlng`\n \\- Second point through which the route must pass.    e.g. `52.6172,13.3833`\n\n* **mode**  `text`\n \\- Routing mode determines how the route is calculated.    e.g. `fastest;car;traffic:disabled.`\n\n* **app_id**  `text`\n \\- A 20 byte Base64 URL-safe encoded string used for the authentication of the client application.    You must include an `app_id` with every request.\n\n* **app_code**  `text`\n \\- A 20 byte Base64 URL-safe encoded string used for the authentication of the client application.    You must include an `app_code` with every request.",
+			"data": [
+				{
+					"key": "waypoint0",
+					"value": "40.7480,-73.9862",
+					"type": "text"
+				},
+				{
+					"key": "waypoint1",
+					"value": "40.7558,-73.9870",
+					"type": "text"
+				},
+				{
+					"key": "mode",
+					"value": "fastest;pedestrian",
+					"type": "text"
+				},
+				{
+					"key": "app_id",
+					"value": "{{YOUR_APP_ID}}",
+					"type": "text"
+				},
+				{
+					"key": "app_code",
+					"value": "{{YOUR_APP_CODE}}",
+					"type": "text"
+				}
+			],
+			"dataMode": "params",
+			"timestamp": 1448890145752,
+			"headers": "",
+			"url": "https://legacy.route.cit.api.here.com/routing/6.2/calculateroute.json?waypoint0=40.7480,-73.9862&waypoint1=40.7558,-73.9870&mode=fastest;pedestrian&app_id={{YOUR_APP_ID}}&app_code={{YOUR_APP_CODE}}",
+			"method": "GET",
+			"preRequestScript": "",
+			"tests": ""
+		},
+		{
+			"collectionId": "4be59ea3-f211-99e7-55f6-56b4c0f5085c",
+			"id": "8a870ed2-8fd6-c334-2467-ee0cc6b7aa53",
+			"name": "Truck Route from A to B with shape information",
+			"description": "*Request a truck route between two points including additional information*\n\nThe shape of the overall route can be requested through adding `routeattributes=shape` to the request URL. Additional information for each maneuver (such as the shape and direction) can requested through adding the `maneuverattributes` parameter to the request URL.\n\n\n\n* **waypoint0**  `latlng`\n \\- Start point of the route.    e.g. `52.515,13.377`\n\n* **waypoint1**  `latlng`\n \\- Second point through which the route must pass.    e.g. `52.6172,13.3833`\n\n* **mode**  `text`\n \\- Routing mode determines how the route is calculated.    e.g. `fastest;car;traffic:disabled.`\n\n* **routeattributes**  `multi-enum`\n \\- Which route attributes are included in the response.    e.g. `shape`\n\n Valid values are : `none`, `bb` - boundingBox, `lg` - legs, `no` - notes, `sh` - shape, `sm` - summary, `sc` - summaryByCountry, `wp` - waypoints\n\n* **maneuverattributes**  `multi-enum`\n \\- Which maneuver attributes are included in the response.\n\n Valid values are : `none`, `ac` - action, `bt` - baseTime, `di` - direction, `eq` - equipment, `fe` - freewayExit, `fj` - freewayJunction, `ix` - indices, `la` - lane, `le` - length, `li` - link, `nm` - nextManeuver, `nr` - nextRoadName, `nu` - nextRoadNumber, `no` - notes, `po` - position, `rn` - roadName, `ru` - roadNumber, `rt` - roadTemplate, `sh` - shape, `sp` - signPost, `ti` - time, `tm` - trafficTime, `tt` - travelTime\n\n* **app_id**  `text`\n \\- A 20 byte Base64 URL-safe encoded string used for the authentication of the client application.    You must include an `app_id` with every request.\n\n* **app_code**  `text`\n \\- A 20 byte Base64 URL-safe encoded string used for the authentication of the client application.    You must include an `app_code` with every request.",
+			"data": [
+				{
+					"key": "waypoint0",
+					"value": "41.9798,-87.8801",
+					"type": "text"
+				},
+				{
+					"key": "waypoint1",
+					"value": "41.9043,-87.9216",
+					"type": "text"
+				},
+				{
+					"key": "mode",
+					"value": "fastest;truck;traffic:default;",
+					"type": "text"
+				},
+				{
+					"key": "routeattributes",
+					"value": "sh",
+					"type": "text"
+				},
+				{
+					"key": "maneuverattributes",
+					"value": "di,sh",
+					"type": "text"
+				},
+				{
+					"key": "app_id",
+					"value": "{{YOUR_APP_ID}}",
+					"type": "text"
+				},
+				{
+					"key": "app_code",
+					"value": "{{YOUR_APP_CODE}}",
+					"type": "text"
+				}
+			],
+			"dataMode": "params",
+			"timestamp": 1448890145417,
+			"headers": "",
+			"url": "https://legacy.route.cit.api.here.com/routing/6.2/calculateroute.json?waypoint0=41.9798,-87.8801&waypoint1=41.9043,-87.9216&mode=fastest;truck;traffic:default;&routeattributes=sh&maneuverattributes=di,sh&app_id={{YOUR_APP_ID}}&app_code={{YOUR_APP_CODE}}",
+			"method": "GET",
+			"preRequestScript": "",
+			"tests": ""
+		},
+		{
+			"collectionId": "4be59ea3-f211-99e7-55f6-56b4c0f5085c",
+			"id": "8c898308-d141-fc72-9a94-09770bcde11b",
+			"name": "Avoiding a specified area",
+			"description": "*Request a route avoiding a defined area by specifying a bounding box*\n\nAreas of road can be avoided through adding an array of bounding boxes to the `avoidareas` parameter added to the request URL.\n\n\n\n* **waypoint0**  `latlng`\n \\- Start point of the route.    e.g. `52.515,13.377`\n\n* **waypoint1**  `latlng`\n \\- Second point through which the route must pass.    e.g. `52.6172,13.3833`\n\n* **mode**  `text`\n \\- Routing mode determines how the route is calculated.    e.g. `fastest;car;traffic:disabled.`\n\n* **avoidareas**  `bbox`\n \\- Areas which the route must not cross - an array of bounding boxes\n\n* **app_id**  `text`\n \\- A 20 byte Base64 URL-safe encoded string used for the authentication of the client application.    You must include an `app_id` with every request.\n\n* **app_code**  `text`\n \\- A 20 byte Base64 URL-safe encoded string used for the authentication of the client application.    You must include an `app_code` with every request.",
+			"data": [
+				{
+					"key": "waypoint0",
+					"value": "50.0522,8.2180",
+					"type": "text"
+				},
+				{
+					"key": "waypoint1",
+					"value": "50.0957,8.5280",
+					"type": "text"
+				},
+				{
+					"key": "mode",
+					"value": "fastest;truck",
+					"type": "text"
+				},
+				{
+					"key": "avoidareas",
+					"value": "50.1062,8.2811;50.0180,8.4253",
+					"type": "text"
+				},
+				{
+					"key": "app_id",
+					"value": "{{YOUR_APP_ID}}",
+					"type": "text"
+				},
+				{
+					"key": "app_code",
+					"value": "{{YOUR_APP_CODE}}",
+					"type": "text"
+				}
+			],
+			"dataMode": "params",
+			"timestamp": 1448890145829,
+			"headers": "",
+			"url": "https://legacy.route.cit.api.here.com/routing/6.2/calculateroute.json?waypoint0=50.0522,8.2180&waypoint1=50.0957,8.5280&mode=fastest;truck&avoidareas=50.1062,8.2811;50.0180,8.4253&app_id={{YOUR_APP_ID}}&app_code={{YOUR_APP_CODE}}",
+			"method": "GET",
+			"preRequestScript": "",
+			"tests": ""
+		},
+		{
+			"collectionId": "4be59ea3-f211-99e7-55f6-56b4c0f5085c",
+			"id": "93549b26-7311-04b5-6879-05c6dac64bef",
+			"name": "Weight Restrictions",
+			"description": "*Request a truck route for a heavy vehicle specifying axel or laden weights*\n\nWeight restrictions can be added to a routing request, through adding the `permittedgrossweight`,  `limitedweight`, `weightperaxle` and `trailerweight` parameters to the request URL.\n\n\n\n* **waypoint0**  `latlng`\n \\- Start point of the route.    e.g. `52.515,13.377`\n\n* **waypoint1**  `latlng`\n \\- Second point through which the route must pass.    e.g. `52.6172,13.3833`\n\n* **mode**  `text`\n \\- Routing mode determines how the route is calculated.    e.g. `fastest;car;traffic:disabled.`\n\n* **permittedgrossweight**  `number`\n \\- Truck routing only, permitted gross weight of the vehicle in tons.\n\n* **limitedweight**  `number`\n \\- Truck routing only, vehicle weight including trailers and shipped goods, in tons.\n\n* **weightperaxle**  `number`\n \\- The maximum weight each axel of the vehicle is permitted to carry in tons\n\n* **trailerweight**  `number`\n \\- The maximum weight of the trailer of the vehicle  in tons - the `hasTrailer` parameter must also be set\n\n* **app_id**  `text`\n \\- A 20 byte Base64 URL-safe encoded string used for the authentication of the client application.    You must include an `app_id` with every request.\n\n* **app_code**  `text`\n \\- A 20 byte Base64 URL-safe encoded string used for the authentication of the client application.    You must include an `app_code` with every request.",
+			"data": [
+				{
+					"key": "waypoint0",
+					"value": "39.2923,-76.6088",
+					"type": "text"
+				},
+				{
+					"key": "waypoint1",
+					"value": "39.2976,-76.5940",
+					"type": "text"
+				},
+				{
+					"key": "mode",
+					"value": "fastest;truck;traffic:disabled;",
+					"type": "text"
+				},
+				{
+					"key": "permittedgrossweight",
+					"value": "30",
+					"type": "text"
+				},
+				{
+					"key": "limitedweight",
+					"value": "20",
+					"type": "text"
+				},
+				{
+					"key": "weightperaxle",
+					"value": "10",
+					"type": "text"
+				},
+				{
+					"key": "trailerweight",
+					"value": "30",
+					"type": "text"
+				},
+				{
+					"key": "app_id",
+					"value": "{{YOUR_APP_ID}}",
+					"type": "text"
+				},
+				{
+					"key": "app_code",
+					"value": "{{YOUR_APP_CODE}}",
+					"type": "text"
+				}
+			],
+			"dataMode": "params",
+			"timestamp": 1448890146093,
+			"headers": "",
+			"url": "https://legacy.route.cit.api.here.com/routing/6.2/calculateroute.json?waypoint0=39.2923,-76.6088&waypoint1=39.2976,-76.5940&mode=fastest;truck;traffic:disabled;&permittedgrossweight=30&limitedweight=20&weightperaxle=10&trailerweight=30&app_id={{YOUR_APP_ID}}&app_code={{YOUR_APP_CODE}}",
+			"method": "GET",
+			"preRequestScript": "",
+			"tests": ""
+		},
+		{
+			"collectionId": "4be59ea3-f211-99e7-55f6-56b4c0f5085c",
+			"id": "98eec566-f409-ff6b-b0b7-15083af4c383",
+			"name": "Multi-language support",
+			"description": "*Request truck route instructions in a foreign language*\n\nThe language of the maneuver  instructions can be altered by setting the `language` in the request URL.  Consult the  Enterprise Routing API Reference for a full list of available languages.\n\n\n\n* **waypoint0**  `latlng`\n \\- Start point of the route.    e.g. `52.515,13.377`\n\n* **waypoint1**  `latlng`\n \\- Second point through which the route must pass.    e.g. `52.6172,13.3833`\n\n* **mode**  `text`\n \\- Routing mode determines how the route is calculated.    e.g. `fastest;car;traffic:disabled.`\n\n* **language**  `enum`\n \\- Language used for maneuever instructions. For example `en-us`\n\n Valid values are : `en-uk` - British English, `en-us` - American English, `fr-fr` - French, `de-de` - German, `es-es` - Spanish, `it-it` - Italian\n\n* **app_id**  `text`\n \\- A 20 byte Base64 URL-safe encoded string used for the authentication of the client application.    You must include an `app_id` with every request.\n\n* **app_code**  `text`\n \\- A 20 byte Base64 URL-safe encoded string used for the authentication of the client application.    You must include an `app_code` with every request.",
+			"data": [
+				{
+					"key": "waypoint0",
+					"value": "41.9798,-87.8801",
+					"type": "text"
+				},
+				{
+					"key": "waypoint1",
+					"value": "41.9043,-87.9216",
+					"type": "text"
+				},
+				{
+					"key": "mode",
+					"value": "fastest;truck;traffic:disabled;",
+					"type": "text"
+				},
+				{
+					"key": "language",
+					"value": "fr-fr",
+					"type": "text"
+				},
+				{
+					"key": "app_id",
+					"value": "{{YOUR_APP_ID}}",
+					"type": "text"
+				},
+				{
+					"key": "app_code",
+					"value": "{{YOUR_APP_CODE}}",
+					"type": "text"
+				}
+			],
+			"dataMode": "params",
+			"timestamp": 1448890145948,
+			"headers": "",
+			"url": "https://legacy.route.cit.api.here.com/routing/6.2/calculateroute.json?waypoint0=41.9798,-87.8801&waypoint1=41.9043,-87.9216&mode=fastest;truck;traffic:disabled;&language=fr-fr&app_id={{YOUR_APP_ID}}&app_code={{YOUR_APP_CODE}}",
+			"method": "GET",
+			"preRequestScript": "",
+			"tests": ""
+		},
+		{
+			"collectionId": "4be59ea3-f211-99e7-55f6-56b4c0f5085c",
+			"id": "9d3c765f-bbb9-0e02-d592-7ffe05e109b0",
+			"name": "Hazardous Goods",
+			"description": "*Request a truck route for a vehicle transporting hazardous goods*\n\nEnvironmental restrictions can be added to the routing request, through adding the `shippedhazardousgoods` parameter to the request URL.\n\n\n\n* **waypoint0**  `latlng`\n \\- Start point of the route.    e.g. `52.515,13.377`\n\n* **waypoint1**  `latlng`\n \\- Second point through which the route must pass.    e.g. `52.6172,13.3833`\n\n* **mode**  `text`\n \\- Routing mode determines how the route is calculated.    e.g. `fastest;car;traffic:disabled.`\n\n* **shippedhazardousgoods**  `multi-enum`\n \\- Truck routing only, list of hazardous materials in the vehicle.\n\n Valid values are : `combustible`, `corrosive`, `explosive`, `flammable`, `gas`, `harmfulToWater`, `organic`, `other`, `poison`, `poisonousInhalation`, `radioActive`\n\n* **app_id**  `text`\n \\- A 20 byte Base64 URL-safe encoded string used for the authentication of the client application.    You must include an `app_id` with every request.\n\n* **app_code**  `text`\n \\- A 20 byte Base64 URL-safe encoded string used for the authentication of the client application.    You must include an `app_code` with every request.",
+			"data": [
+				{
+					"key": "waypoint0",
+					"value": "52.5851,13.2795",
+					"type": "text"
+				},
+				{
+					"key": "waypoint1",
+					"value": "52.5369,13.2645",
+					"type": "text"
+				},
+				{
+					"key": "mode",
+					"value": "fastest;truck",
+					"type": "text"
+				},
+				{
+					"key": "shippedhazardousgoods",
+					"value": "flammable,harmfulToWater",
+					"type": "text"
+				},
+				{
+					"key": "app_id",
+					"value": "{{YOUR_APP_ID}}",
+					"type": "text"
+				},
+				{
+					"key": "app_code",
+					"value": "{{YOUR_APP_CODE}}",
+					"type": "text"
+				}
+			],
+			"dataMode": "params",
+			"timestamp": 1448890146003,
+			"headers": "",
+			"url": "https://legacy.route.cit.api.here.com/routing/6.2/calculateroute.json?waypoint0=52.5851,13.2795&waypoint1=52.5369,13.2645&mode=fastest;truck&shippedhazardousgoods=flammable,harmfulToWater&app_id={{YOUR_APP_ID}}&app_code={{YOUR_APP_CODE}}",
+			"method": "GET",
+			"preRequestScript": "",
+			"tests": ""
+		},
+		{
+			"collectionId": "4be59ea3-f211-99e7-55f6-56b4c0f5085c",
+			"id": "a7b76d83-dfdd-8b1f-1859-4771f745ade7",
+			"name": "Time-based Reverse Flow",
+			"description": "*Request a list of path segments that will reach a destination within a given time*\n\nTime-based reverse flow requests are made using the `reverseflow` endpoint and specifying the `destination` and `time` parameters.\n\n\n\n* **mode**  `text`\n \\- Routing mode determines how the route is calculated.    e.g. `fastest;car;traffic:disabled.`\n\n* **destination**  `latlng`\n \\- Destination of the reverse flow calculation.    e.g. `52.515,13.377`\n\n* **time**  `text`\n \\- Travel time for the isoline.    e.g. `PT0H05M`\n\n* **app_id**  `text`\n \\- A 20 byte Base64 URL-safe encoded string used for the authentication of the client application.    You must include an `app_id` with every request.\n\n* **app_code**  `text`\n \\- A 20 byte Base64 URL-safe encoded string used for the authentication of the client application.    You must include an `app_code` with every request.",
+			"data": [
+				{
+					"key": "mode",
+					"value": "fastest;car",
+					"type": "text"
+				},
+				{
+					"key": "destination",
+					"value": "52.5160,13.3778",
+					"type": "text"
+				},
+				{
+					"key": "time",
+					"value": "PT0H02M",
+					"type": "text"
+				},
+				{
+					"key": "app_id",
+					"value": "{{YOUR_APP_ID}}",
+					"type": "text"
+				},
+				{
+					"key": "app_code",
+					"value": "{{YOUR_APP_CODE}}",
+					"type": "text"
+				}
+			],
+			"dataMode": "params",
+			"timestamp": 1448890145507,
+			"headers": "",
+			"url": "https://legacy.route.cit.api.here.com/routing/6.2/reverseflow.json?mode=fastest;car&destination=52.5160,13.3778&time=PT0H02M&app_id={{YOUR_APP_ID}}&app_code={{YOUR_APP_CODE}}",
+			"method": "GET",
+			"preRequestScript": "",
+			"tests": ""
+		},
+		{
+			"collectionId": "4be59ea3-f211-99e7-55f6-56b4c0f5085c",
+			"id": "ce65b569-359d-9b08-047b-6f0bf9c938f8",
+			"name": "Changing from the metric system",
+			"description": "*Request a truck route with instructional distances given in miles and yards.*\n\nThe unit of measurement of the maneuver instructions can be altered by setting the `metricSystem` parameter to `imperial` in the request URL.\n\n\n\n* **waypoint0**  `latlng`\n \\- Start point of the route.    e.g. `52.515,13.377`\n\n* **waypoint1**  `latlng`\n \\- Second point through which the route must pass.    e.g. `52.6172,13.3833`\n\n* **mode**  `text`\n \\- Routing mode determines how the route is calculated.    e.g. `fastest;car;traffic:disabled.`\n\n* **metricSystem**  `enum`\n \\- The system of units to be used with instructions. Either imperial or metric. Metric is the default.\n\n Valid values are : `imperial`, `metric`\n\n* **app_id**  `text`\n \\- A 20 byte Base64 URL-safe encoded string used for the authentication of the client application.    You must include an `app_id` with every request.\n\n* **app_code**  `text`\n \\- A 20 byte Base64 URL-safe encoded string used for the authentication of the client application.    You must include an `app_code` with every request.",
+			"data": [
+				{
+					"key": "waypoint0",
+					"value": "41.9798,-87.8801",
+					"type": "text"
+				},
+				{
+					"key": "waypoint1",
+					"value": "41.9043,-87.9216",
+					"type": "text"
+				},
+				{
+					"key": "mode",
+					"value": "fastest;truck",
+					"type": "text"
+				},
+				{
+					"key": "metricSystem",
+					"value": "imperial",
+					"type": "text"
+				},
+				{
+					"key": "app_id",
+					"value": "{{YOUR_APP_ID}}",
+					"type": "text"
+				},
+				{
+					"key": "app_code",
+					"value": "{{YOUR_APP_CODE}}",
+					"type": "text"
+				}
+			],
+			"dataMode": "params",
+			"timestamp": 1448890145888,
+			"headers": "",
+			"url": "https://legacy.route.cit.api.here.com/routing/6.2/calculateroute.json?waypoint0=41.9798,-87.8801&waypoint1=41.9043,-87.9216&mode=fastest;truck&metricSystem=imperial&app_id={{YOUR_APP_ID}}&app_code={{YOUR_APP_CODE}}",
+			"method": "GET",
+			"preRequestScript": "",
+			"tests": ""
+		},
+		{
+			"collectionId": "4be59ea3-f211-99e7-55f6-56b4c0f5085c",
+			"id": "d0ad52de-a6f3-bd7e-d34f-ee3e66d39d9a",
+			"name": "Truck Route from A to B",
+			"description": "*Request a truck route between two points*\n\nFastest truck routes can be requested by setting the `mode` parameter to `fastest;truck` in the request URL.\n\n\n\n* **waypoint0**  `latlng`\n \\- Start point of the route.    e.g. `52.515,13.377`\n\n* **waypoint1**  `latlng`\n \\- Second point through which the route must pass.    e.g. `52.6172,13.3833`\n\n* **mode**  `text`\n \\- Routing mode determines how the route is calculated.    e.g. `fastest;car;traffic:disabled.`\n\n* **app_id**  `text`\n \\- A 20 byte Base64 URL-safe encoded string used for the authentication of the client application.    You must include an `app_id` with every request.\n\n* **app_code**  `text`\n \\- A 20 byte Base64 URL-safe encoded string used for the authentication of the client application.    You must include an `app_code` with every request.",
+			"data": [
+				{
+					"key": "waypoint0",
+					"value": "41.9798,-87.8801",
+					"type": "text"
+				},
+				{
+					"key": "waypoint1",
+					"value": "41.9043,-87.9216",
+					"type": "text"
+				},
+				{
+					"key": "mode",
+					"value": "fastest;truck",
+					"type": "text"
+				},
+				{
+					"key": "app_id",
+					"value": "{{YOUR_APP_ID}}",
+					"type": "text"
+				},
+				{
+					"key": "app_code",
+					"value": "{{YOUR_APP_CODE}}",
+					"type": "text"
+				}
+			],
+			"dataMode": "params",
+			"timestamp": 1448890145660,
+			"headers": "",
+			"url": "https://legacy.route.cit.api.here.com/routing/6.2/calculateroute.json?waypoint0=41.9798,-87.8801&waypoint1=41.9043,-87.9216&mode=fastest;truck&app_id={{YOUR_APP_ID}}&app_code={{YOUR_APP_CODE}}",
+			"method": "GET",
+			"preRequestScript": "",
+			"tests": ""
+		},
+		{
+			"collectionId": "4be59ea3-f211-99e7-55f6-56b4c0f5085c",
+			"id": "d78c2e43-33ba-9cf2-8aae-c1b2398f8d82",
+			"name": "Toll Summary by Country",
+			"description": "*Request a truck route with toll road summary by country*\n\nRoute attributes can be suppressed through adding the `routeattributes=none` to the request URL. Toll information can be requested through adding `sc` to the value of the `routeattributes` parameter.\n\n\n\n* **waypoint0**  `latlng`\n \\- Start point of the route.    e.g. `52.515,13.377`\n\n* **waypoint1**  `latlng`\n \\- Second point through which the route must pass.    e.g. `52.6172,13.3833`\n\n* **mode**  `text`\n \\- Routing mode determines how the route is calculated.    e.g. `fastest;car;traffic:disabled.`\n\n* **routeattributes**  `multi-enum`\n \\- Which route attributes are included in the response.    e.g. `shape`\n\n Valid values are : `none`, `bb` - boundingBox, `lg` - legs, `no` - notes, `sh` - shape, `sm` - summary, `sc` - summaryByCountry, `wp` - waypoints\n\n* **app_id**  `text`\n \\- A 20 byte Base64 URL-safe encoded string used for the authentication of the client application.    You must include an `app_id` with every request.\n\n* **app_code**  `text`\n \\- A 20 byte Base64 URL-safe encoded string used for the authentication of the client application.    You must include an `app_code` with every request.",
+			"data": [
+				{
+					"key": "waypoint0",
+					"value": "52.3182,13.5540",
+					"type": "text"
+				},
+				{
+					"key": "waypoint1",
+					"value": "48.7416,2.3626",
+					"type": "text"
+				},
+				{
+					"key": "mode",
+					"value": "fastest;truck",
+					"type": "text"
+				},
+				{
+					"key": "routeattributes",
+					"value": "none,sc",
+					"type": "text"
+				},
+				{
+					"key": "app_id",
+					"value": "{{YOUR_APP_ID}}",
+					"type": "text"
+				},
+				{
+					"key": "app_code",
+					"value": "{{YOUR_APP_CODE}}",
+					"type": "text"
+				}
+			],
+			"dataMode": "params",
+			"timestamp": 1448890145973,
+			"headers": "",
+			"url": "https://legacy.route.cit.api.here.com/routing/6.2/calculateroute.json?waypoint0=52.3182,13.5540&waypoint1=48.7416,2.3626&mode=fastest;truck&routeattributes=none,sc&app_id={{YOUR_APP_ID}}&app_code={{YOUR_APP_CODE}}",
+			"method": "GET",
+			"preRequestScript": "",
+			"tests": ""
+		},
+		{
+			"collectionId": "4be59ea3-f211-99e7-55f6-56b4c0f5085c",
+			"id": "de4647f7-b744-6298-ba5e-da421f343a7a",
+			"name": "Link Information for a location",
+			"description": "*Request detailed information about a path segment in the routing network given one of its coordinates*\n\nLink information can be retrieved using the `getlinkinfo` endpoint, and specifying a coordinate (<i>52.5308°N, 13.3846°E</i>) using the `waypoint` parameter.\n\n\n\n* **waypoint**  `latlng`\n \\- Point through which the route must pass.    e.g. `52.515,13.377`\n\n* **app_id**  `text`\n \\- A 20 byte Base64 URL-safe encoded string used for the authentication of the client application.    You must include an `app_id` with every request.\n\n* **app_code**  `text`\n \\- A 20 byte Base64 URL-safe encoded string used for the authentication of the client application.    You must include an `app_code` with every request.",
+			"data": [
+				{
+					"key": "waypoint",
+					"value": "52.5308,13.3846",
+					"type": "text"
+				},
+				{
+					"key": "app_id",
+					"value": "{{YOUR_APP_ID}}",
+					"type": "text"
+				},
+				{
+					"key": "app_code",
+					"value": "{{YOUR_APP_CODE}}",
+					"type": "text"
+				}
+			],
+			"dataMode": "params",
+			"timestamp": 1448890145478,
+			"headers": "",
+			"url": "https://legacy.route.cit.api.here.com/routing/6.2/getlinkinfo.json?waypoint=52.5308,13.3846&app_id={{YOUR_APP_ID}}&app_code={{YOUR_APP_CODE}}",
+			"method": "GET",
+			"preRequestScript": "",
+			"tests": ""
+		},
+		{
+			"collectionId": "4be59ea3-f211-99e7-55f6-56b4c0f5085c",
+			"id": "f83bb152-4125-16af-ef5a-225df8b763cf",
+			"name": "Distance Isoline Calculation",
+			"description": "*Request the shape outlining the area that can be reached within a defined distance of travel*\n\nTravel distance isoline calculations are made using the `calculateisoline` endpoint and specifying the `start` and `distance` parameters.\n\n\n\n* **mode**  `text`\n \\- Routing mode determines how the route is calculated.    e.g. `fastest;car;traffic:disabled.`\n\n* **start**  `latlng`\n \\- Center of the isoline request.    e.g. `52.515,13.377`\n\n* **distance**  `number`\n \\- Distance of the isoline (from the center point) in meters\n\n* **app_id**  `text`\n \\- A 20 byte Base64 URL-safe encoded string used for the authentication of the client application.    You must include an `app_id` with every request.\n\n* **app_code**  `text`\n \\- A 20 byte Base64 URL-safe encoded string used for the authentication of the client application.    You must include an `app_code` with every request.",
+			"data": [
+				{
+					"key": "mode",
+					"value": "fastest;pedestrian",
+					"type": "text"
+				},
+				{
+					"key": "start",
+					"value": "52.5160,13.3778",
+					"type": "text"
+				},
+				{
+					"key": "distance",
+					"value": "2000",
+					"type": "text"
+				},
+				{
+					"key": "app_id",
+					"value": "{{YOUR_APP_ID}}",
+					"type": "text"
+				},
+				{
+					"key": "app_code",
+					"value": "{{YOUR_APP_CODE}}",
+					"type": "text"
+				}
+			],
+			"dataMode": "params",
+			"timestamp": 1448890145590,
+			"headers": "",
+			"url": "https://legacy.route.cit.api.here.com/routing/6.2/calculateisoline.json?mode=fastest;pedestrian&start=52.5160,13.3778&distance=2000&app_id={{YOUR_APP_ID}}&app_code={{YOUR_APP_CODE}}",
+			"method": "GET",
+			"preRequestScript": "",
+			"tests": ""
+		},
+		{
+			"collectionId": "4be59ea3-f211-99e7-55f6-56b4c0f5085c",
+			"id": "fdd99082-74eb-1c00-3597-5e234bc27f3f",
+			"name": "Truck Route via an Intermediate Point",
+			"description": "*Request a truck route from A to C with an additional stopover at point B*\n\nAdditional waypoint parameters (`waypoint0`, `waypoint1`, `waypoint2` etc...) can be added consecutively to the request URL.\n\n\n\n* **waypoint0**  `latlng`\n \\- Start point of the route.    e.g. `52.515,13.377`\n\n* **waypoint1**  `latlng`\n \\- Second point through which the route must pass.    e.g. `52.6172,13.3833`\n\n* **waypoint2**  `latlng`\n \\- Third point through which the route must pass.\n\n* **mode**  `text`\n \\- Routing mode determines how the route is calculated.    e.g. `fastest;car;traffic:disabled.`\n\n* **app_id**  `text`\n \\- A 20 byte Base64 URL-safe encoded string used for the authentication of the client application.    You must include an `app_id` with every request.\n\n* **app_code**  `text`\n \\- A 20 byte Base64 URL-safe encoded string used for the authentication of the client application.    You must include an `app_code` with every request.",
+			"data": [
+				{
+					"key": "waypoint0",
+					"value": "50.0522,8.2180",
+					"type": "text"
+				},
+				{
+					"key": "waypoint1",
+					"value": "50.0460,8.5561",
+					"type": "text"
+				},
+				{
+					"key": "waypoint2",
+					"value": "50.0957,8.5280",
+					"type": "text"
+				},
+				{
+					"key": "mode",
+					"value": "fastest;truck",
+					"type": "text"
+				},
+				{
+					"key": "app_id",
+					"value": "{{YOUR_APP_ID}}",
+					"type": "text"
+				},
+				{
+					"key": "app_code",
+					"value": "{{YOUR_APP_CODE}}",
+					"type": "text"
+				}
+			],
+			"dataMode": "params",
+			"timestamp": 1448890146130,
+			"headers": "",
+			"url": "https://legacy.route.cit.api.here.com/routing/6.2/calculateroute.json?waypoint0=50.0522,8.2180&waypoint1=50.0460,8.5561&waypoint2=50.0957,8.5280&mode=fastest;truck&app_id={{YOUR_APP_ID}}&app_code={{YOUR_APP_CODE}}",
+			"method": "GET",
+			"preRequestScript": "",
+			"tests": ""
+		}
+	]
+}

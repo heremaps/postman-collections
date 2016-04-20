@@ -1,1 +1,103 @@
-{"id":"554248f8cccb443f1f6ddb58","name":"Batch Geocoder API","description":"Examples for batch_geocoding_nlp_6.2.34 or higher","order":[],"folders":[],"timestamp":1448890054135,"synced":false,"owner":0,"sharedWithTeam":false,"subscribed":false,"remoteLink":"","public":false,"write":true,"requests":[{"collectionId":"554248f8cccb443f1f6ddb58","id":"download-geocoded-data","name":"Download Geocoded Data","description":"*Download a zipped geocoded dataset from a completed job*\n\nTo download the results, make a request to the `jobs/requestId/result `endpoint and unzip the file.\n\n\n\n* **app_id**  `text`\n \\- A 20 byte Base64 URL-safe encoded string used for the authentication of the client application.    You must include an `app_id` with every request.  \n\n* **app_code**  `text`\n \\- A 20 byte Base64 URL-safe encoded string used for the authentication of the client application.    You must include an `app_code` with every request.  \n\n* **Content-Type**  `header`\n\n  Specifies the media type of the body in the GET request.  ","data":[{"key":"app_id","value":"{{YOUR_APP_ID}}","type":"text"},{"key":"app_code","value":"{{YOUR_APP_CODE}}","type":"text"}],"dataMode":"params","timestamp":1448890054017,"headers":"Content-Type: application/octet-stream","url":"https://batch.geocoder.cit.api.here.com/6.2/jobs/puwWrv32YOU24y8MNoUr793chFAI36aC/result?app_id={{YOUR_APP_ID}}&app_code={{YOUR_APP_CODE}}","method":"GET"},{"collectionId":"554248f8cccb443f1f6ddb58","id":"batch-geocode-job-status","name":"Batch Geocode Job Status","description":"*Request the status of a batch geocoder job*\n\nTo check the status, make a request to the `jobs` endpoint  appending the `requestId` and using the parameter `action=status `\n  \n\n\n\n* **action**  `enum`\n \\- Type of request  \n\n Valid values are : `cancel`, `runs`, `status`\n\n* **app_code**  `text`\n \\- A 20 byte Base64 URL-safe encoded string used for the authentication of the client application.    You must include an `app_code` with every request.  \n\n* **app_id**  `text`\n \\- A 20 byte Base64 URL-safe encoded string used for the authentication of the client application.    You must include an `app_id` with every request.  ","data":[{"key":"action","value":"status","type":"text"},{"key":"app_code","value":"{{YOUR_APP_CODE}}","type":"text"},{"key":"app_id","value":"{{YOUR_APP_ID}}","type":"text"}],"dataMode":"params","timestamp":1448890054053,"headers":"","url":"https://batch.geocoder.cit.api.here.com/6.2/jobs/puwWrv32YOU24y8MNoUr793chFAI36aC?action=status&app_code={{YOUR_APP_CODE}}&app_id={{YOUR_APP_ID}}","method":"GET"},{"collectionId":"554248f8cccb443f1f6ddb58","id":"batch-geocode-addresses","name":"Batch Geocode Addresses","description":"* Start asynchronously geocoding a large set of addresses in one batch*\n\nSubmit an HTTP POST request with `action=run` and attach the input data to the body. \n  \n\n\n\n* **gen**  `number`\n \\- Enables/disables backward incompatible behavior in the API\n\n* **app_id**  `text`\n \\- A 20 byte Base64 URL-safe encoded string used for the authentication of the client application.    You must include an `app_id` with every request.\n\n* **app_code**  `text`\n \\- A 20 byte Base64 URL-safe encoded string used for the authentication of the client application.    You must include an `app_code` with every request.\n\n* **action**  `enum`\n \\- Type of request\n\n Valid values are : `cancel`, `run`, `status`\n\n* **mailto**  `text`\n \\- Email address where completion notification is sent.\n\n* **header**  `enum`\n \\- If `true`, a header row is included before the results in the output.  \n\n Valid values are : `false`, `true`\n\n* **indelim**  `text`\n \\- \n\n* **outdelim**  `text`\n \\- \n\n* **outcols**  `text`\n \\- \n\n* **outputCombined**  `enum`\n \\- \n\n Valid values are : `true`, `false`","data":[{"key":"gen","value":"8","type":"text"},{"key":"app_id","value":"{{YOUR_APP_ID}}","type":"text"},{"key":"app_code","value":"{{YOUR_APP_CODE}}","type":"text"},{"key":"action","value":"run","type":"text"},{"key":"mailto","value":"<my_email>","type":"text"},{"key":"header","value":"true","type":"text"},{"key":"indelim","value":"|","type":"text"},{"key":"outdelim","value":"|","type":"text"},{"key":"outcols","value":"displayLatitude,displayLongitude,locationLabel,houseNumber,street,district,city,postalCode,county,state,country","type":"text"},{"key":"outputCombined","value":"false","type":"text"}],"dataMode":"raw","timestamp":1448890054096,"headers":"","url":"https://batch.geocoder.cit.api.here.com/6.2/jobs?gen=8&app_id={{YOUR_APP_ID}}&app_code={{YOUR_APP_CODE}}&action=run&mailto=<my_email>&header=true&indelim=|&outdelim=|&outcols=displayLatitude,displayLongitude,locationLabel,houseNumber,street,district,city,postalCode,county,state,country&outputCombined=false","method":"POST","rawModeData":"recId|searchText|country\n0001|Invalidenstraße 116 10115 Berlin|DEU\n0002|Am Kronberger Hang 8 65824 Schwalbach|DEU\n0003|425 W Randolph St Chicago IL 60606|USA\n0004|One Main Street Cambridge MA 02142|USA\n0005|200 S Mathilda Ave Sunnyvale CA 94086|USA"},{"collectionId":"554248f8cccb443f1f6ddb58","id":"batch-reverse-geocode-locations","name":"Batch Reverse Geocode Locations","description":"*Start asynchronously reverse-geocoding a large set of locations in one batch*\n\nSubmit an HTTP POST request with `action=run` and attach the input data to the body. \n  \n\n\n\n* **gen**  `number`\n \\- Enables/disables backward incompatible behavior in the API\n\n* **app_id**  `text`\n \\- A 20 byte Base64 URL-safe encoded string used for the authentication of the client application.    You must include an `app_id` with every request.\n\n* **app_code**  `text`\n \\- A 20 byte Base64 URL-safe encoded string used for the authentication of the client application.    You must include an `app_code` with every request.\n\n* **action**  `enum`\n \\- \n\n Valid values are : `cancel`, `run`, `status`\n\n* **mailto**  `text`\n \\- \n\n* **header**  `enum`\n \\- \n\n Valid values are : `false`, `true`\n\n* **indelim**  `text`\n \\- \n\n* **outdelim**  `text`\n \\- \n\n* **outcols**  `text`\n \\- \n\n* **outputCombined**  `enum`\n \\- \n\n Valid values are : `true`, `false`\n\n* **mode**  `text`\n \\- ","data":[{"key":"gen","value":"8","type":"text"},{"key":"app_id","value":"{{YOUR_APP_ID}}","type":"text"},{"key":"app_code","value":"{{YOUR_APP_CODE}}","type":"text"},{"key":"action","value":"run","type":"text"},{"key":"mailto","value":"<my_email>","type":"text"},{"key":"header","value":"true","type":"text"},{"key":"indelim","value":"|","type":"text"},{"key":"outdelim","value":"|","type":"text"},{"key":"outcols","value":"displayLatitude,displayLongitude,locationLabel,houseNumber,street,district,city,postalCode,county,state,country","type":"text"},{"key":"outputCombined","value":"false","type":"text"},{"key":"mode","value":"retrieveAddresses","type":"text"}],"dataMode":"raw","timestamp":1448890054132,"headers":"","url":"http://batch.geocoder.cit.api.here.com/6.2/jobs?gen=8&app_id={{YOUR_APP_ID}}&app_code={{YOUR_APP_CODE}}&action=run&mailto=<my_email>&header=true&indelim=|&outdelim=|&outcols=displayLatitude,displayLongitude,locationLabel,houseNumber,street,district,city,postalCode,county,state,country&outputCombined=false&mode=retrieveAddresses","method":"POST","rawModeData":"recId|prox\n0001|52.505308,13.327739,250\n0002|49.917257,8.486488,250\n0003|51.119593,7.399356,250\n0004|49.20012,8.12326,250\n0005|51.116845,7.397318,250\n0006|52.265938,7.976922,250\n0007|48.143131,10.829233,250\n0008|51.770237,7.442682,250\n0009|51.511877,7.461382,250\n0010|52.53,13.391389,250"}]}
+{
+	"id": "e81e8932-ad25-21a6-322c-bea3cb2bcb95",
+	"name": "Batch Geocoder API",
+	"description": "The **HERE Batch Geocoder API** is a web service that allows users to geocode large data sets (hundreds of thousands). Users upload a single input file, the service processes the data asynchronously and returns a single file with the results.\n\nThis example set works with version **6.2.34** or higher\n\nAdditional information can be found on [developer.here.com](https://developer.here.com/rest-apis/documentation/batch-geocoder)",
+	"order": [
+		"eb8fed66-9983-beed-3f65-dcfa991fcd45",
+		"8f4ea13a-c983-9dab-3705-590208a953e6",
+		"c6e4c769-cfc4-5be6-1b8c-6964507aadd7",
+		"acd5cac8-bcd1-5430-5831-c2e17463efa3"
+	],
+	"folders": [],
+	"timestamp": 1448890054135,
+	"owner": 0,
+	"remoteLink": "",
+	"public": false,
+	"requests": [
+		{
+			"collectionId": "e81e8932-ad25-21a6-322c-bea3cb2bcb95",
+			"data": [
+				{
+					"key": "action",
+					"type": "text",
+					"value": "status"
+				},
+				{
+					"key": "app_code",
+					"type": "text",
+					"value": "{{YOUR_APP_CODE}}"
+				},
+				{
+					"key": "app_id",
+					"type": "text",
+					"value": "{{YOUR_APP_ID}}"
+				}
+			],
+			"dataMode": "params",
+			"description": "*Request the status of a batch geocoder job*\n\nTo check the status, make a request to the `jobs` endpoint  appending the `requestId` and using the parameter `action=status `\n  \n\n\n\n* **action**  `enum`\n \\- Type of request  \n\n Valid values are : `cancel`, `runs`, `status`\n\n* **app_code**  `text`\n \\- A 20 byte Base64 URL-safe encoded string used for the authentication of the client application.    You must include an `app_code` with every request.  \n\n* **app_id**  `text`\n \\- A 20 byte Base64 URL-safe encoded string used for the authentication of the client application.    You must include an `app_id` with every request.  ",
+			"headers": "",
+			"id": "8f4ea13a-c983-9dab-3705-590208a953e6",
+			"method": "GET",
+			"name": "Batch Geocode Job Status",
+			"timestamp": 1448890054053,
+			"url": "https://batch.geocoder.cit.api.here.com/6.2/jobs/puwWrv32YOU24y8MNoUr793chFAI36aC?action=status&app_code={{YOUR_APP_CODE}}&app_id={{YOUR_APP_ID}}",
+			"preRequestScript": "",
+			"tests": ""
+		},
+		{
+			"collectionId": "e81e8932-ad25-21a6-322c-bea3cb2bcb95",
+			"data": [],
+			"dataMode": "raw",
+			"description": "*Start asynchronously reverse-geocoding a large set of locations in one batch*\n\nSubmit an HTTP POST request with `action=run` and attach the input data to the body. \n  \n\n\n\n* **gen**  `number`\n \\- Enables/disables backward incompatible behavior in the API\n\n* **app_id**  `text`\n \\- A 20 byte Base64 URL-safe encoded string used for the authentication of the client application.    You must include an `app_id` with every request.\n\n* **app_code**  `text`\n \\- A 20 byte Base64 URL-safe encoded string used for the authentication of the client application.    You must include an `app_code` with every request.\n\n* **action**  `enum`\n \\- \n\n Valid values are : `cancel`, `run`, `status`\n\n* **mailto**  `text`\n \\- \n\n* **header**  `enum`\n \\- \n\n Valid values are : `false`, `true`\n\n* **indelim**  `text`\n \\- \n\n* **outdelim**  `text`\n \\- \n\n* **outcols**  `text`\n \\- \n\n* **outputCombined**  `enum`\n \\- \n\n Valid values are : `true`, `false`\n\n* **mode**  `text`\n \\- ",
+			"headers": "",
+			"id": "acd5cac8-bcd1-5430-5831-c2e17463efa3",
+			"method": "POST",
+			"name": "Batch Reverse Geocode Locations",
+			"rawModeData": "recId|prox\n0001|52.505308,13.327739,250\n0002|49.917257,8.486488,250\n0003|51.119593,7.399356,250\n0004|49.20012,8.12326,250\n0005|51.116845,7.397318,250\n0006|52.265938,7.976922,250\n0007|48.143131,10.829233,250\n0008|51.770237,7.442682,250\n0009|51.511877,7.461382,250\n0010|52.53,13.391389,250",
+			"timestamp": 1448890054132,
+			"url": "http://batch.geocoder.cit.api.here.com/6.2/jobs?gen=8&app_id={{YOUR_APP_ID}}&app_code={{YOUR_APP_CODE}}&action=run&mailto=<my_email>&header=true&indelim=|&outdelim=|&outcols=displayLatitude,displayLongitude,locationLabel,houseNumber,street,district,city,postalCode,county,state,country&outputCombined=false&mode=retrieveAddresses",
+			"preRequestScript": "",
+			"tests": ""
+		},
+		{
+			"collectionId": "e81e8932-ad25-21a6-322c-bea3cb2bcb95",
+			"data": [],
+			"dataMode": "raw",
+			"description": "* Start asynchronously geocoding a large set of addresses in one batch*\n\nSubmit an HTTP POST request with `action=run` and attach the input data to the body. \n  \n\n\n\n* **gen**  `number`\n \\- Enables/disables backward incompatible behavior in the API\n\n* **app_id**  `text`\n \\- A 20 byte Base64 URL-safe encoded string used for the authentication of the client application.    You must include an `app_id` with every request.\n\n* **app_code**  `text`\n \\- A 20 byte Base64 URL-safe encoded string used for the authentication of the client application.    You must include an `app_code` with every request.\n\n* **action**  `enum`\n \\- Type of request\n\n Valid values are : `cancel`, `run`, `status`\n\n* **mailto**  `text`\n \\- Email address where completion notification is sent.\n\n* **header**  `enum`\n \\- If `true`, a header row is included before the results in the output.  \n\n Valid values are : `false`, `true`\n\n* **indelim**  `text`\n \\- \n\n* **outdelim**  `text`\n \\- \n\n* **outcols**  `text`\n \\- \n\n* **outputCombined**  `enum`\n \\- \n\n Valid values are : `true`, `false`",
+			"headers": "",
+			"id": "c6e4c769-cfc4-5be6-1b8c-6964507aadd7",
+			"method": "POST",
+			"name": "Batch Geocode Addresses",
+			"rawModeData": "recId|searchText|country\n0001|Invalidenstraße 116 10115 Berlin|DEU\n0002|Am Kronberger Hang 8 65824 Schwalbach|DEU\n0003|425 W Randolph St Chicago IL 60606|USA\n0004|One Main Street Cambridge MA 02142|USA\n0005|200 S Mathilda Ave Sunnyvale CA 94086|USA",
+			"timestamp": 1448890054096,
+			"url": "https://batch.geocoder.cit.api.here.com/6.2/jobs?gen=8&app_id={{YOUR_APP_ID}}&app_code={{YOUR_APP_CODE}}&action=run&mailto=<my_email>&header=true&indelim=|&outdelim=|&outcols=displayLatitude,displayLongitude,locationLabel,houseNumber,street,district,city,postalCode,county,state,country&outputCombined=false",
+			"preRequestScript": "",
+			"tests": ""
+		},
+		{
+			"collectionId": "e81e8932-ad25-21a6-322c-bea3cb2bcb95",
+			"data": [
+				{
+					"key": "app_id",
+					"type": "text",
+					"value": "{{YOUR_APP_ID}}"
+				},
+				{
+					"key": "app_code",
+					"type": "text",
+					"value": "{{YOUR_APP_CODE}}"
+				}
+			],
+			"dataMode": "params",
+			"description": "*Download a zipped geocoded dataset from a completed job*\n\nTo download the results, make a request to the `jobs/requestId/result `endpoint and unzip the file.\n\n\n\n* **app_id**  `text`\n \\- A 20 byte Base64 URL-safe encoded string used for the authentication of the client application.    You must include an `app_id` with every request.  \n\n* **app_code**  `text`\n \\- A 20 byte Base64 URL-safe encoded string used for the authentication of the client application.    You must include an `app_code` with every request.  \n\n* **Content-Type**  `header`\n\n  Specifies the media type of the body in the GET request.  ",
+			"headers": "Content-Type: application/octet-stream",
+			"id": "eb8fed66-9983-beed-3f65-dcfa991fcd45",
+			"method": "GET",
+			"name": "Download Geocoded Data",
+			"timestamp": 1448890054017,
+			"url": "https://batch.geocoder.cit.api.here.com/6.2/jobs/puwWrv32YOU24y8MNoUr793chFAI36aC/result?app_id={{YOUR_APP_ID}}&app_code={{YOUR_APP_CODE}}",
+			"preRequestScript": "",
+			"tests": ""
+		}
+	]
+}
