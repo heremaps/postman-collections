@@ -1,9 +1,9 @@
 {
-	"id": "7947083a-5b81-96b5-b33a-88b823e6bda3",
+	"id": "9b443bec-840a-54dc-28cb-7d2f4226ee47",
 	"name": "Matrix Routing API",
-	"description": "The **HERE Matrix Routing API** is a **deprecated** web service API that offered easy and fast routing across many regions of the world. It has been superceded by the [Routing API 7.x](https://developer.here.com/rest-apis/documentation/routing)\n\nThe Matrix Routing API provided the following capabilities:\n\n* Calculate a matrix of routes between many start points and destinations\n\nThis example set works with version **6.2.61** or higher",
+	"description": "The **HERE Matrix Routing API** is a <font color='red'>**deprecated**</font> web service API that offered easy and fast routing across many regions of the world. It has been superceded by the [Routing API 7.x](https://developer.here.com/rest-apis/documentation/routing)\n\nThe Matrix Routing API provided the following capabilities:\n\n* Calculate a matrix of routes between many start points and destinations\n\nThis example set works with version **6.2.61** or higher",
 	"order": [
-		"a5257b77-b7e6-1988-3aba-e4f1a623c5b3"
+		"73403fb1-e9ad-97bb-3079-4f43202662be"
 	],
 	"folders": [],
 	"timestamp": 1448890114930,
@@ -12,8 +12,8 @@
 	"public": false,
 	"requests": [
 		{
-			"collectionId": "7947083a-5b81-96b5-b33a-88b823e6bda3",
-			"id": "a5257b77-b7e6-1988-3aba-e4f1a623c5b3",
+			"collectionId": "9b443bec-840a-54dc-28cb-7d2f4226ee47",
+			"id": "73403fb1-e9ad-97bb-3079-4f43202662be",
 			"name": "Matrix Routing",
 			"description": "*Simultaneously calculate route distances to multiple locations*\n\nMatrix calculations are made using the `calculatematrix` endpoint and appending a `start0` parameter and multiple consecutively numbered `destination` parameters to the request.\n\n\n\n* **mode**  `text`\n \\- Routing mode determines how the route is calculated.    e.g.fastest;car;traffic:disabled`\n\n* **start0**  `latlng`\n \\- Start point for the route calculations.    e.g. `52.515,13.377`\n\n* **destination0**  `latlng`\n \\- First destination point for the route calculations.    e.g. `52.4,13.5`\n\n* **destination1**  `latlng`\n \\- Second destination point for the route calculations.    e.g. `52.3,13.4`\n\n* **destination2**  `latlng`\n \\- Third destination point for the route calculations.    e.g. `52.6,13.3`\n\n* **app_id**  `text`\n \\- A 20 byte Base64 URL-safe encoded string used for the authentication of the client application.    You must include an `app_id` with every request.\n\n* **app_code**  `text`\n \\- A 20 byte Base64 URL-safe encoded string used for the authentication of the client application.    You must include an `app_code` with every request.",
 			"data": [
