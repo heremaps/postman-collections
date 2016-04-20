@@ -1,235 +1,307 @@
-{ "description" : "Examples for maps_venue_nlp_1.1 or higher",
-  "folders" : [  ],
-  "id" : "55488cd8693ce4574620f390",
-  "name" : "Venue Maps",
-  "order" : [  ],
-  "owner" : 0,
-  "public" : false,
-  "remoteLink" : "",
-  "requests" : [ { "collectionId" : "55488cd8693ce4574620f390",
-        "data" : [ { "key" : "app_id",
-              "type" : "text",
-              "value" : "{{YOUR_APP_ID}}"
-            },
-            { "key" : "app_code",
-              "type" : "text",
-              "value" : "{{YOUR_APP_CODE}}"
-            }
-          ],
-        "dataMode" : "params",
-        "description" : "*Request authentication credentials*\n\nThe `Signature`, `Policy` and `Key-Pair-Id` retrieved must be used for authentication in subsequent requests.\n\n\n\n* **app_id**  `text`\n \\- A 20 byte Base64 URL-safe encoded string used for the authentication of the client application.    You must include an `app_id` with every request.\n\n* **app_code**  `text`\n \\- A 20 byte Base64 URL-safe encoded string used for the authentication of the client application.    You must include an `app_code` with every request.",
-        "headers" : "",
-        "id" : "venue-map-signature",
-        "method" : "GET",
-        "name" : "Obtain Signature",
-        "timestamp" : 1452587335102,
-        "url" : "https://signature.venue.maps.cit.api.here.com/venues/signature/v1?app_id={{YOUR_APP_ID}}&app_code={{YOUR_APP_CODE}}"
-      },
-      { "collectionId" : "55488cd8693ce4574620f390",
-        "data" : [ { "key" : "app_id",
-              "type" : "text",
-              "value" : "{{YOUR_APP_ID}}"
-            },
-            { "key" : "app_code",
-              "type" : "text",
-              "value" : "{{YOUR_APP_CODE}}"
-            },
-            { "key" : "Signature",
-              "type" : "text",
-              "value" : "{{YOUR_SIGNATURE}}"
-            },
-            { "key" : "Policy",
-              "type" : "text",
-              "value" : "{{YOUR_POLICY}}"
-            },
-            { "key" : "Key-Pair-Id",
-              "type" : "text",
-              "value" : "{{YOUR_KEY_PAIR_ID}}"
-            }
-          ],
-        "dataMode" : "params",
-        "description" : "*Request a list of the name and shape of rooms found within a single venue map tile*\n\nRoom data associated with a map tile is requested by passing `tiles-ia` in the path of the request URL, along with a known `floor` and `quadkey` and associated authentication credentials.\n\n\n\n* **app_id**  `text`\n \\- A 20 byte Base64 URL-safe encoded string used for the authentication of the client application.    You must include an `app_id` with every request.\n\n* **app_code**  `text`\n \\- A 20 byte Base64 URL-safe encoded string used for the authentication of the client application.    You must include an `app_code` with every request.\n\n* **Signature**  `text`\n \\- Signature\n\n* **Policy**  `text`\n \\- Policy\n\n* **Key-Pair-Id**  `text`\n \\- Key-Pair-Id",
-        "headers" : "",
-        "id" : "venue-map-tile-ia",
-        "method" : "GET",
-        "name" : "Room Definitions",
-        "timestamp" : 1452587335162,
-        "url" : "https://static-1.venue.maps.cit.api.here.com/0/tiles-ia/L1/12022001101210030210.js?app_id={{YOUR_APP_ID}}&app_code={{YOUR_APP_CODE}}&Signature={{YOUR_SIGNATURE}}&Policy={{YOUR_POLICY}}&Key-Pair-Id={{YOUR_KEY_PAIR_ID}}"
-      },
-      { "collectionId" : "55488cd8693ce4574620f390",
-        "data" : [ { "key" : "app_id",
-              "type" : "text",
-              "value" : "{{YOUR_APP_ID}}"
-            },
-            { "key" : "app_code",
-              "type" : "text",
-              "value" : "{{YOUR_APP_CODE}}"
-            },
-            { "key" : "Signature",
-              "type" : "text",
-              "value" : "{{YOUR_SIGNATURE}}"
-            },
-            { "key" : "Policy",
-              "type" : "text",
-              "value" : "{{YOUR_POLICY}}"
-            },
-            { "key" : "Key-Pair-Id",
-              "type" : "text",
-              "value" : "{{YOUR_KEY_PAIR_ID}}"
-            }
-          ],
-        "dataMode" : "params",
-        "description" : "*Request a list of the places within a venue*\n\nDetails of the individual places to be found within a venue can be obtained by passing `models-poi` in the path of the request URL and appending the `id` of the venue in question along with associated authentication credentials.\n\n\n\n* **app_id**  `text`\n \\- A 20 byte Base64 URL-safe encoded string used for the authentication of the client application.    You must include an `app_id` with every request.\n\n* **app_code**  `text`\n \\- A 20 byte Base64 URL-safe encoded string used for the authentication of the client application.    You must include an `app_code` with every request.\n\n* **Signature**  `text`\n \\- Signature\n\n* **Policy**  `text`\n \\- Policy\n\n* **Key-Pair-Id**  `text`\n \\- Key-Pair-Id",
-        "headers" : "",
-        "id" : "venue-map-pois",
-        "method" : "GET",
-        "name" : "Places within a Venue",
-        "timestamp" : 1452587335199,
-        "url" : "https://static-1.venue.maps.cit.api.here.com/1/models-poi/DM_7205.js?app_id={{YOUR_APP_ID}}&app_code={{YOUR_APP_CODE}}&Signature={{YOUR_SIGNATURE}}&Policy={{YOUR_POLICY}}&Key-Pair-Id={{YOUR_KEY_PAIR_ID}}"
-      },
-      { "collectionId" : "55488cd8693ce4574620f390",
-        "data" : [ { "key" : "app_id",
-              "type" : "text",
-              "value" : "{{YOUR_APP_ID}}"
-            },
-            { "key" : "app_code",
-              "type" : "text",
-              "value" : "{{YOUR_APP_CODE}}"
-            },
-            { "key" : "Signature",
-              "type" : "text",
-              "value" : "{{YOUR_SIGNATURE}}"
-            },
-            { "key" : "Policy",
-              "type" : "text",
-              "value" : "{{YOUR_POLICY}}"
-            },
-            { "key" : "Key-Pair-Id",
-              "type" : "text",
-              "value" : "{{YOUR_KEY_PAIR_ID}}"
-            }
-          ],
-        "dataMode" : "params",
-        "description" : "*Request extended details of places found within a venue*\n\nA full model of a venue can be obtained by passing `models-full` in the path of the request URL and appending the `id` of the venue in question along with associated authentication credentials. \n  \n  Note that the client-side process formatting the JSON response may take some time in older browsers.\n\n\n\n* **app_id**  `text`\n \\- A 20 byte Base64 URL-safe encoded string used for the authentication of the client application.    You must include an `app_id` with every request.\n\n* **app_code**  `text`\n \\- A 20 byte Base64 URL-safe encoded string used for the authentication of the client application.    You must include an `app_code` with every request.\n\n* **Signature**  `text`\n \\- Signature\n\n* **Policy**  `text`\n \\- Policy\n\n* **Key-Pair-Id**  `text`\n \\- Key-Pair-Id",
-        "headers" : "",
-        "id" : "venue-map-full-model",
-        "method" : "GET",
-        "name" : "Full Venue Model",
-        "timestamp" : 1452587335229,
-        "url" : "https://static-1.venue.maps.cit.api.here.com/1/models-full/DM_12321.js?app_id={{YOUR_APP_ID}}&app_code={{YOUR_APP_CODE}}&Signature={{YOUR_SIGNATURE}}&Policy={{YOUR_POLICY}}&Key-Pair-Id={{YOUR_KEY_PAIR_ID}}"
-      },
-      { "collectionId" : "55488cd8693ce4574620f390",
-        "data" : [ { "key" : "bbox",
-              "type" : "text",
-              "value" : "52.5627,13.3260;52.5171,13.4162"
-            },
-            { "key" : "app_id",
-              "type" : "text",
-              "value" : "{{YOUR_APP_ID}}"
-            },
-            { "key" : "app_code",
-              "type" : "text",
-              "value" : "{{YOUR_APP_CODE}}"
-            }
-          ],
-        "dataMode" : "params",
-        "description" : "*Request a list of venues found within a defined area*\n\nA bounding box is specified using the `bbox` parameter in the request URL.\n\n\n\n* **bbox**  `bbox`\n \\- A type of spatial filter. A bounding box specifies the top-right and bottom left corners of an area to search.    e.g. `52.515,13.377;52.134,13.978`\n\n* **app_id**  `text`\n \\- A 20 byte Base64 URL-safe encoded string used for the authentication of the client application.    You must include an `app_id` with every request.\n\n* **app_code**  `text`\n \\- A 20 byte Base64 URL-safe encoded string used for the authentication of the client application.    You must include an `app_code` with every request.",
-        "headers" : "",
-        "id" : "venue-map-discovery",
-        "method" : "GET",
-        "name" : "Venues within a Bounding Box",
-        "timestamp" : 1452587335259,
-        "url" : "https://discovery.venue.maps.cit.api.here.com/venues/discovery/v1?bbox=52.5627,13.3260;52.5171,13.4162&app_id={{YOUR_APP_ID}}&app_code={{YOUR_APP_CODE}}"
-      },
-      { "collectionId" : "55488cd8693ce4574620f390",
-        "data" : [ { "key" : "bbox",
-              "type" : "text",
-              "value" : "43.4461,-90.0556;38.8885,-83.3594"
-            },
-            { "key" : "app_id",
-              "type" : "text",
-              "value" : "{{YOUR_APP_ID}}"
-            },
-            { "key" : "app_code",
-              "type" : "text",
-              "value" : "{{YOUR_APP_CODE}}"
-            }
-          ],
-        "dataMode" : "params",
-        "description" : "*Request an overview of the number venues across a large area*\n\nA bounding box is specified using the `bbox` parameter in the request URL.\n\n\n\n* **bbox**  `bbox`\n \\- A type of spatial filter. A bounding box specifies the top-right and bottom left corners of an area to search.    e.g. `52.515,13.377;52.134,13.978`\n\n* **app_id**  `text`\n \\- A 20 byte Base64 URL-safe encoded string used for the authentication of the client application.    You must include an `app_id` with every request.\n\n* **app_code**  `text`\n \\- A 20 byte Base64 URL-safe encoded string used for the authentication of the client application.    You must include an `app_code` with every request.",
-        "headers" : "",
-        "id" : "venue-map-discovery-cluster",
-        "method" : "GET",
-        "name" : "Venue Clusters within a Bounding Box",
-        "timestamp" : 1452587335290,
-        "url" : "https://discovery.venue.maps.cit.api.here.com/venues/discovery/v1?bbox=43.4461,-90.0556;38.8885,-83.3594&app_id={{YOUR_APP_ID}}&app_code={{YOUR_APP_CODE}}"
-      },
-      { "collectionId" : "55488cd8693ce4574620f390",
-        "data" : [ { "key" : "app_id",
-              "type" : "text",
-              "value" : "{{YOUR_APP_ID}}"
-            },
-            { "key" : "app_code",
-              "type" : "text",
-              "value" : "{{YOUR_APP_CODE}}"
-            },
-            { "key" : "Signature",
-              "type" : "text",
-              "value" : "{{YOUR_SIGNATURE}}"
-            },
-            { "key" : "Policy",
-              "type" : "text",
-              "value" : "{{YOUR_POLICY}}"
-            },
-            { "key" : "Key-Pair-Id",
-              "type" : "text",
-              "value" : "{{YOUR_KEY_PAIR_ID}}"
-            }
-          ],
-        "dataMode" : "params",
-        "description" : "*Request a base64 encoded map tile and associated room definitions with a single request*\n\nA base64 encoded map tile together with the room definitions, is requested by passing `tiles-ia-b64` in the path of the request URL, along with a known `floor` and `quadkey` and associated authentication credentials.\n\n\n\n* **app_id**  `text`\n \\- A 20 byte Base64 URL-safe encoded string used for the authentication of the client application.    You must include an `app_id` with every request.\n\n* **app_code**  `text`\n \\- A 20 byte Base64 URL-safe encoded string used for the authentication of the client application.    You must include an `app_code` with every request.\n\n* **Signature**  `text`\n \\- Signature\n\n* **Policy**  `text`\n \\- Policy\n\n* **Key-Pair-Id**  `text`\n \\- Key-Pair-Id",
-        "headers" : "",
-        "id" : "venue-map-tile-ia-b64",
-        "method" : "GET",
-        "name" : "Base64 Encoded Map Tiles",
-        "timestamp" : 1452587335318,
-        "url" : "https://static-1.venue.maps.cit.api.here.com/0/tiles-ia-b64/L1/12022001101210030210.js?app_id={{YOUR_APP_ID}}&app_code={{YOUR_APP_CODE}}&Signature={{YOUR_SIGNATURE}}&Policy={{YOUR_POLICY}}&Key-Pair-Id={{YOUR_KEY_PAIR_ID}}"
-      },
-      { "collectionId" : "55488cd8693ce4574620f390",
-        "data" : [ { "key" : "app_id",
-              "type" : "text",
-              "value" : "{{YOUR_APP_ID}}"
-            },
-            { "key" : "app_code",
-              "type" : "text",
-              "value" : "{{YOUR_APP_CODE}}"
-            },
-            { "key" : "Signature",
-              "type" : "text",
-              "value" : "{{YOUR_SIGNATURE}}"
-            },
-            { "key" : "Policy",
-              "type" : "text",
-              "value" : "{{YOUR_POLICY}}"
-            },
-            { "key" : "Key-Pair-Id",
-              "type" : "text",
-              "value" : "{{YOUR_KEY_PAIR_ID}}"
-            }
-          ],
-        "dataMode" : "params",
-        "description" : "*Request an individual venue map tile*\n\nIn addition to the usual `app_id` and `app_code`, three additional parameters are required for authentication purposes. The `Signature`, `Policy` and `Key-Pair-Id` parameters have been obtained from a prior request to the `Signature` endpoint.\n\n\n\n* **app_id**  `text`\n \\- A 20 byte Base64 URL-safe encoded string used for the authentication of the client application.    You must include an `app_id` with every request.\n\n* **app_code**  `text`\n \\- A 20 byte Base64 URL-safe encoded string used for the authentication of the client application.    You must include an `app_code` with every request.\n\n* **Signature**  `text`\n \\- Signature\n\n* **Policy**  `text`\n \\- Policy\n\n* **Key-Pair-Id**  `text`\n \\- Key-Pair-Id",
-        "headers" : "",
-        "id" : "venue-map-tile",
-        "method" : "GET",
-        "name" : "Venue Map Tile",
-        "timestamp" : 1452587335351,
-        "url" : "https://static-1.venue.maps.cit.api.here.com/0/tiles-png/L1/12022001101210030210.png?app_id={{YOUR_APP_ID}}&app_code={{YOUR_APP_CODE}}&Signature={{YOUR_SIGNATURE}}&Policy={{YOUR_POLICY}}&Key-Pair-Id={{YOUR_KEY_PAIR_ID}}"
-      }
-    ],
-  "sharedWithTeam" : false,
-  "subscribed" : false,
-  "synced" : false,
-  "timestamp" : 1452587335353,
-  "write" : true
+{
+	"id": "8e3bd102-b4a9-3192-16d6-3b7018ffedd7",
+	"name": "Venue Maps",
+	"description": "The **HERE Venue Maps API** returns detailed up-to-date information on geometry, metadata, Points of Interest (POI) and indoor routing for more than 12 000 venues around the world. \n\nThe Venue Maps API provides solutions for the following high level use cases:\n\n* Discover venues in a certain area of the world\n* Get a venue map image tile\n* Get a venue map JSON tile\n* Get full information of a venue and customize your experience\n\n\nThis example set works with version **1.1** or higher\n\nAdditional information can be found on [developer.here.com](https://developer.here.com/rest-apis/documentation/venue-maps)",
+	"order": [
+		"01ad7275-a0d1-f884-25e7-6d7c7e6fa4b0",
+		"929c1c72-7913-152e-d622-78a94b893c78",
+		"a198b117-aa0c-b0f5-8721-29068df17fa2",
+		"27e58bd1-3c02-b1b1-c3de-5d8613686f9f",
+		"1df226e0-5ee1-ef97-dd97-943bffc6c7d1",
+		"f2ea19cf-285f-4287-647e-0044be689548",
+		"f999e32f-3320-dff9-0e3a-0d9d78475a63",
+		"4579707e-954c-1d23-39a3-55ad26e1eb8e"
+	],
+	"folders": [],
+	"timestamp": 1452587335353,
+	"owner": 0,
+	"remoteLink": "",
+	"public": false,
+	"requests": [
+		{
+			"collectionId": "8e3bd102-b4a9-3192-16d6-3b7018ffedd7",
+			"data": [
+				{
+					"key": "app_id",
+					"type": "text",
+					"value": "{{YOUR_APP_ID}}"
+				},
+				{
+					"key": "app_code",
+					"type": "text",
+					"value": "{{YOUR_APP_CODE}}"
+				}
+			],
+			"dataMode": "params",
+			"description": "*Request authentication credentials*\n\nThe `Signature`, `Policy` and `Key-Pair-Id` retrieved must be used for authentication in subsequent requests.\n\n\n\n* **app_id**  `text`\n \\- A 20 byte Base64 URL-safe encoded string used for the authentication of the client application.    You must include an `app_id` with every request.\n\n* **app_code**  `text`\n \\- A 20 byte Base64 URL-safe encoded string used for the authentication of the client application.    You must include an `app_code` with every request.",
+			"headers": "",
+			"id": "01ad7275-a0d1-f884-25e7-6d7c7e6fa4b0",
+			"method": "GET",
+			"name": "Obtain Signature",
+			"timestamp": 1452587335102,
+			"url": "https://signature.venue.maps.cit.api.here.com/venues/signature/v1?app_id={{YOUR_APP_ID}}&app_code={{YOUR_APP_CODE}}",
+			"preRequestScript": "",
+			"tests": ""
+		},
+		{
+			"collectionId": "8e3bd102-b4a9-3192-16d6-3b7018ffedd7",
+			"data": [
+				{
+					"key": "bbox",
+					"type": "text",
+					"value": "52.5627,13.3260;52.5171,13.4162"
+				},
+				{
+					"key": "app_id",
+					"type": "text",
+					"value": "{{YOUR_APP_ID}}"
+				},
+				{
+					"key": "app_code",
+					"type": "text",
+					"value": "{{YOUR_APP_CODE}}"
+				}
+			],
+			"dataMode": "params",
+			"description": "*Request a list of venues found within a defined area*\n\nA bounding box is specified using the `bbox` parameter in the request URL.\n\n\n\n* **bbox**  `bbox`\n \\- A type of spatial filter. A bounding box specifies the top-right and bottom left corners of an area to search.    e.g. `52.515,13.377;52.134,13.978`\n\n* **app_id**  `text`\n \\- A 20 byte Base64 URL-safe encoded string used for the authentication of the client application.    You must include an `app_id` with every request.\n\n* **app_code**  `text`\n \\- A 20 byte Base64 URL-safe encoded string used for the authentication of the client application.    You must include an `app_code` with every request.",
+			"headers": "",
+			"id": "1df226e0-5ee1-ef97-dd97-943bffc6c7d1",
+			"method": "GET",
+			"name": "Venues within a Bounding Box",
+			"timestamp": 1452587335259,
+			"url": "https://discovery.venue.maps.cit.api.here.com/venues/discovery/v1?bbox=52.5627,13.3260;52.5171,13.4162&app_id={{YOUR_APP_ID}}&app_code={{YOUR_APP_CODE}}",
+			"preRequestScript": "",
+			"tests": ""
+		},
+		{
+			"collectionId": "8e3bd102-b4a9-3192-16d6-3b7018ffedd7",
+			"data": [
+				{
+					"key": "app_id",
+					"type": "text",
+					"value": "{{YOUR_APP_ID}}"
+				},
+				{
+					"key": "app_code",
+					"type": "text",
+					"value": "{{YOUR_APP_CODE}}"
+				},
+				{
+					"key": "Signature",
+					"type": "text",
+					"value": "{{YOUR_SIGNATURE}}"
+				},
+				{
+					"key": "Policy",
+					"type": "text",
+					"value": "{{YOUR_POLICY}}"
+				},
+				{
+					"key": "Key-Pair-Id",
+					"type": "text",
+					"value": "{{YOUR_KEY_PAIR_ID}}"
+				}
+			],
+			"dataMode": "params",
+			"description": "*Request extended details of places found within a venue*\n\nA full model of a venue can be obtained by passing `models-full` in the path of the request URL and appending the `id` of the venue in question along with associated authentication credentials. \n  \n  Note that the client-side process formatting the JSON response may take some time in older browsers.\n\n\n\n* **app_id**  `text`\n \\- A 20 byte Base64 URL-safe encoded string used for the authentication of the client application.    You must include an `app_id` with every request.\n\n* **app_code**  `text`\n \\- A 20 byte Base64 URL-safe encoded string used for the authentication of the client application.    You must include an `app_code` with every request.\n\n* **Signature**  `text`\n \\- Signature\n\n* **Policy**  `text`\n \\- Policy\n\n* **Key-Pair-Id**  `text`\n \\- Key-Pair-Id",
+			"headers": "",
+			"id": "27e58bd1-3c02-b1b1-c3de-5d8613686f9f",
+			"method": "GET",
+			"name": "Full Venue Model",
+			"timestamp": 1452587335229,
+			"url": "https://static-1.venue.maps.cit.api.here.com/1/models-full/DM_12321.js?app_id={{YOUR_APP_ID}}&app_code={{YOUR_APP_CODE}}&Signature={{YOUR_SIGNATURE}}&Policy={{YOUR_POLICY}}&Key-Pair-Id={{YOUR_KEY_PAIR_ID}}",
+			"preRequestScript": "",
+			"tests": ""
+		},
+		{
+			"collectionId": "8e3bd102-b4a9-3192-16d6-3b7018ffedd7",
+			"data": [
+				{
+					"key": "app_id",
+					"type": "text",
+					"value": "{{YOUR_APP_ID}}"
+				},
+				{
+					"key": "app_code",
+					"type": "text",
+					"value": "{{YOUR_APP_CODE}}"
+				},
+				{
+					"key": "Signature",
+					"type": "text",
+					"value": "{{YOUR_SIGNATURE}}"
+				},
+				{
+					"key": "Policy",
+					"type": "text",
+					"value": "{{YOUR_POLICY}}"
+				},
+				{
+					"key": "Key-Pair-Id",
+					"type": "text",
+					"value": "{{YOUR_KEY_PAIR_ID}}"
+				}
+			],
+			"dataMode": "params",
+			"description": "*Request an individual venue map tile*\n\nIn addition to the usual `app_id` and `app_code`, three additional parameters are required for authentication purposes. The `Signature`, `Policy` and `Key-Pair-Id` parameters have been obtained from a prior request to the `Signature` endpoint.\n\n\n\n* **app_id**  `text`\n \\- A 20 byte Base64 URL-safe encoded string used for the authentication of the client application.    You must include an `app_id` with every request.\n\n* **app_code**  `text`\n \\- A 20 byte Base64 URL-safe encoded string used for the authentication of the client application.    You must include an `app_code` with every request.\n\n* **Signature**  `text`\n \\- Signature\n\n* **Policy**  `text`\n \\- Policy\n\n* **Key-Pair-Id**  `text`\n \\- Key-Pair-Id",
+			"headers": "",
+			"id": "4579707e-954c-1d23-39a3-55ad26e1eb8e",
+			"method": "GET",
+			"name": "Venue Map Tile",
+			"timestamp": 1452587335351,
+			"url": "https://static-1.venue.maps.cit.api.here.com/0/tiles-png/L1/12022001101210030210.png?app_id={{YOUR_APP_ID}}&app_code={{YOUR_APP_CODE}}&Signature={{YOUR_SIGNATURE}}&Policy={{YOUR_POLICY}}&Key-Pair-Id={{YOUR_KEY_PAIR_ID}}",
+			"preRequestScript": "",
+			"tests": ""
+		},
+		{
+			"collectionId": "8e3bd102-b4a9-3192-16d6-3b7018ffedd7",
+			"data": [
+				{
+					"key": "app_id",
+					"type": "text",
+					"value": "{{YOUR_APP_ID}}"
+				},
+				{
+					"key": "app_code",
+					"type": "text",
+					"value": "{{YOUR_APP_CODE}}"
+				},
+				{
+					"key": "Signature",
+					"type": "text",
+					"value": "{{YOUR_SIGNATURE}}"
+				},
+				{
+					"key": "Policy",
+					"type": "text",
+					"value": "{{YOUR_POLICY}}"
+				},
+				{
+					"key": "Key-Pair-Id",
+					"type": "text",
+					"value": "{{YOUR_KEY_PAIR_ID}}"
+				}
+			],
+			"dataMode": "params",
+			"description": "*Request a list of the name and shape of rooms found within a single venue map tile*\n\nRoom data associated with a map tile is requested by passing `tiles-ia` in the path of the request URL, along with a known `floor` and `quadkey` and associated authentication credentials.\n\n\n\n* **app_id**  `text`\n \\- A 20 byte Base64 URL-safe encoded string used for the authentication of the client application.    You must include an `app_id` with every request.\n\n* **app_code**  `text`\n \\- A 20 byte Base64 URL-safe encoded string used for the authentication of the client application.    You must include an `app_code` with every request.\n\n* **Signature**  `text`\n \\- Signature\n\n* **Policy**  `text`\n \\- Policy\n\n* **Key-Pair-Id**  `text`\n \\- Key-Pair-Id",
+			"headers": "",
+			"id": "929c1c72-7913-152e-d622-78a94b893c78",
+			"method": "GET",
+			"name": "Room Definitions",
+			"timestamp": 1452587335162,
+			"url": "https://static-1.venue.maps.cit.api.here.com/0/tiles-ia/L1/12022001101210030210.js?app_id={{YOUR_APP_ID}}&app_code={{YOUR_APP_CODE}}&Signature={{YOUR_SIGNATURE}}&Policy={{YOUR_POLICY}}&Key-Pair-Id={{YOUR_KEY_PAIR_ID}}",
+			"preRequestScript": "",
+			"tests": ""
+		},
+		{
+			"collectionId": "8e3bd102-b4a9-3192-16d6-3b7018ffedd7",
+			"data": [
+				{
+					"key": "app_id",
+					"type": "text",
+					"value": "{{YOUR_APP_ID}}"
+				},
+				{
+					"key": "app_code",
+					"type": "text",
+					"value": "{{YOUR_APP_CODE}}"
+				},
+				{
+					"key": "Signature",
+					"type": "text",
+					"value": "{{YOUR_SIGNATURE}}"
+				},
+				{
+					"key": "Policy",
+					"type": "text",
+					"value": "{{YOUR_POLICY}}"
+				},
+				{
+					"key": "Key-Pair-Id",
+					"type": "text",
+					"value": "{{YOUR_KEY_PAIR_ID}}"
+				}
+			],
+			"dataMode": "params",
+			"description": "*Request a list of the places within a venue*\n\nDetails of the individual places to be found within a venue can be obtained by passing `models-poi` in the path of the request URL and appending the `id` of the venue in question along with associated authentication credentials.\n\n\n\n* **app_id**  `text`\n \\- A 20 byte Base64 URL-safe encoded string used for the authentication of the client application.    You must include an `app_id` with every request.\n\n* **app_code**  `text`\n \\- A 20 byte Base64 URL-safe encoded string used for the authentication of the client application.    You must include an `app_code` with every request.\n\n* **Signature**  `text`\n \\- Signature\n\n* **Policy**  `text`\n \\- Policy\n\n* **Key-Pair-Id**  `text`\n \\- Key-Pair-Id",
+			"headers": "",
+			"id": "a198b117-aa0c-b0f5-8721-29068df17fa2",
+			"method": "GET",
+			"name": "Places within a Venue",
+			"timestamp": 1452587335199,
+			"url": "https://static-1.venue.maps.cit.api.here.com/1/models-poi/DM_7205.js?app_id={{YOUR_APP_ID}}&app_code={{YOUR_APP_CODE}}&Signature={{YOUR_SIGNATURE}}&Policy={{YOUR_POLICY}}&Key-Pair-Id={{YOUR_KEY_PAIR_ID}}",
+			"preRequestScript": "",
+			"tests": ""
+		},
+		{
+			"collectionId": "8e3bd102-b4a9-3192-16d6-3b7018ffedd7",
+			"data": [
+				{
+					"key": "bbox",
+					"type": "text",
+					"value": "43.4461,-90.0556;38.8885,-83.3594"
+				},
+				{
+					"key": "app_id",
+					"type": "text",
+					"value": "{{YOUR_APP_ID}}"
+				},
+				{
+					"key": "app_code",
+					"type": "text",
+					"value": "{{YOUR_APP_CODE}}"
+				}
+			],
+			"dataMode": "params",
+			"description": "*Request an overview of the number venues across a large area*\n\nA bounding box is specified using the `bbox` parameter in the request URL.\n\n\n\n* **bbox**  `bbox`\n \\- A type of spatial filter. A bounding box specifies the top-right and bottom left corners of an area to search.    e.g. `52.515,13.377;52.134,13.978`\n\n* **app_id**  `text`\n \\- A 20 byte Base64 URL-safe encoded string used for the authentication of the client application.    You must include an `app_id` with every request.\n\n* **app_code**  `text`\n \\- A 20 byte Base64 URL-safe encoded string used for the authentication of the client application.    You must include an `app_code` with every request.",
+			"headers": "",
+			"id": "f2ea19cf-285f-4287-647e-0044be689548",
+			"method": "GET",
+			"name": "Venue Clusters within a Bounding Box",
+			"timestamp": 1452587335290,
+			"url": "https://discovery.venue.maps.cit.api.here.com/venues/discovery/v1?bbox=43.4461,-90.0556;38.8885,-83.3594&app_id={{YOUR_APP_ID}}&app_code={{YOUR_APP_CODE}}",
+			"preRequestScript": "",
+			"tests": ""
+		},
+		{
+			"collectionId": "8e3bd102-b4a9-3192-16d6-3b7018ffedd7",
+			"data": [
+				{
+					"key": "app_id",
+					"type": "text",
+					"value": "{{YOUR_APP_ID}}"
+				},
+				{
+					"key": "app_code",
+					"type": "text",
+					"value": "{{YOUR_APP_CODE}}"
+				},
+				{
+					"key": "Signature",
+					"type": "text",
+					"value": "{{YOUR_SIGNATURE}}"
+				},
+				{
+					"key": "Policy",
+					"type": "text",
+					"value": "{{YOUR_POLICY}}"
+				},
+				{
+					"key": "Key-Pair-Id",
+					"type": "text",
+					"value": "{{YOUR_KEY_PAIR_ID}}"
+				}
+			],
+			"dataMode": "params",
+			"description": "*Request a base64 encoded map tile and associated room definitions with a single request*\n\nA base64 encoded map tile together with the room definitions, is requested by passing `tiles-ia-b64` in the path of the request URL, along with a known `floor` and `quadkey` and associated authentication credentials.\n\n\n\n* **app_id**  `text`\n \\- A 20 byte Base64 URL-safe encoded string used for the authentication of the client application.    You must include an `app_id` with every request.\n\n* **app_code**  `text`\n \\- A 20 byte Base64 URL-safe encoded string used for the authentication of the client application.    You must include an `app_code` with every request.\n\n* **Signature**  `text`\n \\- Signature\n\n* **Policy**  `text`\n \\- Policy\n\n* **Key-Pair-Id**  `text`\n \\- Key-Pair-Id",
+			"headers": "",
+			"id": "f999e32f-3320-dff9-0e3a-0d9d78475a63",
+			"method": "GET",
+			"name": "Base64 Encoded Map Tiles",
+			"timestamp": 1452587335318,
+			"url": "https://static-1.venue.maps.cit.api.here.com/0/tiles-ia-b64/L1/12022001101210030210.js?app_id={{YOUR_APP_ID}}&app_code={{YOUR_APP_CODE}}&Signature={{YOUR_SIGNATURE}}&Policy={{YOUR_POLICY}}&Key-Pair-Id={{YOUR_KEY_PAIR_ID}}",
+			"preRequestScript": "",
+			"tests": ""
+		}
+	]
 }
