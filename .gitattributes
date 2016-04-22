@@ -1,2 +1,2 @@
 # Settings for github/linguist
-*.postman-collection linguist-language=JSON
+*.postman_collection linguist-language=JSON
