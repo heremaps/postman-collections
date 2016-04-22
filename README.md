@@ -48,7 +48,8 @@ The **HERE REST APIs** provide a flexible and fast access to a variety of map da
 * **Batch Reverse Geocode Locations** - Start asynchronously reverse-geocoding a large set of locations in one batch
 * **Download Geocoded Data**  - Download a zipped geocoded dataset from a completed job
 
-[![Run in Postman](https://run.pstmn.io/button.svg)](https://app.getpostman.com/run-collection/6337161a8efcffb6f72a)
+[![Run in Postman](https://run.pstmn.io/button.svg)](https://app.getpostman.com/run-collection/6337161a8efcffb6f72a)  [![Download Collection](https://heremaps.github.io/postman-collections/img/download.svg)](../../raw/master/batch-geocoder.postman_collection)
+
 
 ## [Geocoder API](geocoder.postman_collection)
 
@@ -64,7 +65,7 @@ The **HERE REST APIs** provide a flexible and fast access to a variety of map da
 * **Reverse Geocode the Shape of a Postal Code** - Request the shape of a postal district for a given latitude and longitude
 * **Suppressing Response Attributes** - Request only the latitude, longitude for a given address
 
-[![Run in Postman](https://run.pstmn.io/button.svg)](https://app.getpostman.com/run-collection/4f968ce760f14ed986dc)
+[![Run in Postman](https://run.pstmn.io/button.svg)](https://app.getpostman.com/run-collection/4f968ce760f14ed986dc)  [![Download Collection](https://heremaps.github.io/postman-collections/img/download.svg)](../../raw/master/geocoder.postman_collection)
 
 ## [Map Image API](map-image.postman_collection)
 
@@ -85,7 +86,7 @@ The **HERE REST APIs** provide a flexible and fast access to a variety of map da
 * **Styling a Set of Markers** - Request an image of a map including markers styled with a common theme
 * **Terrain Map Image** - Request an image of a topographical map
 
-[![Run in Postman](https://run.pstmn.io/button.svg)](https://app.getpostman.com/run-collection/639497e869981f6ca24d)
+[![Run in Postman](https://run.pstmn.io/button.svg)](https://app.getpostman.com/run-collection/639497e869981f6ca24d)  [![Download Collection](https://heremaps.github.io/postman-collections/img/download.svg)](../../raw/master/map-image.postman_collection)
 
 ## [Map Tile API](map-tile.postman_collection)
 
@@ -112,7 +113,7 @@ The **HERE REST APIs** provide a flexible and fast access to a variety of map da
 * **Transparent Truck Restrictions Map** - Request a transparent tile showing restrictions for heavy vehicles only
 * **Truck Restrictions Map** - Request a street map tile showing restrictions for heavy vehicles
 
-[![Run in Postman](https://run.pstmn.io/button.svg)](https://app.getpostman.com/run-collection/69119d09338b80b1feb7)
+[![Run in Postman](https://run.pstmn.io/button.svg)](https://app.getpostman.com/run-collection/69119d09338b80b1feb7)  [![Download Collection](https://heremaps.github.io/postman-collections/img/download.svg)](../../raw/master/map-tile.postman_collection)
 
 ## [Places API](places.postman_collection)
 
@@ -126,7 +127,7 @@ The **HERE REST APIs** provide a flexible and fast access to a variety of map da
 * **Place Categories** places/place-categories) - Request a list of place categories available for a given location
 * **Search Suggestions** places/search-suggestion) - Request a list of suggestions based on a partial query string
 
-[![Run in Postman](https://run.pstmn.io/button.svg)](https://app.getpostman.com/run-collection/5512cdb6376b4f216541)
+[![Run in Postman](https://run.pstmn.io/button.svg)](https://app.getpostman.com/run-collection/5512cdb6376b4f216541)  [![Download Collection](https://heremaps.github.io/postman-collections/img/download.svg)](../../raw/master/places.postman_collection)
 
 ## [Public Transit API](public-transit.postman_collection)
 
@@ -147,7 +148,7 @@ The **HERE REST APIs** provide a flexible and fast access to a variety of map da
 * **Transit Coverage Nearby** - Request a list of transit operators and station coverage nearby
 * **Transit Coverage Within a City** - Request a list of transit operator coverage within a specified city
 
-[![Run in Postman](https://run.pstmn.io/button.svg)](https://app.getpostman.com/run-collection/db0df6b89a0048399079)
+[![Run in Postman](https://run.pstmn.io/button.svg)](https://app.getpostman.com/run-collection/db0df6b89a0048399079)  [![Download Collection](https://heremaps.github.io/postman-collections/img/download.svg)](../../raw/master/public-transit.postman_collection)
 
 ## [Routing API](routing.postman_collection)
 
@@ -164,7 +165,7 @@ The **HERE REST APIs** provide a flexible and fast access to a variety of map da
 * **Route with an Intermediate Stop Point** - Request a route from A to B with stop at an intermediate point C
 * **Timetabled Public Transport Route** - Request a public transport route between two points specifying a departure time
 
-[![Run in Postman](https://run.pstmn.io/button.svg)](https://app.getpostman.com/run-collection/58f9ba13cb3c6a214840)
+[![Run in Postman](https://run.pstmn.io/button.svg)](https://app.getpostman.com/run-collection/58f9ba13cb3c6a214840)  [![Download Collection](https://heremaps.github.io/postman-collections/img/download.svg)](../../raw/master/routing.postman_collection)
 
 ## [Traffic API](traffic.postman_collection)
 
@@ -182,7 +183,7 @@ The **HERE REST APIs** provide a flexible and fast access to a variety of map da
 * **Traffic flow using corridor** - Request traffic flow for a defined route
 * **Transparent Traffic Map** - Request a transparent tile with traffic flow information
 
-[![Run in Postman](https://run.pstmn.io/button.svg)](https://app.getpostman.com/run-collection/1adbe0abedec53e48979)
+[![Run in Postman](https://run.pstmn.io/button.svg)](https://app.getpostman.com/run-collection/1adbe0abedec53e48979)  [![Download Collection](https://heremaps.github.io/postman-collections/img/download.svg)](../../raw/master/traffic.postman_collection)
 
 ## [Venue Maps](venue-maps.postman_collection)
 
@@ -195,7 +196,7 @@ The **HERE REST APIs** provide a flexible and fast access to a variety of map da
 * **Venue Map Tile** - Request an individual venue map tile
 * **Venues within a Bounding Box** - Request a list of venues found within a defined area
 
-[[![Run in Postman](https://run.pstmn.io/button.svg)](https://app.getpostman.com/run-collection/00f105c5cd47b15f0f08)
+[![Run in Postman](https://run.pstmn.io/button.svg)](https://app.getpostman.com/run-collection/00f105c5cd47b15f0f08)  [![Download Collection](https://heremaps.github.io/postman-collections/img/download.svg)](../../raw/master/venue-maps.postman_collection)
 
 ## [Weather API](weather.postman_collection)
 
@@ -210,7 +211,7 @@ The **HERE REST APIs** provide a flexible and fast access to a variety of map da
 * **Weather Conditions for a City**  - Request current weather observations around a named location
 * **Weather Conditions using Zip Codes**  - Request current weather conditions using a US Zip Codes
 
-[![Run in Postman](https://run.pstmn.io/button.svg)](https://app.getpostman.com/run-collection/98256a1ee83071c5bbb7)
+[![Run in Postman](https://run.pstmn.io/button.svg)](https://app.getpostman.com/run-collection/98256a1ee83071c5bbb7)  [![Download Collection](https://heremaps.github.io/postman-collections/img/download.svg)](../../raw/master/weather.postman_collection)
 
 ---
 
@@ -230,7 +231,7 @@ The **HERE Platform Extensions** enable developers to further enrich their HERE 
 * **Find Locations within a Bounding Box** - Request a list of user-defined locations within a defined area
 * **Find the Five Nearest Locations** - Request a list of user-defined locations within a circle around a fixed point
 
-[![Run in Postman](https://run.pstmn.io/button.svg)](https://app.getpostman.com/run-collection/cc3ab14488a6554821e3)
+[![Run in Postman](https://run.pstmn.io/button.svg)](https://app.getpostman.com/run-collection/cc3ab14488a6554821e3)  [![Download Collection](https://heremaps.github.io/postman-collections/img/download.svg)](../../raw/master/location-custom.postman_collection)
 
 ## [Platform Data Extension API](platform-data.postman_collection)
 
@@ -241,13 +242,13 @@ The **HERE Platform Extensions** enable developers to further enrich their HERE 
 * **Platform Data** - Request data from a specific data layer about a specified location
 * **Platform Static Data** - Request enumerated content from a static data table
 
-[![Run in Postman](https://run.pstmn.io/button.svg)](https://app.getpostman.com/run-collection/4dce366199ba57ae2c90)
+[![Run in Postman](https://run.pstmn.io/button.svg)](https://app.getpostman.com/run-collection/4dce366199ba57ae2c90)  [![Download Collection](https://heremaps.github.io/postman-collections/img/download.svg)](../../raw/master/platform-data.postman_collection)
 
 ## [Route Match Extension API](route-match.postman_collection)
 
 * **Match GPX Data to a Route** - Request a set of linkIds that match a GPX trace
 
-[![Run in Postman](https://run.pstmn.io/button.svg)](https://app.getpostman.com/run-collection/8398d82324a1f5b60d57)
+[![Run in Postman](https://run.pstmn.io/button.svg)](https://app.getpostman.com/run-collection/8398d82324a1f5b60d57)  [![Download Collection](https://heremaps.github.io/postman-collections/img/download.svg)](../../raw/master/route-match.postman_collection)
 
 ## [Toll Cost Extension API](toll-cost.postman_collection)
 
@@ -256,7 +257,7 @@ The **HERE Platform Extensions** enable developers to further enrich their HERE 
 * **Toll Costs for a Car** - Request standard passenger vehicle toll costs for a journey based on linkIds
 * **Toll Costs for a Truck with Trailer**  - Request toll costs for a 38 ton truck-with-trailer journey based on linkIds
 
-[![Run in Postman](https://run.pstmn.io/button.svg)](https://app.getpostman.com/run-collection/c5789e757a96e910ea3d)
+[![Run in Postman](https://run.pstmn.io/button.svg)](https://app.getpostman.com/run-collection/c5789e757a96e910ea3d)  [![Download Collection](https://heremaps.github.io/postman-collections/img/download.svg)](../../raw/master/toll-cost.postman_collection)
 
 ## [Waypoint Sequence Extension API](waypoints-sequence.postman_collection)
 
@@ -265,7 +266,7 @@ The **HERE Platform Extensions** enable developers to further enrich their HERE 
 * **Waypoint Sequence for a Car** - Request an ordered list of destinations for the quickest car journey
 * **Waypoint Sequence for a Truck with Trailer** - Request an ordered list of destinations for a truck with trailer
 
-[![Run in Postman](https://run.pstmn.io/button.svg)](https://app.getpostman.com/run-collection/c63afbf5dec85dff125a)
+[![Run in Postman](https://run.pstmn.io/button.svg)](https://app.getpostman.com/run-collection/c63afbf5dec85dff125a)  [![Download Collection](https://heremaps.github.io/postman-collections/img/download.svg)](../../raw/master/waypoints-sequence.postman_collection)
 
 ---
 
@@ -299,10 +300,10 @@ The **HERE Platform Extensions** enable developers to further enrich their HERE 
 * **Truck Route via an Intermediate Point** - Request a truck route from A to C with an additional stopover at point B
 * **Weight Restrictions** - Request a truck route for a heavy vehicle specifying axel or laden weights
 
-[![Run in Postman](https://run.pstmn.io/button.svg)](https://app.getpostman.com/run-collection/926e75591fcac72eab82)
+[![Run in Postman](https://run.pstmn.io/button.svg)](https://app.getpostman.com/run-collection/926e75591fcac72eab82)  [![Download Collection](https://heremaps.github.io/postman-collections/img/download.svg)](../../raw/master/legacy-enterprise-routing.postman_collection)
 
 ## [Matrix Routing API](legacy-matrix-routing.postman_collection)
 
 * **Matrix Routing**  - Simultaneously calculate route distances to multiple locations
 
-[![Run in Postman](https://run.pstmn.io/button.svg)](https://app.getpostman.com/run-collection/811ebd840c41662e1a30)
+[![Run in Postman](https://run.pstmn.io/button.svg)](https://app.getpostman.com/run-collection/811ebd840c41662e1a30)  [![Download Collection](https://heremaps.github.io/postman-collections/img/download.svg)](../../raw/master/legacy-matrix-routing.postman_collection)
