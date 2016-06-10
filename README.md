@@ -4,7 +4,6 @@ This repository holds a series of postman collections demonstrating a variety of
 
 These examples have been created for use with the **Postman** utility. Postman is a testing framework for REST APIs. The tool can be downloaded from [www.getpostman.com](https://www.getpostman.com).
 
-
 To import the collection, first `clone` this repository, then open the Postman utility and select the *`Import`* option. Select the *`Folder`* tab from the dialog and drag and drop the cloned repository folder into the target.
 
 The collections contained in this repository are organized under this scheme:
@@ -34,7 +33,8 @@ The collections contained in this repository are organized under this scheme:
 
 > You can obtain a set of credentials from the [Plans Page](https://developer.here.com/plans/api/consumer-mapping) on **developer.here.com**.
 
----
+See the [LICENSE](LICENSE) file in the root of this project for license details.
+
 # REST APIs
 
 The **HERE REST APIs** provide a flexible and fast access to a variety of map data and other map data functions. Developers can use the HERE Rest APIs to perform tasks ranging from batch geocode requests and advanced traffic incident reports to creating an isoline route.
@@ -49,7 +49,6 @@ The **HERE REST APIs** provide a flexible and fast access to a variety of map da
 * **Download Geocoded Data**  - Download a zipped geocoded dataset from a completed job
 
 [![Run in Postman](https://run.pstmn.io/button.svg)](https://app.getpostman.com/run-collection/6337161a8efcffb6f72a)  [![Download Collection](https://heremaps.github.io/postman-collections/img/download.svg)](../../raw/master/batch-geocoder.postman_collection)
-
 
 ## [Geocoder API](geocoder.postman_collection)
 
@@ -213,8 +212,6 @@ The **HERE REST APIs** provide a flexible and fast access to a variety of map da
 
 [![Run in Postman](https://run.pstmn.io/button.svg)](https://app.getpostman.com/run-collection/98256a1ee83071c5bbb7)  [![Download Collection](https://heremaps.github.io/postman-collections/img/download.svg)](../../raw/master/weather.postman_collection)
 
----
-
 # Platform Extensions
 
 The **HERE Platform Extensions** enable developers to further enrich their HERE enabled applications by providing access to additional data sets and functionalities, currently not available through HERE Platform services, which are tailored to specific use cases. Developers can use the Platform Extensions to add more capabilities to the service results received from HERE Platform services. They can only be used as add-ons to HERE Platform Services.
@@ -267,8 +264,6 @@ The **HERE Platform Extensions** enable developers to further enrich their HERE 
 * **Waypoint Sequence for a Truck with Trailer** - Request an ordered list of destinations for a truck with trailer
 
 [![Run in Postman](https://run.pstmn.io/button.svg)](https://app.getpostman.com/run-collection/c63afbf5dec85dff125a)  [![Download Collection](https://heremaps.github.io/postman-collections/img/download.svg)](../../raw/master/waypoints-sequence.postman_collection)
-
----
 
 # Legacy APIs
 > Documentation on these APIs can be found on the bottom of the [developer.here.com documentation listing page](https://developer.here.com/documentation).
