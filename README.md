@@ -149,7 +149,7 @@ The **HERE REST APIs** provide a flexible and fast access to a variety of map da
 * **Transit Coverage Nearby** - Request a list of transit operators and station coverage nearby
 * **Transit Coverage Within a City** - Request a list of transit operator coverage within a specified city
 
-[![Run in Postman](https://run.pstmn.io/button.svg)](https://app.getpostman.com/run-collection/db0df6b89a0048399079)  [![Download Collection](https://heremaps.github.io/postman-collections/img/download.svg)](../../raw/master/public-transit.postman_collection)
+[![Run in Postman](https://run.pstmn.io/button.svg)](https://app.getpostman.com/run-collection/db160e2119445bca4955)  [![Download Collection](https://heremaps.github.io/postman-collections/img/download.svg)](../../raw/master/public-transit.postman_collection)
 
 ## [Routing API](routing.postman_collection)
 
@@ -185,7 +185,7 @@ The **HERE REST APIs** provide a flexible and fast access to a variety of map da
 * **Truck route trailer restrictions** - Request a truck route for a vehicle with a trailer
 * **Weight Restrictions** - Request a truck route for a heavy vehicle specifying axel or laden weights
 
-[![Run in Postman](https://run.pstmn.io/button.svg)](https://app.getpostman.com/run-collection/58f9ba13cb3c6a214840)  [![Download Collection](https://heremaps.github.io/postman-collections/img/download.svg)](../../raw/master/routing.postman_collection)
+[![Run in Postman](https://run.pstmn.io/button.svg)](https://app.getpostman.com/run-collection/3d880860b31ef4c5019e)  [![Download Collection](https://heremaps.github.io/postman-collections/img/download.svg)](../../raw/master/routing.postman_collection)
 
 ## [Traffic API](traffic.postman_collection)
 
