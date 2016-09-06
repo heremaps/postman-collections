@@ -14,7 +14,7 @@ The collections contained in this repository are organized under this scheme:
   * [Map Image API](#map-image-api)
   * [Map Tile API](#map-tile-api)
   * [Places API](#places-api)
-  * [Public Transport API](#public-transport-api)
+  * [Public Transit API](#public-transit-api)
   * [Routing API](#routing-api)
   * [Traffic API](#traffic-api)
   * [Venue Maps](#venue-maps)
