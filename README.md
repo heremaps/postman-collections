@@ -137,13 +137,15 @@ The **HERE REST APIs** provide a flexible and fast access to a variety of map da
 * **Find Stations by ID** - Request details of a specific transit station based on a previous request
 * **Find Stations by Name** - Request a list of public transit stations based on name
 * **Find Transit Coverage in Cities Nearby** - Request a list of transit operators available in cities nearby
+* **Multi-Station Board Departure Times** - Request a list of all next departure times and destinations
+* **Next Nearby Departures from a given station** - Request a list of next departure times and destinations of a particular station
 * **Plan a Transit Route to Arrive at a Certain Time** - Request a public transit route between any two place.
 * **Plan a route from A to B using Public Transport** - Request a public transit route between any two place.
 * **Public Transit Route That Shows Line Graph** - Request a public transit route with line graphs showing the actual route of the transit services.
 * **Reachability of an Area Within a Specific Time** - Request a list of the public transit stations that can be reached in a given time
+* **Reachability of an Area with Only Buses** - Request a list of the public transit stations that can be reached with certain transit types only
 * **Show Intermediate Stations on a Transit Route** - Request a public transit route showing intermediate stops between stations
 * **Show Up to 6 Transit Routes** - Request the maxium no of public transit routes for a journey
-* **Station Board Departure Times** - Request a list of train departure times and destinations
 * **Transit Coverage Nearby** - Request a list of transit operators and station coverage nearby
 * **Transit Coverage Within a City** - Request a list of transit operator coverage within a specified city
 
@@ -151,18 +153,37 @@ The **HERE REST APIs** provide a flexible and fast access to a variety of map da
 
 ## [Routing API](routing.postman_collection)
 
+* **Abnormal Loads** - Request a truck route for long, tall or wide vehicles
 * **Additional Route Settings** - Request a route specifying additional route settings.
+* **Alternative routes** - Request multiple alternative routes within a single request
 * **Avoiding a Form of Public Transport** - Request a public transport route avoiding rail
-* **Avoiding a specified stretch of road**- Request a route avoiding a specific road as defined by an avoidLink
+* **Avoiding a specified area** - Request a route avoiding a defined area by specifying a bounding box
+* **Avoiding a specified stretch of road** - Request a route avoiding a specific road as defined by an avoidLink
 * **Car Route from A to B** - Request a driving route between two points
-* **Changing from the metric system**- Request a route with instructional distances given in miles and yards
+* **Changing from the metric system** - Request a route with instructional distances given in miles and yards
+* **Distance-based isoline with destination as center** - Request an isoline that will reach a destination within a defined distance of travel
+* **Distance-based isoline with start as center** - Request the shape outlining the area that can be reached within a defined distance of travel
 * **Getting route information within viewbounds** - Request partial route information for maneuvers within a given area
+* **Hazardous Goods** - Request a truck route for a vehicle transporting hazardous goods
+* **Link Information for a location** - Request detailed information about a path segment in the routing network given one of its coordinates
+* **Link Information using linkId** - Request detailed information about a path segment in the routing network given a linkid
+* **Many to Many Matrix Routing** - Matrix routing request with three start points and five destinations
 * **Multi-language support** - Request route instructions in a foreign language
+* **One to Many Matrix Routing** - Simultaneously calculate route distances to multiple locations
 * **Pedestrian Route from A to B** - Request a walking route between two points
 * **Prefer/Avoid Motorways** - Request a route preferring or avoiding specific types of road
+* **Previously Calculated Route Information** - Request information about a previously calculated route
 * **Route from A to B using Public Transport** - Request a route between two points using public transport
 * **Route with an Intermediate Stop Point** - Request a route from A to B with stop at an intermediate point C
+* **Time-based isoline with destination as center** - Request an isoline that will reach a destination within a given time
+* **Time-based isoline with start point as center** - Request the shape outlining the area that can be reached within a given time
 * **Timetabled Public Transport Route** - Request a public transport route between two points specifying a departure time
+* **Toll Summary by Country** - Request a truck route with toll road summary by country
+* **Truck Route from A to B** - Request a truck route between two points
+* **Truck Route from A to B with shape information** - Request a truck route between two points including additional information
+* **Truck Route via an Intermediate Point** - Request a truck route from A to C with an additional stopover at point B
+* **Truck route trailer restrictions** - Request a truck route for a vehicle with a trailer
+* **Weight Restrictions** - Request a truck route for a heavy vehicle specifying axel or laden weights
 
 [![Run in Postman](https://run.pstmn.io/button.svg)](https://app.getpostman.com/run-collection/58f9ba13cb3c6a214840)  [![Download Collection](https://heremaps.github.io/postman-collections/img/download.svg)](../../raw/master/routing.postman_collection)
 
