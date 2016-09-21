@@ -23,11 +23,7 @@ The collections contained in this repository are organized under this scheme:
   * [Custom Location Extension API](#custom-location-extension-api)
   * [Platform Data Extension API](#platform-data-extension-api)
   * [Route Match Extension API](#route-match-extension-api)
-  * [Toll Cost Extension API](#toll-cost-extension-api)
   * [Waypoint Sequence Extension API](#waypoint-sequence-extension-api)
-* [Legacy APIs](#legacy-apis)
-  * [Enterprise Routing API](#enterprise-routing-api)
-  * [Matrix Routing API](#matrix-routing-api)
 
 > **NOTE:** In order to get the postman requests to work, you **must** replace all instances of the `{YOUR_APP_ID}` and `{YOUR_APP_CODE}` variables within the collection and use your own HERE credentials. Within Postman, set the variables using the *`Manage environments`* menu.
 
