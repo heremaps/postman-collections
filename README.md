@@ -268,14 +268,6 @@ The **HERE Platform Extensions** enable developers to further enrich their HERE 
 
 [![Run in Postman](https://run.pstmn.io/button.svg)](https://app.getpostman.com/run-collection/8398d82324a1f5b60d57)  [![Download Collection](https://heremaps.github.io/postman-collections/img/download.svg)](../../raw/master/route-match.postman_collection)
 
-## [Toll Cost Extension API](toll-cost.postman_collection)
-
-* **Toll Cost for a Truck**  - Request toll costs for a 7.5 ton truck  journey based on linkIds
-* **Toll Costs based on Departure Time** - Request toll costs for a journey commencing at a given time
-* **Toll Costs for a Car** - Request standard passenger vehicle toll costs for a journey based on linkIds
-* **Toll Costs for a Truck with Trailer**  - Request toll costs for a 38 ton truck-with-trailer journey based on linkIds
-
-[![Run in Postman](https://run.pstmn.io/button.svg)](https://app.getpostman.com/run-collection/c5789e757a96e910ea3d)  [![Download Collection](https://heremaps.github.io/postman-collections/img/download.svg)](../../raw/master/toll-cost.postman_collection)
 
 ## [Waypoint Sequence Extension API](waypoints-sequence.postman_collection)
 
@@ -285,41 +277,3 @@ The **HERE Platform Extensions** enable developers to further enrich their HERE 
 * **Waypoint Sequence for a Truck with Trailer** - Request an ordered list of destinations for a truck with trailer
 
 [![Run in Postman](https://run.pstmn.io/button.svg)](https://app.getpostman.com/run-collection/c63afbf5dec85dff125a)  [![Download Collection](https://heremaps.github.io/postman-collections/img/download.svg)](../../raw/master/waypoints-sequence.postman_collection)
-
-# Legacy APIs
-> Documentation on these APIs can be found on the bottom of the [developer.here.com documentation listing page](https://developer.here.com/documentation).
-
-## [Enterprise Routing API](legacy-enterprise-routing.postman_collection)
-
-* **Abnormal Loads** - Request a truck route for long, tall or wide vehicles
-* **Avoiding a specified area** - Request a route avoiding a defined area by specifying a bounding box
-* **Avoiding a specified stretch of road** - Request a truck route avoiding a specific road as defined by an avoidLink
-* **Car Route from A to B** - Request a driving route for light vehicles between two points
-* **Changing from the metric system** - Request a truck route with instructional distances given in miles and yards.
-* **Distance Isoline Calculation** - Request the shape outlining the area that can be reached within a defined distance of travel
-* **Distance-based Reverse Flow** - Request a list of path segments that will reach a destination within a defined distance of travel
-* **Getting truck route information within viewbounds** - Request partial truck route information for maneuvers within a given area
-* **Hazardous Goods** - Request a truck route for a vehicle transporting hazardous goods
-* **Isochrone Calculation** - Request the shape outlining the area that can be reached within a given time
-* **Link Information for a location** - Request detailed information about a path segment in the routing network given one of its coordinates
-* **Link Information using linkId** - Request detailed information about a path segment in the routing network given a linkid
-* **Multi-language support** - Request truck route instructions in a foreign language
-* **Multiple Route Modes** - Request routes for multiple routing modes within a single request
-* **Pedestrian Route from A to B** - Request a walking route between two points
-* **Prefer/Avoid Motorways** - Request a truck route preferring or avoiding specific types of road
-* **Previously Calculated Route Information** - Request information about a previously calculated route
-* **Time-based Reverse Flow** - Request a list of path segments that will reach a destination within a given time
-* **Toll Summary by Country** - Request a truck route with toll road summary by country
-* **Trailer Restrictions** - Request a truck route for a vehicle with a trailer
-* **Truck Route from A to B** - Request a truck route between two points
-* **Truck Route from A to B with shape information** - Request a truck route between two points including additional information
-* **Truck Route via an Intermediate Point** - Request a truck route from A to C with an additional stopover at point B
-* **Weight Restrictions** - Request a truck route for a heavy vehicle specifying axel or laden weights
-
-[![Run in Postman](https://run.pstmn.io/button.svg)](https://app.getpostman.com/run-collection/926e75591fcac72eab82)  [![Download Collection](https://heremaps.github.io/postman-collections/img/download.svg)](../../raw/master/legacy-enterprise-routing.postman_collection)
-
-## [Matrix Routing API](legacy-matrix-routing.postman_collection)
-
-* **Matrix Routing**  - Simultaneously calculate route distances to multiple locations
-
-[![Run in Postman](https://run.pstmn.io/button.svg)](https://app.getpostman.com/run-collection/811ebd840c41662e1a30)  [![Download Collection](https://heremaps.github.io/postman-collections/img/download.svg)](../../raw/master/legacy-matrix-routing.postman_collection)
