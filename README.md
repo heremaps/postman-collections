@@ -1,6 +1,7 @@
 # Postman Collections
 
-This repository holds a series of postman collections demonstrating a variety of use cases for all of the  **HERE REST and Platform Extension APIs**. More information about our APIs can be found on [developer.here.com](https://developer.here.com/).
+This repository holds a series of postman collections demonstrating a variety of use cases for all of the [HERE REST and Platform Extension APIs](https://developer.here.com/documentation) and are updated in sync with changes to the respective APIs.
+More information about our APIs can be found on [developer.here.com](https://developer.here.com/).
 
 These examples have been created for use with the **Postman** utility. Postman is a testing framework for REST APIs. The tool can be downloaded from [www.getpostman.com](https://www.getpostman.com).
 
